@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 5 · Taller: el brief, programa y sitio | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 5 del Parcial 1: taller para definir el brief del museo: programa a la medida (cuadro de áreas), análisis de sitio y primeras decisiones de partido.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 5 · Taller: el brief, programa y sitio</h1>
+    <p class="parcial-desc">Sesión-taller. Hoy no leemos: decidimos. Convertimos "un museo" en <em>nuestro</em> museo, con su programa, su sitio y su primera idea de organización. Todavía sin software.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Definir</strong> el encargo: misión, colección, públicos prioritarios y operación del museo.</li>
+        <li><strong>Derivar</strong> necesidades espaciales concretas a partir de cada público.</li>
+        <li><strong>Elaborar</strong> un cuadro de áreas por zonas y comprobar que sus subtotales cuadran.</li>
+        <li><strong>Calcular</strong> el aforo de tu museo y explicar qué requisitos dispara.</li>
+        <li><strong>Leer</strong> un sitio: orientación, accesos, topografía, contexto, vistas y clima.</li>
+        <li><strong>Incorporar</strong> la accesibilidad universal como restricción del proyecto, no como añadido.</li>
+        <li><strong>Marcar</strong> la procedencia de cada dato (V / P / D / NV) y distinguir lo verificado de lo supuesto.</li>
+        <li><strong>Formular</strong> un partido que responda al programa y al sitio, no a una forma preferida.</li>
+      </ul>
+    </div>
+
+    <p>
+      En la Sesión 4 vimos qué es un museo y de qué se compone. Hoy le ponemos nombre y números al nuestro.
+      Al terminar esta sesión, cada equipo debe salir con seis piezas: una <strong>ficha de
+      identidad</strong>, un <strong>cuadro de áreas</strong>, una <strong>tabla de aforo</strong>, un
+      <strong>análisis de su sitio</strong>, un <strong>diagrama de recorridos</strong> y un
+      <strong>diagrama de partido</strong>. Eso es el cimiento sobre el que, más adelante, se levantará
+      el modelo.
+    </p>
+
+    <p>
+      Y el orden importa: <strong>los metros cuadrados van casi al final</strong>. Antes hay que saber
+      <em>qué</em> museo es y <em>para quién</em>; si no, se acaba ajustando superficies a un edificio que
+      nadie ha definido.
+    </p>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Antes de empezar: marca de dónde viene cada dato</p>
+      <p>
+        Un brief se construye con datos de orígenes muy distintos, y confundirlos es la manera más rápida
+        de que un proyecto se caiga en la revisión. Ya conocen tres de estas marcas: las usaron en la
+        <strong>Sesión 3</strong> para analizar un museo ajeno. Hoy se aplican a los datos del proyecto
+        propio y <strong>se les suma una cuarta</strong>. Cada cifra que escriban lleva una:
+      </p>
+      <ul>
+        <li><strong>V: verificado.</strong> Lo comprobaste en la fuente oficial vigente y puedes decir en cuál.</li>
+        <li><strong>P: provisional.</strong> Puedes usarlo hoy, pero falta confirmar su <em>vigencia</em> o
+          su <em>aplicabilidad a tu caso</em>. Aquí caben dos situaciones distintas: lo que viene de una
+          compilación o un apunte y no has comprobado en la fuente original, y también una recomendación
+          técnica de una institución seria (que puede estar perfectamente verificada) pero que
+          <em>no es de cumplimiento obligatorio</em> y podría no aplicar a tu proyecto.</li>
+        <li><strong>D: decisión didáctica.</strong> <em>La nueva.</em> Es un supuesto de este ejercicio,
+          acordado en clase. En la S3 no existía porque analizaban un edificio ajeno y no había nada que
+          decidir; ahora el museo es suyo y sí lo hay. Perfectamente válida, siempre que se declare.</li>
+        <li><strong>NV: no verificado.</strong> Todavía no lo has comprobado. Escríbelo igual.</li>
+      </ul>
+      <p>
+        La regla de oro: <strong>no escondas un NV</strong>. Una incertidumbre visible se resuelve con una
+        llamada a la ventanilla; una cifra inventada que nadie marcó se descubre cuando ya está construida.
+        Esto no es burocracia académica: es exactamente lo que se te va a exigir en la práctica.
+      </p>
+      <p>
+        Vale también al revés: si marcas <strong>V</strong>, tienes que poder decir <em>dónde</em>. «Lo vi
+        en internet» no es una fuente verificada.
+      </p>
+    </div>
+
+    <h2>1 · La ficha de identidad: qué museo es el tuyo</h2>
+
+    <p>
+      En la Sesión 4 su equipo acordó una misión de dos frases. Ahora se convierte en encargo. Antes de tocar
+      una sola superficie, tu equipo cierra esta ficha, porque de ella depende todo lo demás:
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">Ficha de identidad del museo (primer entregable del brief)</caption>
+        <thead>
+          <tr><th scope="col">Variable</th><th scope="col">Qué hay que decidir</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Misión</strong></td><td>Qué hace este museo por su comunidad, en dos frases.</td></tr>
+          <tr><td><strong>Colección o contenido</strong></td><td>Qué conserva, interpreta o exhibe: objetos, documentos, fotografía, obra gráfica, testimonios, medios digitales, réplicas.</td></tr>
+          <tr><td><strong>Sensibilidad del acervo</strong></td><td>¿Hay material muy sensible a la luz? De aquí salen los lux de tus salas (Sesión 4).</td></tr>
+          <tr><td><strong>Tres públicos prioritarios</strong></td><td>Elige tres y sé específico: no «la comunidad», sino grupos escolares, familias, investigadores, personas mayores, artistas locales, turistas.</td></tr>
+          <tr><td><strong>Actividades</strong></td><td>Qué ocurre dentro además de mirar: talleres, funciones, consulta, montaje, eventos comunitarios.</td></tr>
+          <tr><td><strong>Personal estimado</strong></td><td>Cuánta gente trabaja ahí. Afecta oficinas, casilleros, sanitarios de servicio y estacionamiento.</td></tr>
+          <tr><td><strong>Régimen de exposición</strong></td><td>¿Solo permanente? ¿Recibe préstamos? Si recibe, necesitas cuarentena y preparación de verdad.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Del público al espacio: el paso que importa</p>
+      <p>
+        Para cada uno de tus <strong>tres públicos prioritarios</strong>, escribe una línea con este
+        formato:
+      </p>
+      <p style="text-align:center">
+        <em>público → actividad → necesidad espacial → condición de accesibilidad</em>
+      </p>
+      <p>
+        Por ejemplo: <em>grupos escolares → taller de 30 niños → aula con lavabo, cerca del acceso y lejos
+        de las salas silenciosas → mobiliario a dos alturas y ruta sin escalones desde el autobús.</em>
+      </p>
+      <p>
+        Esas tres líneas son las que después justifican tu cuadro de áreas. Un espacio que no responde a
+        ningún público ni a ninguna actividad probablemente sobra.
+      </p>
+    </div>
+
+    <h2>2 · El programa a la medida</h2>
+    <p>
+      El programa general de un museo (el de la tabla de la Sesión 4) es demasiado grande para un semestre.
+      Vamos a bajarlo a un <strong>museo pequeño con énfasis educativo-cultural</strong> y a ponerle
+      superficies. El resultado es el <strong>cuadro de áreas</strong>: la lista de espacios con su
+      tamaño aproximado. Es tu primer "contrato" con el proyecto: todo lo demás se mide contra él.
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">Cuadro de áreas orientativo: museo pequeño con programa educativo-cultural</caption>
+        <thead>
+          <tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3"><strong>Acceso y atención al público</strong></td></tr>
+          <tr><td>Vestíbulo y recepción</td><td>1</td><td>60 m²</td></tr>
+          <tr><td>Taquilla e información</td><td>1</td><td>10 m²</td></tr>
+          <tr><td>Guardarropa</td><td>1</td><td>12 m²</td></tr>
+          <tr><td>Tienda / librería</td><td>1</td><td>25 m²</td></tr>
+          <tr><td>Cafetería (con cocina)</td><td>1</td><td>60 m²</td></tr>
+          <tr><td>Sanitarios públicos</td><td>2</td><td>20 m² c/u</td></tr>
+
+          <tr><td colspan="3"><strong>Exposición</strong></td></tr>
+          <tr><td>Sala de exposición permanente</td><td>2</td><td>120 m² c/u</td></tr>
+          <tr><td>Sala de exposición temporal</td><td>1</td><td>100 m²</td></tr>
+          <tr><td>Áreas de descanso</td><td>—</td><td>30 m²</td></tr>
+
+          <tr><td colspan="3"><strong>Programa educativo-cultural</strong></td></tr>
+          <tr><td>Aula / taller didáctico</td><td>2</td><td>50 m² c/u</td></tr>
+          <tr><td>Sala de usos múltiples / auditorio (≈80 pers.)</td><td>1</td><td>140 m²</td></tr>
+          <tr><td>Biblioteca / mediateca</td><td>1</td><td>80 m²</td></tr>
+
+          <tr><td colspan="3"><strong>Acervo y conservación</strong></td></tr>
+          <tr><td>Bodega de obra</td><td>1</td><td>60 m²</td></tr>
+          <tr><td>Registro y restauración</td><td>1</td><td>40 m²</td></tr>
+          <tr><td>Recepción de obra y cuarentena</td><td>1</td><td>25 m²</td></tr>
+          <tr><td>Preparación y montaje de exposiciones</td><td>1</td><td>35 m²</td></tr>
+          <tr><td>Carga y descarga</td><td>1</td><td>30 m²</td></tr>
+
+          <tr><td colspan="3"><strong>Administración</strong></td></tr>
+          <tr><td>Dirección y oficinas</td><td>1</td><td>60 m²</td></tr>
+          <tr><td>Sala de juntas</td><td>1</td><td>25 m²</td></tr>
+
+          <tr><td colspan="3"><strong>Servicios generales</strong></td></tr>
+          <tr><td>Cuartos de máquinas, eléctrico, datos y climatización</td><td>—</td><td>60 m²</td></tr>
+          <tr><td>Seguridad y control</td><td>1</td><td>15 m²</td></tr>
+          <tr><td>Residuos y limpieza</td><td>—</td><td>15 m²</td></tr>
+          <tr><td>Sanitarios de servicio y casilleros</td><td>—</td><td>25 m²</td></tr>
+
+          <tr><td colspan="3"><strong>Subtotal útil ≈ 1&nbsp;290 m² · con circulaciones y muros (≈30 %) ≈ 1&nbsp;670 m²</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Estas cifras son un punto de partida</p>
+      <p>
+        Todas las superficies de la tabla son <strong>D, decisión didáctica</strong>: un punto de partida
+        acordado para este ejercicio, no una norma. Ajústalas al carácter de tu museo y afínalas con
+        <strong>Plazola (1999)</strong> y <strong>Neufert</strong> (superficies por espacio, distancias de
+        visión y alturas de sala). Como referencia útil: en una sala, las obras se cuelgan con su centro
+        cerca de la <strong>línea de visión (≈1.50–1.60 m)</strong> y los muros de exposición rondan los
+        <strong>2.5–3.5 m de altura</strong> (Plazola, 1999). Ojo: Plazola y Neufert son manuales de
+        dimensionamiento, <em>no</em> normativa mexicana vigente: lo que saques de ahí es P, no V.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Lo que casi nadie dibuja y sin lo cual el museo no funciona</p>
+      <p>
+        Fíjate en la zona de <strong>acervo y conservación</strong>. Un museo no puede recibir una
+        exposición en préstamo si no tiene dónde <strong>recibir la obra, ponerla en cuarentena, prepararla
+        y montarla</strong>. Esa secuencia (andén, recepción, cuarentena, preparación, bodega, sala) es una
+        ruta completa que debe existir en tu planta y <strong>no debe cruzarse con el recorrido del
+        visitante</strong>.
+      </p>
+      <p>
+        Lo mismo con los cuartos técnicos, la seguridad y los residuos: ocupan unos 90 m² entre todos y
+        suelen aparecer al final, cuando ya no caben. Colócalos desde el partido.
+      </p>
+    </div>
+
+    <h2>3 · El sitio</h2>
+    <p>
+      Un edificio no existe en el vacío: responde a un lugar. Antes de dibujar nada conviene
+      <strong>leer el sitio</strong>. Trabajaremos sobre <strong>un solo predio en Tijuana, el mismo para
+      todo el grupo</strong>, que se entrega con su ficha en esta sesión.
+    </p>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Por qué un único predio para toda la generación</p>
+      <p>
+        Porque hace comparables los proyectos. Si cada equipo elige su terreno, las diferencias entre
+        propuestas se explican por el sitio y no por las decisiones de proyecto, y la revisión se vuelve
+        injusta: nadie puede juzgar si resolviste bien un problema que solo tú tenías. Con un predio común,
+        <strong>todos enfrentan las mismas restricciones</strong> (la misma pendiente, la misma orientación,
+        los mismos accesos) y lo único que varía es lo que cada quien hizo con ellas. Ahí es donde se
+        aprende.
+      </p>
+      <p>
+        La <strong>ficha del predio</strong> que recibes incluye: polígono y dimensiones, norte, curvas de
+        nivel, vialidades y accesos permitidos, contexto inmediato, fotografías, y el estatus de
+        compatibilidad urbana. Cada dato viene con su marca <strong>V / P / D / NV</strong>: no todo está
+        verificado, y saber qué falta es parte del ejercicio.
+      </p>
+    </div>
+
+    <p>Esto es lo que hay que analizar del sitio:</p>
+    <ul>
+      <li><strong>Orientación y asoleamiento:</strong> por dónde sale y se pone el sol. En un museo es
+        decisivo: la luz sobre las obras debe controlarse, así que conviene saber de dónde viene.</li>
+      <li><strong>Accesos:</strong> desde qué calles se llega, a pie y en auto; dónde conviene la entrada
+        del público y dónde la de servicio (carga de obra).</li>
+      <li><strong>Topografía:</strong> ¿es plano o tiene pendiente? Los desniveles condicionan accesos,
+        rampas y plataformas.</li>
+      <li><strong>Contexto urbano:</strong> qué hay alrededor (escala de los vecinos, carácter del barrio).</li>
+      <li><strong>Vistas:</strong> hacia dónde vale la pena abrir y de qué conviene protegerse.</li>
+      <li><strong>Clima:</strong> viento, temperatura, lluvia. Tijuana tiene su propio microclima.</li>
+      <li><strong>Normativa:</strong> uso de suelo, límites de altura y restricciones del predio.</li>
+    </ul>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">El sol, en corto</p>
+      <p>
+        El sol sale por el oriente, culmina hacia el sur (en nuestra latitud) y se pone al poniente; en
+        verano va alto, en invierno bajo. Sobre tu croquis del sitio marca de dónde viene en la mañana y en
+        la tarde, y pregúntate: ¿qué fachada recibe el sol más duro (poniente) y qué pondrás ahí?, ¿tus
+        salas quedarán protegidas o habrá que filtrar la luz?, ¿dónde se agradece el sol: en la plaza, la
+        cafetería, el patio?
+      </p>
+    </div>
+
+    <h2>4 · El aforo: el número que dimensiona el edificio</h2>
+
+    <p>
+      Hasta aquí tienes metros cuadrados. Falta el dato que los vuelve un edificio real: <strong>cuánta
+      gente cabe</strong>. El aforo no es una curiosidad estadística: es lo que determina cuántas salidas
+      necesitas, de qué ancho, cuántos sanitarios y cuántos cajones de estacionamiento. Calcúlalo ahora,
+      no cuando ya tengas las plantas dibujadas.
+    </p>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Cómo se calcula</p>
+      <p>
+        El aforo de un espacio es su <strong>superficie útil dividida entre una densidad de ocupación</strong>
+        (metros cuadrados por persona). Se calcula por zonas y se toma siempre el
+        <strong>escenario más desfavorable</strong>: el momento de máxima concurrencia simultánea.
+      </p>
+      <p>
+        Para este ejercicio usaremos <strong>≈2 m² por persona en salas de exposición</strong>
+        (<strong>D</strong>, decisión didáctica). El auditorio se cuenta por asientos, no por superficie:
+        son <strong>80 personas</strong>. Suma después vestíbulo, talleres y biblioteca según el uso que
+        les des.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Hazlo con tus números</p>
+      <p>
+        Con el cuadro de áreas de arriba, las salas de exposición suman <strong>370 m²</strong>. A 2 m² por
+        persona son <strong>185 visitantes</strong>; con las 80 del auditorio vas por
+        <strong>265 personas</strong> antes de contar vestíbulo, cafetería, talleres y biblioteca.
+      </p>
+      <p>
+        Ese número tiene consecuencias inmediatas, y aquí viene lo importante: los <strong>umbrales</strong>
+        que disparan requisitos (a partir de cuántas personas se exigen salidas de emergencia, cuántas y de
+        qué ancho, y cuándo el edificio cambia de clasificación de riesgo) están en el
+        <strong>Reglamento de la Ley de Edificaciones para el Municipio de Tijuana, Título III, Sección IV</strong>
+        («Requerimientos para la prevención de emergencias, accesibilidad y facilidad para el desalojo»).
+      </p>
+      <p>
+        <strong>No te doy las cifras.</strong> Búscalas tú en el texto vigente y márcalas
+        <strong>V</strong> anotando artículo y fecha de la última reforma. Si no logras confirmarlas,
+        márcalas <strong>NV</strong> y decláralo en la entrega: eso también es un resultado.
+      </p>
+      <p>
+        <strong>Aviso honesto:</strong> esto no se resuelve en cinco minutos. El reglamento es largo, los
+        requisitos están repartidos entre secciones y hay compilaciones que no coinciden con el texto
+        oficial. Empieza la búsqueda <em>antes</em> de la sesión y trae lo que encuentres, aunque sea
+        incompleto. En clase resolvemos las dudas, no la búsqueda entera.
+      </p>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Una advertencia sobre la normativa</p>
+      <p>
+        Circulan muchas copias del reglamento en apuntes, foros y compilaciones. <strong>No son fuente
+        válida.</strong> El texto que manda es el publicado en el <strong>Periódico Oficial del Estado de
+        Baja California</strong>, y el reglamento se reforma con frecuencia: cuando este apunte se escribió,
+        la última reforma era de julio de 2025, y la propia ficha técnica del ayuntamiento todavía anunciaba
+        una fecha anterior.
+      </p>
+      <p>
+        Moraleja: si dos fuentes discrepan, gana el Periódico Oficial. Y si tienes dudas, la
+        <strong>Dirección de Administración Urbana</strong> del ayuntamiento es quien resuelve. Preguntar
+        no es una debilidad, es el procedimiento.
+      </p>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Accesibilidad universal: requisito, no añadido</p>
+      <p>
+        Recuerda la definición de museo que vimos en la Sesión 4: el ICOM (2022) pone
+        <strong>«accesibles e inclusivos»</strong> al mismo nivel que conservar y exhibir. Eso convierte la
+        accesibilidad en parte del encargo, no en un trámite posterior.
+      </p>
+      <p>Tu brief debe resolver, y tu proyecto demostrar:</p>
+      <ul>
+        <li><strong>Una ruta continua sin barreras</strong> desde la banqueta y el estacionamiento hasta todas las áreas públicas.</li>
+        <li><strong>La misma entrada para todos.</strong> Una puerta lateral «para sillas de ruedas» no es accesibilidad: es segregación con rampa.</li>
+        <li><strong>Y por lo mismo, la ruta accesible no se dibuja aparte.</strong> Debe <em>coincidir</em>
+          con el recorrido público siempre que sea posible, y llegar a todas las áreas públicas. Solo se
+          separa cuando una condición del edificio lo hace inevitable, y cada vez que se separa, tienes
+          que poder justificarlo.</li>
+        <li><strong>Acceso a todos los niveles públicos</strong>, con lugares para sillas de ruedas <em>integrados</em> en el auditorio, no confinados a una esquina.</li>
+        <li><strong>Sanitarios accesibles</strong> y áreas de descanso distribuidas a lo largo del recorrido.</li>
+        <li><strong>Accesibilidad sensorial y cognitiva:</strong> contraste visual, señalización legible, textos en lenguaje claro, subtítulos y audiodescripción en audiovisuales, recursos táctiles, y control de ruido y reflejos.</li>
+      </ul>
+      <p>
+        Ese último punto es el que más se olvida. Un museo puede tener rampas impecables y seguir siendo
+        inaccesible para quien no ve, no oye o procesa la información de otra manera.
+      </p>
+      <p>
+        Las <strong>dimensiones exigibles</strong> (pendientes, anchos, giros, cantidad de cajones
+        accesibles) están en el mismo reglamento municipal, <strong>Título III, Secciones IV y V</strong>
+        («Elementos de apoyo para personas con discapacidad»). Búscalas y márcalas como cualquier otro dato.
+      </p>
+    </div>
+
+    <h2>5 · El partido: primeras decisiones</h2>
+    <p>
+      Con el programa y el sitio sobre la mesa, tomamos las primeras decisiones de organización: el
+      <strong>partido</strong>. No es todavía el edificio dibujado, sino la idea de cómo se ordena: qué va
+      con qué, por dónde se entra y se recorre, y qué mira hacia dónde. Tres criterios mandan en un museo:
+    </p>
+    <ul>
+      <li><strong>Separar lo público del "detrás de escena".</strong> El visitante recorre vestíbulo, salas
+        y espacios educativos; el acervo, la restauración y los servicios funcionan por detrás, con su
+        propia entrada.</li>
+      <li><strong>Trazar la ruta accesible desde el principio.</strong> No al final, cuando ya no queda
+        sitio para la rampa. Ver la caja de abajo.</li>
+      <li><strong>Ubicar las salas según la luz.</strong> Colocar la exposición donde la orientación permita
+        controlar el ingreso de luz natural.</li>
+    </ul>
+
+    <figure class="fig-media">
+      <svg viewBox="0 0 640 400" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
+           aria-label="Diagrama de partido: zona pública (acceso, vestíbulo, exposición, educativo-cultural) separada del detrás de escena (acervo, conservación y servicios), con la orientación de la luz sobre la exposición">
+        <defs>
+          <marker id="f3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
+          </marker>
+        </defs>
+
+        <!-- sol / orientación -->
+        <g>
+          <circle cx="80" cy="58" r="17" fill="var(--naranja-claro)" stroke="var(--naranja)" stroke-width="1.6"/>
+          <g stroke="var(--naranja)" stroke-width="1.6"><path d="M80 30v-9M80 95v9M52 58h-9M108 58h9M60 38l-6-6M100 78l6 6M100 38l6-6M60 78l-6 6"/></g>
+          <path d="M96 72 L188 128" fill="none" stroke="var(--naranja)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#f3)"/>
+          <text x="80" y="112" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">orientación / luz</text>
+        </g>
+
+        <!-- enlaces -->
+        <g stroke="var(--texto-suave)" stroke-width="1.8" fill="none">
+          <path d="M285 330 L285 304"/>
+          <path d="M285 256 L285 222"/>
+          <path d="M212 278 L180 214"/>
+          <path d="M372 186 L430 182" stroke-dasharray="6 5"/>
+          <path d="M515 212 L515 278"/>
+        </g>
+        <text x="398" y="176" text-anchor="middle" font-family="var(--sans)" font-size="11" font-style="italic" fill="var(--texto-suave)">obra</text>
+
+        <!-- nodos PÚBLICO -->
+        <g font-family="var(--sans)" font-size="14" text-anchor="middle">
+          <g><rect x="200" y="150" width="170" height="72" rx="10" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.8"/>
+             <text x="285" y="182" font-weight="700" fill="var(--texto)">Exposición</text>
+             <text x="285" y="201" font-size="11.5" fill="var(--texto-suave)">salas permanentes y temporal</text></g>
+          <g><rect x="210" y="256" width="150" height="46" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.6"/>
+             <text x="285" y="284" fill="var(--texto)">Vestíbulo</text></g>
+          <g><rect x="210" y="330" width="150" height="44" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.6"/>
+             <text x="285" y="357" fill="var(--texto)">Acceso público</text></g>
+          <g><rect x="25" y="158" width="150" height="60" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.6"/>
+             <text x="100" y="184" fill="var(--texto)">Educativo-</text>
+             <text x="100" y="202" fill="var(--texto)">cultural</text></g>
+        </g>
+
+        <!-- nodos DETRÁS DE ESCENA -->
+        <g font-family="var(--sans)" font-size="14" text-anchor="middle">
+          <g><rect x="430" y="150" width="180" height="60" rx="9" fill="var(--verde-claro)" stroke="var(--verde)" stroke-width="1.6"/>
+             <text x="520" y="176" fill="var(--texto)">Acervo y</text>
+             <text x="520" y="194" fill="var(--texto)">conservación</text></g>
+          <g><rect x="430" y="278" width="180" height="48" rx="9" fill="var(--verde-claro)" stroke="var(--verde)" stroke-width="1.6"/>
+             <text x="520" y="306" fill="var(--texto)">Servicios</text></g>
+        </g>
+
+        <!-- entrada -->
+        <path d="M285 398 L285 376" fill="none" stroke="var(--texto-suave)" stroke-width="1.8" marker-end="url(#f3)"/>
+        <text x="300" y="393" font-family="var(--sans)" font-size="11" fill="var(--texto-suave)">calle</text>
+
+        <!-- leyenda -->
+        <g font-family="var(--sans)" font-size="12">
+          <rect x="25" y="352" width="16" height="12" rx="2" fill="var(--azul-claro)" stroke="var(--azul-medio)"/>
+          <text x="47" y="362" fill="var(--texto-suave)">Público</text>
+          <rect x="120" y="352" width="16" height="12" rx="2" fill="var(--verde-claro)" stroke="var(--verde)"/>
+          <text x="142" y="362" fill="var(--texto-suave)">Detrás de escena</text>
+        </g>
+      </svg>
+      <figcaption>
+        <b>Figura 1.</b> Un partido posible: el público entra por un lado y recorre vestíbulo, exposición y
+        espacios educativos; el acervo, la conservación y los servicios quedan detrás, con acceso propio.
+        La exposición se orienta para controlar la luz. (Esquema propio, adaptado de Plazola, 1999.)
+      </figcaption>
+    </figure>
+
+    <p>
+      Ese diagrama (de <strong>burbujas y flechas</strong>) es la forma más rápida de pensar el partido:
+      cada burbuja es una zona, cada flecha una relación o un recorrido. Es también un ejercicio de
+      <strong>representación</strong>: estás comunicando una idea de organización antes de tener una sola
+      línea del edificio.
+    </p>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Entregable del taller (avance de proyecto)</p>
+      <p>Al cierre de la sesión, cada equipo entrega:</p>
+      <ol>
+        <li>La <strong>ficha de identidad</strong>: misión, colección y su sensibilidad, tres públicos
+          prioritarios con su necesidad espacial, actividades, personal y régimen de exposición.</li>
+        <li>El <strong>cuadro de áreas</strong> de su museo, coherente con la ficha anterior.</li>
+        <li>La <strong>tabla de aforo</strong>: el cálculo por zonas, el total, y los requisitos que dispara
+          (salidas, sanitarios, estacionamiento), <strong>cada uno con su fuente y su marca V / P / D / NV</strong>.
+          Si un dato quedó en NV, decláralo; no lo rellenes.</li>
+        <li>El <strong>análisis del sitio</strong> (orientación, accesos, topografía, contexto, vistas).</li>
+        <li>El <strong>diagrama de recorridos</strong>, con <strong>tres flujos</strong> claramente
+          distinguibles: <strong>público</strong>, <strong>personal</strong> y <strong>obra</strong>. Debe
+          verse que el de obra no cruza el vestíbulo. Sobre el recorrido público, marca además con un
+          trazo distinto la <strong>ruta accesible</strong>: no es un cuarto flujo, sino una cualidad que
+          el recorrido público debe cumplir (ver más abajo).</li>
+        <li>Un <strong>diagrama de zonificación / partido</strong> a mano, como el de arriba.</li>
+      </ol>
+      <p>Esto cuenta como el <strong>avance de proyecto</strong> del primer parcial y es el insumo con el que, en el Parcial 2, empezaremos a modelar en Revit.</p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        <strong>Intercambia tu brief con otro equipo.</strong> En diez minutos, cada uno debe encontrar en
+        el del otro: una decisión sin justificar, un flujo incompatible (por ejemplo, obra entrando por el
+        vestíbulo) y un dato que todavía falte. Si el otro equipo no encuentra nada, probablemente no lo
+        leyó con suficiente cuidado. Insiste.
+      </p>
+      <p>
+        Revisa además que <strong>cada cifra lleve su marca</strong> V / P / D / NV. Un brief sin ningún NV
+        solo convence si cada dato viene con su fuente o está declarado como decisión del ejercicio. Lo
+        que descalifica un brief no es tener incógnitas: es esconderlas.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Ayuntamiento de Tijuana. <em>Reglamento de la Ley de Edificaciones para el Municipio de Tijuana, B.C.</em> Título III, Secciones IV y V. Publicado en el Periódico Oficial del Estado de Baja California. Consultar la versión vigente en tijuana.gob.mx. [Aforo, salidas, accesibilidad. <strong>Anota siempre la fecha de la última reforma y la fecha de tu consulta.</strong>]</li>
+      <li>Congreso del Estado de Baja California. <em>Ley de Edificaciones del Estado de Baja California</em>. Texto vigente en congresobc.gob.mx.</li>
+      <li>Dirección de Administración Urbana, Ayuntamiento de Tijuana. [Autoridad que resuelve las dudas de interpretación y los datos que el reglamento no tabula.]</li>
+      <li>ICOM. (2022). <em>Definición de museo</em>. Consejo Internacional de Museos. Recuperado de icom.museum.</li>
+      <li>Plazola Cisneros, A., Plazola Anguiano, A. y Plazola Anguiano, G. (1999). Museo y galería. En <em>Enciclopedia de arquitectura Plazola</em> (Vol. 8, M–O). Plazola Editores.</li>
+      <li>Neufert, E. (2014). <em>Arte de proyectar en arquitectura</em> (16.ª ed. renovada). Gustavo Gili.</li>
+      <li>Montaner, J. M. (2003). <em>Museos para el siglo XXI</em>. Gustavo Gili.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 6, la representación: planta, sección y alzado.</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-4.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S4 · El proyecto: un museo</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-6.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S6 · La representación: planta, sección y alzado</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Plazola (1999), Neufert (2014) y Montaner (2003).
+      Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

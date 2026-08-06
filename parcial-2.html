@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcial 2 · Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesiones del Parcial 2 del curso Dibujo Asistido por Computadora II.">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="index.html">&larr; Índice del curso</a>
+    <h1>Parcial 2</h1>
+    <p class="parcial-desc" data-parcial-desc>Sesiones del segundo parcial.</p>
+    <p class="seccion__titulo parcial-sesiones-tit">Temas</p>
+    <ul class="subtemas" data-parcial="2">
+      <noscript>Activa JavaScript para ver los temas de este parcial.</noscript>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Hamad (2025), Cardoso Llach &amp; Capdevila Werning (2009)
+      y la Ayuda de Autodesk Revit 2025.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/curso.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>

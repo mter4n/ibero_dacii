@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 6 · La representación: planta, sección y alzado | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 6 del Parcial 1: el lenguaje de la representación arquitectónica: la planta, la sección y el alzado, la escala y las convenciones.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 6 · La representación: planta, sección y alzado</h1>
+    <p class="parcial-desc">El lenguaje con el que los arquitectos describen un edificio: las tres vistas convencionales, la escala y las reglas para que cualquiera pueda leerlas.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Explicar</strong> qué operación de corte y proyección produce una planta, una sección y un alzado.</li>
+        <li><strong>Producir</strong> las tres vistas a escala, con jerarquía de línea y la información mínima.</li>
+        <li><strong>Comprobar</strong> que las tres describen el mismo edificio.</li>
+        <li><strong>Argumentar</strong> por qué en un museo la sección es la vista de la luz.</li>
+      </ul>
+    </div>
+
+    <p>
+      Ya tienes un museo pensado (S3–S5). Antes de dibujarlo necesitas el <strong>lenguaje</strong>: un
+      sistema de vistas convencionales que cualquiera puede leer. Hoy lo vemos completo (planta, sección
+      y alzado) porque en el próximo taller (S7) dibujarás las tres para tu museo. Y hay una razón más de
+      fondo: <strong>BIM es "un modelo, muchas vistas"</strong>; entender qué es cada vista a mano es
+      entender exactamente lo que Revit generará por ti.
+    </p>
+
+    <h2>1 · La planta</h2>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Planta arquitectónica</p>
+      <p>
+        Una planta representa una <strong>sección horizontal</strong> del edificio: se corta con un plano
+        horizontal, se retira la parte superior y se proyecta ortográficamente lo que queda, mirando hacia
+        abajo (Ching, 2015). No es "el edificio visto desde arriba": es el edificio <em>cortado</em>.
+      </p>
+    </div>
+
+    <p>
+      Como <strong>referencia convencional</strong>, el plano de corte suele situarse en torno a
+      <strong>1.20 m sobre el piso</strong>: a esa altura corta las puertas y ventanas típicas (por eso se
+      ven en la planta) y deja ver mesas, muebles y cubiertas (Ching, 2015). No es una regla fija: la altura
+      se ajusta cuando el edificio lo pide (para cortar por un ventanal alto, por un lucernario o por un
+      entrepiso), y lo que manda es <em>qué necesitas mostrar</em>. En Revit esa decisión tiene un nombre y
+      un control propio (el rango de la vista), así que te conviene entenderla ahora como criterio y no
+      como número memorizado.
+    </p>
+
+    <p>
+      Todo lo que el plano <strong>corta</strong> se dibuja con la línea más gruesa; lo que se
+      <strong>ve por debajo</strong> del corte, con líneas más delgadas; y lo que está <strong>arriba u
+      oculto</strong> (un volado, un doble altura), punteado.
+    </p>
+
+    <figure class="fig-media">
+      <svg viewBox="0 0 640 320" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
+           aria-label="Esquema del corte horizontal de la planta a 1.20 metros: corta muros, puertas y ventanas; se mira hacia abajo">
+        <defs>
+          <marker id="f4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
+          </marker>
+        </defs>
+        <g>
+          <rect x="90" y="70" width="18" height="180" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
+          <rect x="392" y="70" width="18" height="180" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
+          <rect x="80" y="250" width="340" height="14" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
+          <rect x="80" y="56" width="340" height="14" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
+          <rect x="392" y="120" width="18" height="60" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.6"/>
+          <rect x="90" y="150" width="18" height="100" fill="var(--fondo)" stroke="var(--texto)" stroke-width="1.4" stroke-dasharray="4 3"/>
+          <g stroke="var(--texto-suave)" stroke-width="2" fill="none">
+            <circle cx="250" cy="170" r="9"/>
+            <path d="M250 179v34M250 190l-14 12M250 190l14 12M250 213l-11 22M250 213l11 22"/>
+          </g>
+        </g>
+        <g>
+          <rect x="60" y="128" width="392" height="6" fill="var(--rojo)" opacity="0.75"/>
+          <text x="470" y="136" font-family="var(--sans)" font-size="13" fill="var(--rojo)">plano de corte</text>
+          <text x="470" y="153" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">≈ 1.20 m sobre el piso</text>
+          <path d="M78 134 L78 250" stroke="var(--texto-suave)" stroke-width="1.2" marker-start="url(#f4)" marker-end="url(#f4)"/>
+          <text x="30" y="196" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">1.20 m</text>
+        </g>
+        <g>
+          <path d="M540 90 L540 170" stroke="var(--azul-medio)" stroke-width="2.4" marker-end="url(#f4)"/>
+          <text x="540" y="78" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--azul-medio)">se mira</text>
+          <text x="540" y="196" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--azul-medio)">hacia abajo</text>
+        </g>
+        <text x="256" y="300" text-anchor="middle" font-family="var(--sans)" font-size="13" font-style="italic" fill="var(--texto-suave)">El corte pasa por puertas y ventanas: por eso aparecen en la planta.</text>
+      </svg>
+      <figcaption>
+        <b>Figura 1.</b> La planta es un corte horizontal a ≈1.20 m: la parte superior se retira y se
+        proyecta lo que queda, mirando hacia abajo. (Esquema propio a partir de Ching, 2015.)
+      </figcaption>
+    </figure>
+
+    <p>
+      Una buena planta trae: muros cortados con línea gruesa, puertas con su abatimiento, ventanas,
+      <strong>nombres de los espacios</strong>, cotas generales, <strong>norte</strong>,
+      <strong>escala</strong> y la <strong>línea de corte de la sección</strong> (marca por dónde cortarás).
+    </p>
+
+    <h2>2 · La escala</h2>
+    <p>
+      Un dibujo arquitectónico se hace <strong>a escala</strong>: cada unidad del papel representa una
+      dimensión real. La regla práctica es que <strong>la escala determina el detalle</strong>: cuanto más
+      grande la escala, más información puede (y debe) contener el dibujo (Ching, 2015). Para el museo
+      usaremos <strong>1:100</strong> en plantas y cortes generales, y 1:250/1:500 para el conjunto en su
+      sitio.
+    </p>
+
+    <h2>3 · La sección</h2>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Sección arquitectónica</p>
+      <p>
+        Una sección representa un <strong>corte vertical</strong> del edificio: un plano vertical lo
+        atraviesa, se retira una de las partes y se proyecta ortográficamente lo que queda (Ching, 2015).
+        Es la planta puesta de pie: misma lógica de corte, otra dirección.
+      </p>
+    </div>
+
+    <p>
+      Mientras el corte horizontal de la planta suele seguir una altura convencional, el plano de la
+      sección <strong>se coloca libremente, donde más revele</strong> (Ching, 2015): corta por lo
+      interesante (la sala principal, el doble altura, la escalera, el lucernario) nunca por el pasillo
+      vacío. Marca niveles y alturas, y dibuja siempre la <strong>escala humana</strong> (una persona
+      ≈1.70 m): sin ella no se lee el tamaño.
+    </p>
+
+    <figure class="fig-media">
+      <svg viewBox="0 0 640 330" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
+           aria-label="Esquema de una sección: plano vertical que corta el edificio mostrando dos niveles, un doble altura y la luz entrando por un lucernario">
+        <defs>
+          <marker id="f5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
+          </marker>
+        </defs>
+        <g stroke="var(--texto)" stroke-width="2.4" fill="var(--gris-azul-claro)">
+          <rect x="70" y="272" width="420" height="14"/>
+          <rect x="70" y="80" width="16" height="192"/>
+          <rect x="474" y="130" width="16" height="142"/>
+          <rect x="86" y="180" width="212" height="12"/>
+          <rect x="70" y="80" width="240" height="12"/>
+          <rect x="332" y="118" width="158" height="12"/>
+        </g>
+        <g stroke="var(--texto)" stroke-width="2.4" fill="none">
+          <path d="M310 86 L332 124"/>
+        </g>
+        <g stroke="var(--naranja)" stroke-width="2" opacity="0.9">
+          <path d="M330 60 L368 150" marker-end="url(#f5)"/>
+          <path d="M352 52 L390 142" marker-end="url(#f5)"/>
+          <path d="M374 46 L412 136" marker-end="url(#f5)"/>
+        </g>
+        <text x="392" y="40" font-family="var(--sans)" font-size="12.5" fill="var(--naranja)">luz del lucernario</text>
+        <g stroke="var(--texto-suave)" stroke-width="2" fill="none">
+          <circle cx="150" cy="222" r="7"/><path d="M150 229v26M150 238l-10 9M150 238l10 9M150 255l-8 16M150 255l8 16"/>
+          <circle cx="400" cy="212" r="7"/><path d="M400 219v26M400 228l-10 9M400 228l10 9M400 245l-8 16M400 245l8 16"/>
+          <circle cx="180" cy="132" r="7"/><path d="M180 139v24M180 147l-9 8M180 147l9 8M180 163l-7 15M180 163l7 15"/>
+        </g>
+        <g font-family="var(--sans)" font-size="12.5" fill="var(--texto-suave)">
+          <text x="120" y="165">nivel 1</text>
+          <text x="120" y="252">planta baja</text>
+          <text x="360" y="252">sala a doble altura</text>
+        </g>
+        <path d="M520 130 L520 272" stroke="var(--texto-suave)" stroke-width="1.2" marker-start="url(#f5)" marker-end="url(#f5)"/>
+        <text x="532" y="205" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">altura</text>
+        <text x="532" y="220" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">libre</text>
+        <text x="280" y="316" text-anchor="middle" font-family="var(--sans)" font-size="13" font-style="italic" fill="var(--texto-suave)">La sección revela lo que la planta no puede: alturas, dobles alturas y por dónde entra la luz.</text>
+      </svg>
+      <figcaption>
+        <b>Figura 2.</b> La sección corta verticalmente y muestra niveles, alturas y la entrada de luz:
+        aquí, un lucernario ilumina la sala a doble altura. Las personas dan la escala. (Esquema propio a
+        partir de Ching, 2015.)
+      </figcaption>
+    </figure>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">En un museo, la sección es la vista de la luz</p>
+      <p>
+        Recuerda la Sesión 4: la luz sobre las obras debe controlarse. Esa decisión <em>vive en la
+        sección</em>: la altura de la sala, el lucernario, el muro que filtra el sol. Cuando más adelante
+        iluminemos y rendericemos el modelo, estaremos comprobando lo que tu sección prometió.
+      </p>
+    </div>
+
+    <h2>4 · El alzado</h2>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Alzado</p>
+      <p>
+        Un alzado es la <strong>proyección ortográfica</strong> del edificio sobre un plano vertical
+        paralelo a una de sus caras (Ching, 2015). Aquí no se corta nada: se dibuja lo que se ve de frente,
+        sin la deformación de la perspectiva.
+      </p>
+    </div>
+
+    <ul>
+      <li>Se nombra por su <strong>orientación</strong> (alzado norte, sur…), la que decidiste en el brief (S5).</li>
+      <li>La profundidad se sugiere con el <strong>peso de línea</strong>: lo cercano más grueso, lo lejano más delgado (Ching, 2015).</li>
+      <li>Trae terreno, personas, vanos y materiales indicados: es la cara pública del museo.</li>
+    </ul>
+
+    <figure class="fig-media">
+      <svg viewBox="0 0 640 330" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
+           aria-label="Esquema de un alzado: proyección ortográfica de una fachada sobre un plano vertical, con línea de terreno, vanos, personas a escala y líneas de proyección que suben desde la planta correspondiente">
+        <defs>
+          <marker id="fa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
+          </marker>
+        </defs>
+
+        <!-- planta esquemática abajo, para mostrar la correspondencia -->
+        <g stroke="var(--texto-suave)" stroke-width="1.8" fill="none" opacity="0.65">
+          <rect x="120" y="250" width="320" height="46"/>
+        </g>
+        <text x="280" y="315" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">planta (la fachada que se proyecta es la cara inferior)</text>
+
+        <!-- lineas de proyeccion -->
+        <g stroke="var(--azul-medio)" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.85">
+          <path d="M120 250 L120 92"/>
+          <path d="M440 250 L440 92"/>
+        </g>
+
+        <!-- volumen del alzado: contorno grueso -->
+        <g stroke="var(--texto)" stroke-width="3" fill="var(--gris-azul-claro)">
+          <path d="M120 108 L120 210 L440 210 L440 140 L300 140 L300 108 Z"/>
+        </g>
+        <!-- vanos: linea media -->
+        <g stroke="var(--texto)" stroke-width="1.8" fill="var(--fondo)">
+          <rect x="150" y="150" width="34" height="44"/>
+          <rect x="200" y="150" width="34" height="44"/>
+          <rect x="336" y="164" width="56" height="46"/>
+        </g>
+        <!-- volumen lejano: linea delgada -->
+        <g stroke="var(--texto-suave)" stroke-width="1.2" fill="none">
+          <path d="M300 108 L300 140"/>
+          <path d="M262 122 L262 210"/>
+        </g>
+
+        <!-- terreno -->
+        <path d="M70 210 L500 210" stroke="var(--texto)" stroke-width="3.4"/>
+        <text x="76" y="226" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">línea de terreno</text>
+
+        <!-- personas -->
+        <g stroke="var(--texto-suave)" stroke-width="2" fill="none">
+          <circle cx="470" cy="180" r="6"/><path d="M470 186v14M470 192l-8 7M470 192l8 7M470 200l-6 10M470 200l6 10"/>
+          <circle cx="100" cy="180" r="6"/><path d="M100 186v14M100 192l-8 7M100 192l8 7M100 200l-6 10M100 200l6 10"/>
+        </g>
+
+        <!-- cota de ancho -->
+        <path d="M120 84 L440 84" stroke="var(--texto-suave)" stroke-width="1.2" marker-start="url(#fa)" marker-end="url(#fa)"/>
+        <text x="280" y="76" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">mismo ancho que la fachada en planta</text>
+
+        <!-- rotulos -->
+        <g font-family="var(--sans)" font-size="12.5" fill="var(--texto-suave)">
+          <text x="516" y="150">contorno</text>
+          <text x="516" y="166">cercano:</text>
+          <text x="516" y="182">línea gruesa</text>
+          <text x="516" y="112">fondo:</text>
+          <text x="516" y="128">línea delgada</text>
+        </g>
+        <text x="520" y="248" font-family="var(--sans)" font-size="12.5" font-weight="600" fill="var(--azul-medio)">N</text>
+        <path d="M527 244 L527 228" stroke="var(--azul-medio)" stroke-width="1.6" marker-end="url(#fa)"/>
+      </svg>
+      <figcaption>
+        <b>Figura 3.</b> El alzado no corta: proyecta perpendicularmente una fachada sobre un plano
+        vertical. Su ancho es el de <em>esa</em> cara en planta (líneas de proyección punteadas), su altura
+        la de la sección. La profundidad se sugiere con el peso de línea, no con sombreado ni perspectiva.
+        (Esquema propio a partir de Ching, 2015.)
+      </figcaption>
+    </figure>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Tres cosas que un alzado no es</p>
+      <ul>
+        <li><strong>No es una perspectiva frontal.</strong> No hay punto de fuga ni convergencia: todo lo
+          paralelo a la fachada se mantiene paralelo y a escala.</li>
+        <li><strong>No es un dibujo de fachada suelto.</strong> Sale de la planta y de la sección, y tiene
+          que cuadrar con las dos.</li>
+        <li><strong>No es decoración.</strong> Si dibujas un material, es porque decidiste ese material;
+          si dibujas un alero, es porque protege algo del sol.</li>
+      </ul>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Las tres vistas son un solo edificio</p>
+      <p>
+        Planta, sección y alzado deben <strong>corresponderse</strong>: los muros que aparecen en la
+        sección existen en la planta; el alzado mide de ancho lo mismo que <em>la fachada que representa</em>
+        (no cualquier ancho de la planta) y de alto lo mismo que la sección.
+      </p>
+      <p>
+        En BIM esa correspondencia <em>geométrica</em> viene dada, porque todas las vistas se derivan de los
+        mismos elementos. Pero ojo: el modelo coordina la geometría, no tu criterio. Que una vista exista y
+        cuadre no significa que esté bien configurada, bien anotada ni bien pensada; eso lo veremos en la
+        S8. A mano, en cambio, la correspondencia la garantizas tú, línea por línea. Precisamente por eso
+        vale la pena aprenderla aquí: es el hábito mental que te preparará para Revit.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Ejercicio en clase + tarea</p>
+      <p>
+        <strong>En clase:</strong> dibuja la planta de un espacio que conozcas de memoria (tu recámara),
+        con muros gruesos, puertas, ventanas y nombres; luego córtale una sección con una persona a escala.
+        <strong>Tarea:</strong> el alzado principal de ese mismo espacio. Es tu calentamiento: en la
+        <strong>Sesión 7</strong> harás exactamente esto, pero con tu museo.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        Marca la <strong>línea de sección</strong> sobre tu planta y demuestra <strong>cinco
+        correspondencias geométricas</strong> entre planta, sección y alzado: un muro que está en las tres,
+        una altura que coincide, un ancho que coincide, un vano que aparece donde debe y un nivel que se
+        lee igual. Si alguna no cuadra, todavía no describes un solo edificio.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Ching, F. D. K. (2015). <em>Architectural graphics</em> (6.ª ed.). Wiley. [Cap. 4: Multiview Drawings.]</li>
+      <li>Yee, R. (2012). <em>Architectural drawing: A visual compendium of types and methods</em> (4.ª ed.). Wiley.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 7, taller: el anteproyecto a mano (plantas, sección y alzado de tu museo).</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-5.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S5 · Taller: el brief, programa y sitio</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-7.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S7 · Taller: el anteproyecto a mano</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Ching (2015) y Yee (2012). Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 7 · Taller: el anteproyecto a mano | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 7 del Parcial 1: taller de dibujo del anteproyecto del museo a mano: plantas, sección y alzado, a escala 1:100.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 7 · Taller: el anteproyecto a mano</h1>
+    <p class="parcial-desc">El taller central del parcial: todo lo aprendido se junta y tu museo pasa del diagrama al papel: plantas, sección y alzado.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Convertir</strong> el partido del brief en un anteproyecto esquemático dibujado.</li>
+        <li><strong>Verificar</strong> en la planta los tres flujos del brief (público, personal y obra) y
+          que la ruta accesible acompañe al recorrido público hasta todas las áreas públicas.</li>
+        <li><strong>Coordinar</strong> planta, sección y alzado de tu propio proyecto.</li>
+      </ul>
+    </div>
+
+    <p>
+      Sesión de <strong>taller</strong>: se dibuja en clase, por equipos, con retroalimentación directa.
+      El objetivo es convertir el partido del brief (S5) en un <strong>anteproyecto esquemático</strong>
+      con las reglas de la S6. No buscamos un paquete de concurso: buscamos un anteproyecto claro y
+      coherente, el que la próxima semana empezarás a levantar en Revit.
+    </p>
+
+    <h2>Qué se dibuja hoy</h2>
+    <p>
+      Todo a <strong>escala 1:100</strong>, salvo la planta de conjunto, que va a 1:250 o 1:500 según
+      el tamaño de tu predio.
+    </p>
+    <ol>
+      <li><strong>Planta de conjunto</strong> (1:250 o 1:500): el museo en su predio, con accesos, orientación y norte.</li>
+      <li><strong>Planta arquitectónica de cada nivel</strong>: muros con grosor, puertas y ventanas, nombre y
+        área de cada espacio, cotas generales, norte, escala, y la <strong>línea de corte</strong> marcada.</li>
+      <li><strong>Sección principal</strong>, por la línea marcada: niveles y alturas, personas a escala y
+        <strong>la entrada de luz dibujada</strong> (flechas del sol, según tu análisis de sitio de la S5).</li>
+      <li><strong>Alzado de acceso</strong>: terreno, vanos, personas y pesos de línea.</li>
+    </ol>
+
+    <h2>Método sugerido</h2>
+    <ol>
+      <li>Del <strong>diagrama de burbujas a la planta</strong>: convierte cada burbuja en un recinto con sus
+        m² del cuadro de áreas (S5). Primero en croquis, suelto.</li>
+      <li><strong>Traslada los tres flujos del brief a la planta</strong>: el del visitante
+        (acceso → vestíbulo → salas → educativo → salida), el del personal y el de la obra. Comprueba que
+        el "detrás de escena" tenga su propia ruta y que la <strong>ruta accesible</strong> acompañe al
+        recorrido público, sin desviarlo por una puerta aparte.</li>
+      <li>Pasa a limpio la planta; <strong>corta por lo interesante</strong> y levanta la sección; termina con
+        el alzado, que debe medir lo mismo que planta y sección.</li>
+    </ol>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Errores típicos (revísalos antes de entregar)</p>
+      <ul>
+        <li>Espacios que no suman lo del cuadro de áreas, o circulaciones enormes "de relleno".</li>
+        <li>Museo sin ruta de servicio: ¿por dónde entra la obra a la bodega sin cruzar el vestíbulo?</li>
+        <li>Accesibilidad que se pierde a medio recorrido: una rampa en la entrada y un escalón en la sala.</li>
+        <li>El aforo que calculaste en la S5 no cuadra con las salas que acabas de dibujar.</li>
+        <li>Muros de una sola línea, sin espesor; planta sin norte, sin escala o sin nombres.</li>
+        <li>Sección que corta por un pasillo vacío, o sin personas (no se lee el tamaño).</li>
+        <li>Las tres vistas no se corresponden: muros que están en la sección y no en la planta.</li>
+      </ul>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Piensa como modelador desde ya</p>
+      <p>
+        La próxima semana conocerás Revit (S8–S9), y en el Parcial 2 este anteproyecto se convertirá en el
+        modelo: cada muro que dibujas hoy será un muro con altura y material; cada nivel, un <em>Level</em>;
+        cada puerta, una familia alojada en su muro. Mientras más clara y modulada sea tu planta, más fácil
+        será modelarla.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Entregable: el paquete del anteproyecto (avance de proyecto)</p>
+      <p>Se entrega al cierre (o se termina de pulir en casa): </p>
+      <ol>
+        <li>El <strong>brief completo de la S5</strong>, actualizado si el proyecto lo cambió: ficha de
+          identidad, cuadro de áreas, tabla de aforo, análisis del sitio, diagrama de recorridos y partido.
+          Si al dibujar tuviste que mover una superficie o cambiar un supuesto, <strong>corrige el brief</strong>:
+          no lo dejes contradiciendo a tus planos.</li>
+        <li>Planta de conjunto a 1:250 o 1:500, y planta(s) arquitectónicas a 1:100.</li>
+        <li>Sección principal y alzado de acceso 1:100.</li>
+        <li>Los croquis del recorrido y de una sala con su luz (del taller S3, mejorados si quieres).</li>
+      </ol>
+      <p>
+        <strong>La prueba de coherencia:</strong> todas las piezas describen el <em>mismo</em> edificio.
+        Este paquete es tu avance de proyecto del parcial y el insumo del modelado en el Parcial 2.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro · revisión a media sesión</p>
+      <p>
+        A mitad del taller paramos y cada equipo <strong>cuelga lo que lleve</strong> (planta de conjunto,
+        diagrama de recorridos y planta principal) para una revisión de cinco minutos frente al grupo.
+        No se evalúa el acabado sino la <strong>decisión</strong>: qué resolviste y qué sigue abierto.
+      </p>
+      <p>
+        Es deliberado que ocurra antes de pasar a limpio: corregir un partido cuesta minutos, corregir una
+        lámina terminada cuesta la tarde.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Ching, F. D. K. (2015). <em>Architectural graphics</em> (6.ª ed.). Wiley.</li>
+      <li>Neufert, E. (2014). <em>Arte de proyectar en arquitectura</em> (16.ª ed.). Gustavo Gili. [Dimensiones y áreas de referencia.]</li>
+      <li>Plazola Cisneros, A. et al. (1999). Museo y galería. En <em>Enciclopedia de arquitectura Plazola</em> (Vol. 8). Plazola Editores.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 8, Revit: el entorno y la interfaz. La herramienta, por fin.</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-6.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S6 · La representación: planta, sección y alzado</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-8.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S8 · Revit: el entorno y la interfaz</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Ching (2015), Neufert (2014) y Plazola (1999). Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

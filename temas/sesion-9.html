@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 9 · Taller: primer contacto con Revit | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 9 del Parcial 1: taller en laboratorio: abrir Revit, crear un proyecto, navegar y dibujar, seleccionar y modificar los primeros muros.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 9 · Taller: primer contacto con Revit</h1>
+    <p class="parcial-desc">Frente a la máquina. Hoy abres Revit por primera vez: crear un proyecto, navegar la interfaz y dibujar, seleccionar y modificar tus primeros muros.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Crear</strong> un proyecto a partir de una plantilla y guardarlo con la nomenclatura correcta.</li>
+        <li><strong>Navegar</strong> entre vistas sabiendo en todo momento en cuál estás.</li>
+        <li><strong>Modelar</strong> muros con medidas exactas usando cotas temporales y snaps.</li>
+        <li><strong>Restringir</strong> un muro a un nivel y comprobar qué pasa al mover ese nivel.</li>
+        <li><strong>Distinguir</strong> en pantalla un cambio de tipo de un cambio de instancia.</li>
+        <li><strong>Seleccionar y modificar</strong> elementos, y <strong>diagnosticar</strong> un error sin reiniciar a ciegas.</li>
+      </ul>
+    </div>
+
+    <p>
+      Todo lo de la S8, ahora con tus manos. El objetivo de hoy <strong>no es modelar el museo
+      completo</strong> (eso es el Parcial 2), sino perderle el miedo al programa: que al salir sepas crear
+      un proyecto, moverte con soltura y dibujar con precisión. Practicarás primero con un recinto genérico
+      y, al final, <strong>trazarás un fragmento de tu propio museo</strong> para ver el puente entre lo que
+      dibujaste a mano y el modelo. Trabaja al ritmo de la guía; levanta la mano cuando te atores.
+    </p>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Qué traer hoy</p>
+      <p>
+        Tu <strong>paquete de anteproyecto de la S7</strong>, con las cotas legibles. Lo vas a necesitar en
+        la Parte 5: de ahí saldrán las medidas que teclees.
+      </p>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Antes de empezar</p>
+      <p>
+        Los tiempos de abajo suman 110 minutos y dejan margen deliberado para el arranque:
+        inicio de sesión, licencia educativa, versiones distintas y equipos lentos. Si vas
+        retrasado, lo esencial de hoy son las <strong>Partes 1 a 3</strong>; la Parte 4 marca qué
+        puedes dejar para después.
+      </p>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Cómo trabajaremos hoy: por ciclos cortos</p>
+      <p>
+        Cada bloque sigue el mismo ritmo, y conviene que lo sepas para no perderte:
+      </p>
+      <ol>
+        <li><strong>Demostración</strong> (unos 5 minutos): yo lo hago en pantalla, tú solo miras.</li>
+        <li><strong>Tú lo haces</strong>: repites la operación en tu equipo.</li>
+        <li><strong>Comprobación</strong>: cada bloque cierra con un <em>micrologro</em> concreto (algo que
+          debe existir en tu pantalla antes de seguir). Si no lo tienes, levanta la mano ahí mismo.</li>
+      </ol>
+      <p>
+        No copies los movimientos sin entenderlos. La pregunta que debes hacerte en cada paso es
+        <em>por qué</em> funcionó, no <em>dónde</em> estaba el botón: los botones cambian de sitio entre
+        versiones, la lógica no.
+      </p>
+    </div>
+
+    <h2>Parte 1 · Abrir y reconocer (15 min)</h2>
+    <ol>
+      <li>Abre <strong>Revit</strong>. En la pantalla de inicio, identifica: proyectos recientes, Nuevo, Abrir.</li>
+      <li>Crea un <strong>proyecto nuevo</strong> con la plantilla <em>arquitectónica métrica</em> (Browse si hace falta; recuerda: plantillas = .rte).</li>
+      <li>Reconoce en pantalla lo que viste en la S8: cinta, Propiedades, <strong>Navegador del proyecto</strong>, barra de control de vista. Nota que estás en una vista de planta (Level 1).</li>
+      <li><strong>Comprueba las unidades</strong> antes de dibujar nada: Manage → Project Units. Confirma
+        que la longitud está en <strong>milímetros</strong>. Si estuviera en metros, teclear «8000» daría
+        un muro de ocho kilómetros y no entenderías por qué.</li>
+      <li><strong>Guarda ahora</strong>, antes de tener nada que perder: <strong>Apellido_S9.rvt</strong>,
+        en tu carpeta, no en el escritorio del laboratorio. Y vuelve a guardar al final de cada bloque.</li>
+    </ol>
+    <p class="micrologro"><strong>Micrologro:</strong> tienes un proyecto guardado con tu nombre, en milímetros, abierto en la vista de planta Level 1.</p>
+
+    <h2>Parte 2 · Navegar (15 min)</h2>
+    <ol>
+      <li>Zoom con la <strong>rueda</strong>: girar, presionar y arrastrar (pan), doble clic (ajustar a pantalla).</li>
+      <li>Abre la <strong>vista 3D</strong> (el botón de la casita/3D en la barra de acceso rápido).</li>
+      <li>Orbita con <strong>Shift + rueda presionada</strong>; usa el <strong>ViewCube</strong> para ir a Top, Front y una esquina.</li>
+      <li>Vuelve a la planta desde el <strong>Navegador del proyecto</strong> (doble clic en Level 1). Regla de oro: ¿en qué vista estoy?</li>
+    </ol>
+    <p class="micrologro"><strong>Micrologro:</strong> puedes ir de planta a 3D y volver sin dudar, y sabes decir en voz alta en qué vista estás.</p>
+
+    <h2>Parte 3 · Dibujar con precisión (30 min)</h2>
+    <ol>
+      <li>Pestaña Architecture → <strong>Wall</strong> (Muro). Dibuja un muro haciendo clic y moviéndote a la
+        derecha; <strong>teclea 8000</strong> y Enter: acabas de usar la <strong>cota temporal</strong>.</li>
+      <li>Sigue el contorno: hacia arriba <strong>6000</strong>, izquierda <strong>8000</strong>, y cierra.
+        Observa las <strong>líneas de alineación</strong> y los <strong>snaps</strong> enganchando los extremos.</li>
+      <li>Abre la <strong>vista 3D</strong>: tus "líneas" son muros con altura: eso es BIM (la planta era un corte, ¿recuerdas la S6?).</li>
+      <li>Selecciona un muro y mira <strong>Propiedades</strong>: altura, base, tipo. Cambia el tipo en el
+        <strong>selector de tipo</strong> y observa qué pasa.</li>
+    </ol>
+    <p class="micrologro"><strong>Micrologro:</strong> tienes un recinto cerrado de 8&nbsp;000 × 6&nbsp;000 mm, lo ves en 3D con altura, y sabes dónde leer la altura de un muro.</p>
+
+    <h2>Parte 4 · Niveles, restricciones y coordinación (25 min)</h2>
+
+    <p>
+      Éste es el bloque que de verdad separa a Revit de un programa de dibujo. Hasta ahora hiciste muros;
+      ahora vas a comprobar que <strong>están relacionados con algo</strong>.
+    </p>
+    <ol>
+      <li>Abre una <strong>elevación</strong> desde el Navegador del proyecto (Elevations → South). Ahí
+        están tus niveles: <strong>Level 1</strong> y <strong>Level 2</strong>. Fíjate en la cota del
+        segundo.</li>
+      <li>Vuelve a la planta, selecciona un muro y mira <strong>Propiedades</strong>: <em>Base
+        Constraint</em>, <em>Top Constraint</em>, <em>Unconnected Height</em>. Cambia su restricción
+        superior a <strong>Up to level: Level 2</strong>.</li>
+      <li>Vuelve a la elevación y <strong>sube el Level 2</strong> (selecciónalo y teclea otra cota, por
+        ejemplo 3&nbsp;600). <strong>Observa qué le pasa al muro.</strong> Eso, y no otra cosa, es el
+        comportamiento paramétrico del que hablamos desde la S2.</li>
+      <li>Ahora <strong>tipo frente a instancia</strong>: selecciona un solo muro y cámbialo de tipo con el
+        <strong>selector de tipo</strong>. Solo cambia ese. Después entra a <strong>Editar tipo</strong> y
+        mira (sin guardar cambios) cuántos muros comparten esa definición. Ahí está la diferencia que viste
+        en la S8.</li>
+      <li>Selección y movimiento: prueba <strong>clic</strong>, <strong>ventana</strong> (arrastre a la
+        derecha) y <strong>cruce</strong> (a la izquierda), y usa <strong>Move</strong> para desplazar un
+        muro exactamente <strong>1500</strong>.</li>
+    </ol>
+    <p class="micrologro"><strong>Micrologro:</strong> moviste un nivel y un muro cambió de altura solo. Puedes explicar por qué.</p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Un modelo, muchas vistas: compruébalo</p>
+      <p>
+        Llevas todo el parcial oyendo esta frase. Ahora hazla verdad en treinta segundos: pon
+        <strong>planta y 3D en mosaico</strong> (pestaña View → Tile Views, o teclea <strong>WT</strong>),
+        selecciona un muro en la planta y muévelo. Míralo moverse en el 3D <em>al mismo tiempo</em>.
+      </p>
+      <p>
+        No dibujaste dos veces. Hay un solo muro y dos maneras de mirarlo. Eso es exactamente lo que tu
+        planta, tu sección y tu alzado de la S7 intentaban conseguir a mano, revisando que las tres
+        cuadraran.
+      </p>
+    </div>
+
+    <p class="nota-docente">
+      Mirror, Rotate y Array quedan para el Parcial 2: son comandos útiles, pero genéricos, y hoy el tiempo
+      rinde más en lo que solo Revit hace.
+    </p>
+
+    <h2>Parte 5 · Tu museo: el primer trazo (15 min)</h2>
+
+    <p>
+      Hasta aquí practicaste con un rectángulo cualquiera. Ahora abre tu
+      <strong>paquete de anteproyecto</strong> (el de la S7) y traza en Revit
+      <strong>un fragmento</strong> de tu museo, no el edificio entero: solo una pieza:
+    </p>
+    <ol>
+      <li>Elige <strong>un espacio</strong>: el vestíbulo o una sala de exposición.</li>
+      <li>Traza sus <strong>muros exteriores</strong> tomando las medidas de tu propia planta. Usa las cotas temporales: teclea las distancias reales de tu proyecto.</li>
+      <li>Añade <strong>una división interior</strong> y <strong>una puerta</strong> (Architecture → Door).
+        Colócala sobre un muro y fíjate en tres cosas: el muro es su <strong>anfitrión</strong> (el hueco lo
+        abre ella sola); en el selector de tipo eliges entre varios <strong>tipos</strong> de la misma
+        <strong>familia</strong>; y lo que acabas de colocar es una <strong>instancia</strong>. Familia →
+        tipo → instancia → anfitrión, como en la S8.</li>
+      <li><strong>Prueba el anfitrión:</strong> selecciona el muro que aloja la puerta y bórralo. La puerta
+        desaparece con él. Deshaz con Ctrl+Z. Eso es una relación de dependencia, no una coincidencia
+        de dibujo.</li>
+      <li>Abre la <strong>vista 3D</strong> y mira tu propio espacio levantado.</li>
+    </ol>
+    <p class="micrologro"><strong>Micrologro:</strong> un fragmento de <em>tu</em> museo existe como modelo, con sus medidas reales, y lo puedes ver en planta y en 3D.</p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Lo que acaba de ocurrir</p>
+      <p>
+        Ese trazo es el puente de todo el curso. Los muros que dibujaste a mano en la S7 acaban de
+        convertirse en <strong>muros con altura, material y relaciones</strong>. La cota que mediste con
+        escalímetro ahora la teclea el programa. Y la planta que dibujaste como un corte a mano es
+        exactamente la vista que Revit deriva del modelo.
+      </p>
+      <p>
+        No te preocupes si quedó tosco o incompleto: no se evalúa el acabado. Se evalúa que hayas visto,
+        con tu propio proyecto, que representar y modelar son la misma decisión tomada con herramientas
+        distintas.
+      </p>
+      <p>
+        En dos horas hiciste el ciclo completo del curso en miniatura: creaste un archivo desde una
+        plantilla, navegaste vistas de un modelo único y dibujaste elementos <em>inteligentes</em> con
+        precisión. El principio del Parcial 2 será el mismo (construir elementos y relaciones), pero
+        aparecerán categorías nuevas: pisos, cubiertas, escaleras y rampas, huecos, habitaciones,
+        familias cargables y, al final, la documentación del proyecto. Lo que no cambiará es la lógica que
+        practicaste hoy.
+      </p>
+    </div>
+
+    <h2>Parte 6 · Cerrar y entregar (10 min)</h2>
+    <ol>
+      <li>Guarda por última vez. Ya lo hiciste al empezar y en cada bloque: <strong>Apellido_S9.rvt</strong>.
+        Recuerda: .rvt = proyecto; la plantilla .rte quedó intacta.</li>
+      <li>Toma una captura de tu vista 3D.</li>
+      <li>Escribe tu <strong>nota de diagnóstico</strong> (ver abajo).</li>
+    </ol>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Atorones típicos del primer día</p>
+      <ul>
+        <li><strong>"No veo mis muros":</strong> estás en otra vista o el zoom está lejísimos: doble clic a la rueda (Zoom to Fit).</li>
+        <li><strong>"Se me cerró Propiedades / el Navegador":</strong> pestaña View → User Interface → márcalos de nuevo.</li>
+        <li><strong>"Dibujé y no pasa nada":</strong> mira la barra de estado (abajo a la izquierda): Revit te está pidiendo el siguiente clic.</li>
+        <li><strong>"Todo se mueve junto":</strong> los muros conectados se estiran entre sí: es el comportamiento paramétrico, no un error.</li>
+        <li><strong>Esc dos veces</strong> te saca de cualquier comando. Es tu mejor amigo.</li>
+      </ul>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">El protocolo: seis preguntas, siempre en este orden</p>
+      <p>
+        La lista de arriba resuelve casos concretos. Esto resuelve <em>cualquier</em> caso. Cuando algo no
+        aparezca o no responda, no vuelvas a dibujarlo: pregúntale a la pantalla, en orden.
+      </p>
+      <ol>
+        <li><strong>Vista:</strong> ¿en qué vista estoy y qué debería verse aquí?</li>
+        <li><strong>Selección:</strong> ¿qué elemento está seleccionado ahora mismo?</li>
+        <li><strong>Comando:</strong> ¿Revit está esperando otro clic? (mira la barra de estado, abajo a la izquierda).</li>
+        <li><strong>Propiedades:</strong> ¿el nivel, la altura, el tipo y las restricciones son los que creo?</li>
+        <li><strong>Visibilidad:</strong> ¿existe el elemento pero está oculto o fuera del rango de la vista?</li>
+        <li><strong>Deshacer:</strong> ¿cuál fue la última operación que sí funcionó?</li>
+      </ol>
+      <p>
+        Nueve de cada diez atorones caen en los tres primeros. Y ojo con una idea cómoda:
+        <strong>Ctrl+Z deshace la mayoría de las operaciones de modelado, pero no todo</strong>: cerrar sin
+        guardar, sobrescribir un archivo o abrirlo en otra versión no se arreglan deshaciendo. Por eso
+        guardas seguido.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Entregable + para la próxima sesión</p>
+      <p>
+        <strong>Entregable:</strong> tu archivo <strong>.rvt</strong> y la captura de la vista 3D (se suben
+        a la plataforma). <strong>Próxima sesión (S10):</strong> examen del parcial y entrega final del
+        paquete de anteproyecto (S7). El examen incluye lo de Revit a nivel <em>conceptual</em>, así que repasa la
+        S8.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        Además del archivo y la captura, entrega <strong>tres líneas describiendo un error que te haya
+        pasado hoy</strong>: qué viste, qué revisaste y cómo lo resolviste. Da igual cuál sea; lo que se
+        evalúa es que sepas <em>diagnosticar</em>. En Revit, saber qué preguntarle a la pantalla vale más
+        que memorizar comandos.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Hamad, M. (2025). <em>Autodesk Revit 2025 Architecture</em>. Mercury Learning and Information (sello de De Gruyter). Capítulos 1 y 2.</li>
+      <li>Autodesk. (2025). <em>Ayuda de Revit 2025</em>. Recuperado de <a href="https://help.autodesk.com/view/RVT/2025/ENU/" target="_blank" rel="noopener">help.autodesk.com/view/RVT/2025</a>.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 10, examen del primer parcial y entrega del anteproyecto.</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-8.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S8 · Revit: el entorno y la interfaz</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-10.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S10 · Presentación y examen del primer parcial</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Hamad (2025) y la Ayuda de Autodesk Revit 2025.
+      Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

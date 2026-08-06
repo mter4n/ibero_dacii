@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 8 · Revit: el entorno y la interfaz | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 8 del Parcial 1: conocer Autodesk Revit: qué es, su interfaz, la navegación, los archivos y las bases de dibujar, seleccionar y modificar.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 8 · Revit: el entorno y la interfaz</h1>
+    <p class="parcial-desc">La herramienta, por fin. Qué es Revit, cómo se ve por dentro, cómo se navega y cómo se maneja la información: la teoría que mañana pondrás en práctica frente a la máquina.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Identificar</strong> las partes de la interfaz de Revit y para qué sirve cada una.</li>
+        <li><strong>Explicar</strong> por qué el edificio se construye con elementos y no con líneas.</li>
+        <li><strong>Distinguir</strong> un tipo de una instancia, y saber cuál estás modificando.</li>
+        <li><strong>Distinguir</strong> los tipos de archivo (.rvt, .rte, .rfa, .rft) y cuándo se usa cada uno.</li>
+        <li><strong>Explicar</strong> qué es un nivel y por qué se define antes de dibujar el primer muro.</li>
+        <li><strong>Anticipar</strong> qué vistas cambian cuando modificas un elemento.</li>
+      </ul>
+    </div>
+
+    <p>
+      Llevas seis sesiones construyendo el proyecto y su representación; hoy conoces la herramienta que lo
+      volverá modelo. Esta sesión es un <strong>recorrido guiado</strong> por Revit: su lógica, su pantalla
+      y sus archivos. En la próxima (S9) lo abrirás tú.
+    </p>
+
+    <h2>1 · Qué es Autodesk Revit</h2>
+    <p>
+      Revit es <strong>la plataforma que este curso ha elegido</strong> para aplicar la metodología BIM que
+      vimos en la S2. Conviene decirlo con precisión: Revit y BIM no son sinónimos. Puedes usar Revit de
+      forma pobre, como si fuera un tablero de dibujo, y puedes aplicar principios BIM con otras
+      plataformas. Dos ideas definen su lógica.
+    </p>
+    <p>
+      La primera es el <strong>archivo único</strong>: en un proyecto académico como el tuyo, todo el modelo
+      vive en un solo archivo <code>.rvt</code>, y de él se derivan plantas, secciones, alzados y tablas
+      <em>coordinadas entre sí</em>. La segunda: Revit se basa en <strong>vistas</strong>: siempre trabajas
+      <em>dentro de una vista</em> (una planta, una sección, un 3D), y la primera pregunta antes de modelar
+      es siempre: ¿estoy en la vista correcta? (Hamad, 2025).
+    </p>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Dos matices que evitan malentendidos</p>
+      <p>
+        <strong>«Archivo único» es cierto aquí, pero no siempre.</strong> En la práctica profesional un
+        proyecto se reparte en modelos vinculados, trabajo compartido entre varias personas y bibliotecas
+        externas. Para tu museo de un semestre, un archivo basta; no lo generalices.
+      </p>
+      <p>
+        <strong>«Automáticamente» es engañoso.</strong> El modelo permite <em>derivar</em> las vistas y
+        mantenerlas coordinadas, que no es poco. Pero tú sigues teniendo que crear cada vista, definir su
+        alcance, configurar qué se ve, anotar y componer los planos. Revit coordina; no documenta solo.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Architecture, Structure y MEP</p>
+      <p>
+        Revit reúne tres disciplinas en un mismo paquete: Architecture (arquitectos), Structure (ingenieros
+        estructurales) y MEP (instalaciones). En este curso usaremos las herramientas de
+        <em>arquitectura</em> (Hamad, 2025).
+      </p>
+    </div>
+
+    <h2>2 · La interfaz</h2>
+    <p>
+      Al crear o abrir un proyecto aparece el área de trabajo. Tus dos vías principales a los comandos son
+      la <strong>cinta de opciones</strong> y el <strong>menú de archivo</strong> (Hamad, 2025).
+    </p>
+
+    <figure>
+      <img src="../assets/img/t1-interfaz.jpg" alt="Vista general de la interfaz de Revit 2025">
+      <figcaption>
+        <b>Figura 1.</b> La interfaz de Revit: menú de archivo, barra de acceso rápido, cinta de opciones,
+        área de dibujo, Propiedades, Navegador del proyecto y las barras de control, estado y opciones.
+        Fuente: Hamad (2025).
+      </figcaption>
+    </figure>
+
+    <p>Las piezas que usarás todo el tiempo:</p>
+    <ul>
+      <li><strong>Cinta (ribbon):</strong> pestañas y paneles con los comandos; al seleccionar un elemento
+        aparece una <strong>pestaña contextual</strong> con sus herramientas.</li>
+      <li><strong>Propiedades:</strong> los parámetros del elemento seleccionado (o de la vista actual, si
+        no hay selección), con el <strong>selector de tipo</strong> arriba.</li>
+      <li><strong>Navegador del proyecto:</strong> la tabla de contenido del proyecto, con todas sus vistas,
+        tablas, planos y familias (Autodesk, 2025).</li>
+      <li><strong>Barra de control de vista:</strong> escala, nivel de detalle (Coarse/Medium/Fine) y estilo
+        visual (de alambre a sombreado).</li>
+    </ul>
+
+    <figure class="fig-media">
+      <img src="../assets/img/t1-propmuro.jpg" alt="Paleta de Propiedades mostrando los parámetros de un muro">
+      <figcaption><b>Figura 2.</b> Propiedades muestra los parámetros del elemento seleccionado; aquí, un muro. Fuente: Hamad (2025).</figcaption>
+    </figure>
+
+    <h2>3 · Los niveles: el esqueleto invisible del modelo</h2>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Nivel (Level)</p>
+      <p>
+        Un <strong>nivel</strong> es un <em>plano horizontal de referencia</em> a una altura determinada:
+        el piso terminado de planta baja, el del primer piso, la cara inferior de la cubierta. No es un
+        objeto que se vea en el edificio terminado; es la <strong>cota de la que todo cuelga</strong>.
+      </p>
+    </div>
+
+    <p>
+      Importa por tres razones, y conviene entenderlas antes de dibujar el primer muro:
+    </p>
+    <ul>
+      <li><strong>Cada vista de planta pertenece a un nivel.</strong> Cuando abres «Level 1» estás mirando
+        el corte horizontal asociado a ese plano de referencia. Por eso la primera pregunta sigue siendo
+        <em>¿en qué vista estoy?</em>: si dibujas en el nivel equivocado, el muro existe, pero no donde
+        creías.</li>
+      <li><strong>La mayoría de los elementos arquitectónicos se relacionan con niveles.</strong> Un muro
+        arranca siempre de un <em>nivel base</em>, y desde ahí tienes dos opciones: <strong>restringirlo a
+        un nivel superior</strong>, o darle una <strong>altura no conectada</strong> (un número). Las dos
+        son parámetros y las dos son válidas; verás ambas en Propiedades. La diferencia está en el tipo de
+        relación: la restricción crea una <em>dependencia</em> con otro nivel, mientras que la altura no
+        conectada guarda un <em>valor independiente</em>.
+        <br>
+        En la práctica: si el muro está restringido al Level 2 y subes ese nivel, el muro crece solo. Si le
+        diste altura no conectada, conserva su altura, aunque seguirá anclado a su nivel base: si
+        mueves <em>ese</em>, el muro se desplaza entero. <strong>Siempre que el proyecto lo permita,
+        restringe a niveles</strong>: es lo que hace que el modelo reaccione en vez de obligarte a reeditar.</li>
+      <li><strong>Si mueves el nivel, se mueve lo que depende de él.</strong> Subir la altura de entrepiso
+        de 3.00 a 3.20 m no obliga a reeditar muro por muro: cambias el nivel y el modelo reacciona. Eso
+        <em>es</em> el comportamiento paramétrico del que hablamos en la S2.</li>
+    </ul>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">La conexión con tu anteproyecto</p>
+      <p>
+        Los niveles son la traducción digital de algo que ya dibujaste a mano: las <strong>líneas de nivel
+        que acotaste en tu sección</strong> (S6 y S7). Cuando en el Parcial 2 empieces a modelar el museo,
+        lo primero que harás no será un muro, sino <strong>definir los niveles</strong> a partir de tu
+        propia sección. Tenerla bien resuelta te ahorrará rehacer el modelo.
+      </p>
+    </div>
+
+    <h2>4 · Tipo e instancia: la distinción que evita desastres</h2>
+
+    <p>
+      Si solo te llevas dos ideas de esta sesión, que sean los niveles y ésta. En Revit, cada elemento que
+      colocas es una <strong>instancia</strong> de un <strong>tipo</strong>.
+    </p>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Tipo e instancia</p>
+      <p>
+        El <strong>tipo</strong> es la definición: «Muro básico genérico de 20 cm», con su composición, sus
+        capas y su material. La <strong>instancia</strong> es cada muro concreto que dibujaste con ese tipo,
+        con su posición, su longitud y su altura.
+      </p>
+      <p>
+        En Propiedades verás ambas cosas: los <em>parámetros de instancia</em> abajo (afectan solo al muro
+        seleccionado) y, con el botón <strong>Editar tipo</strong>, los <em>parámetros de tipo</em> (afectan
+        a <strong>todos</strong> los muros de ese tipo en el proyecto).
+      </p>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">El error clásico del primer semestre</p>
+      <p>
+        Quieres que <em>un</em> muro sea más grueso, entras a <strong>Editar tipo</strong>, cambias el
+        espesor… y se engordan los treinta muros del museo. No es un fallo del programa: hiciste
+        exactamente lo que pediste.
+      </p>
+      <p>
+        La regla: si quieres cambiar <strong>uno</strong>, cambia una propiedad de instancia o asígnale
+        otro tipo. Si quieres cambiar <strong>todos los de esa clase</strong>, edita el tipo. Y si quieres
+        una variante nueva sin tocar las existentes, <strong>duplica el tipo</strong> antes de editarlo.
+      </p>
+    </div>
+
+    <p>
+      Esta lógica también explica las familias. Una puerta vive en un archivo <code>.rfa</code> (la
+      <em>familia</em>), que contiene varios <em>tipos</em> (0.90 × 2.10, 1.00 × 2.10…), y cada puerta que
+      colocas en un muro es una <em>instancia</em> de uno de esos tipos, alojada en su <strong>anfitrión</strong>.
+      Familia → tipo → instancia → anfitrión: esa cadena es la estructura de datos de casi todo lo que
+      modelarás.
+    </p>
+
+    <h2>5 · Navegar el modelo</h2>
+    <p>
+      La <strong>rueda del ratón</strong> es el zoom (girar acerca/aleja, presionarla y arrastrar
+      desplaza, doble clic ajusta a pantalla). En 3D, el <strong>ViewCube</strong> orienta el modelo con un
+      clic, y con Shift + rueda presionada se <strong>orbita</strong>. Para vistas en perspectiva se coloca
+      una <strong>cámara</strong>, exactamente lo que en el Parcial 3 usaremos para los renders.
+    </p>
+
+    <figure class="fig-media">
+      <img src="../assets/img/t1-viewcube.jpg" alt="El ViewCube de Revit para orientar el modelo en 3D">
+      <figcaption><b>Figura 3.</b> El ViewCube orienta el modelo 3D con un clic. Fuente: Hamad (2025).</figcaption>
+    </figure>
+
+    <h2>6 · Proyectos, plantillas y archivos</h2>
+    <p>
+      Un proyecto nuevo siempre se crea a partir de una <strong>plantilla</strong>. Al abrir un archivo,
+      fíjate en su versión: un archivo guardado en una versión más nueva no abre en una más antigua, y al
+      actualizar uno viejo ya no puede regresar (Hamad, 2025).
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">Los tipos de archivo de Revit</caption>
+        <thead><tr><th scope="col">Extensión</th><th scope="col">Qué contiene</th></tr></thead>
+        <tbody>
+          <tr><td><strong>.rvt</strong></td><td>Proyecto: el modelo del edificio con todas sus vistas.</td></tr>
+          <tr><td><strong>.rte</strong></td><td>Plantilla de proyecto: unidades, vistas y configuración de partida.</td></tr>
+          <tr><td><strong>.rfa</strong></td><td>Familia: un componente cargable (puerta, ventana, mueble).</td></tr>
+          <tr><td><strong>.rft</strong></td><td>Plantilla de familia: base para crear una familia nueva.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="fig-media">
+      <img src="../assets/img/t1-nuevoproy.jpg" alt="Cuadro de diálogo para crear un proyecto nuevo a partir de una plantilla">
+      <figcaption><b>Figura 4.</b> Proyecto nuevo a partir de una plantilla (.rte). Fuente: Hamad (2025).</figcaption>
+    </figure>
+
+    <h2>7 · Las bases de dibujar, seleccionar y modificar</h2>
+    <p>
+      Mañana dibujarás tus primeros muros. Tres ayudas te darán precisión (Hamad, 2025): las
+      <strong>cotas temporales</strong> (teclea la medida en vez de "atinarle" con el ratón), las
+      <strong>líneas de alineación</strong> (guías punteadas que alinean tu trazo con lo existente) y los
+      <strong>snaps</strong> (el cursor se engancha a extremos, centros e intersecciones). Para
+      <strong>seleccionar</strong>: clic directo, ventana (arrastre a la derecha: solo lo contenido) o
+      cruce (a la izquierda: también lo atravesado). Y para <strong>modificar</strong>, el panel Modify
+      concentra los comandos esenciales:
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">Los cinco comandos de modificación esenciales (Hamad, 2025)</caption>
+        <thead><tr><th scope="col">Comando</th><th scope="col">Qué hace</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Move</strong> (Mover)</td><td>Desplaza los elementos una distancia exacta.</td></tr>
+          <tr><td><strong>Copy</strong> (Copiar)</td><td>Duplica; con Multiple, varias copias seguidas.</td></tr>
+          <tr><td><strong>Rotate</strong> (Rotar)</td><td>Gira alrededor de un centro de rotación.</td></tr>
+          <tr><td><strong>Mirror</strong> (Simetría)</td><td>Refleja respecto de un eje (existente o dibujado).</td></tr>
+          <tr><td><strong>Array</strong> (Matriz)</td><td>Repite en patrón lineal o radial.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Ya sabes más Revit del que crees</p>
+      <p>
+        Todo lo que viste en este parcial <em>es</em> Revit por anticipado: la planta que domina la pantalla
+        es el corte a 1.20 m que aprendiste en la S6; el Navegador lista las vistas porque "BIM es un modelo,
+        muchas vistas" (S2); y los muros que dibujarás mañana son los de tu anteproyecto (S7). El programa
+        solo le pone botones a lo que ya entiendes.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Para la próxima sesión (taller en laboratorio)</p>
+      <p>
+        La S9 es frente a la máquina: verifica tu acceso al laboratorio o trae laptop con
+        <strong>Revit instalado</strong> (hay licencia educativa gratuita en el sitio de Autodesk con tu
+        correo institucional).
+      </p>
+      <p>
+        Trae también tu <strong>anteproyecto (S7) con las cotas legibles</strong>. La mayor parte del taller
+        será práctica guiada sobre un recinto genérico, pero en el último bloque tomarás las medidas de tu
+        propia planta para trazar <strong>un fragmento de tu museo</strong>: un espacio, sus muros
+        exteriores, una división y una puerta.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        Sin computadora y en tres líneas cada una, responde: <em>¿qué es un nivel y por qué importa antes de
+        dibujar?</em>, <em>¿por qué un muro no es una línea?</em> y <em>¿qué diferencia hay entre un .rvt y
+        un .rte?</em>
+      </p>
+      <p>
+        Estas tres preguntas son del mismo tipo que las del examen de la S10: se te pedirá
+        <strong>criterio</strong>, nunca en qué pestaña vive un botón.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Hamad, M. (2025). <em>Autodesk Revit 2025 Architecture</em>. Mercury Learning and Information (sello de De Gruyter). Capítulos 1 y 2.</li>
+      <li>Autodesk. (2025). <em>Ayuda de Revit 2025</em>. Recuperado de <a href="https://help.autodesk.com/view/RVT/2025/ENU/" target="_blank" rel="noopener">help.autodesk.com/view/RVT/2025</a>.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 9, taller: primer contacto con Revit. Abrir, navegar y dibujar tus primeros muros.</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-7.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S7 · Taller: el anteproyecto a mano</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-9.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S9 · Taller: primer contacto con Revit</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Hamad (2025) y la Ayuda de Autodesk Revit 2025.
+      Imágenes reproducidas con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 2 · Del dibujo a la información | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 2 del Parcial 1: la idea grande del curso, del dibujo a mano al CAD, y de CAD a BIM.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 2 · Del dibujo a la información</h1>
+    <p class="parcial-desc">Arranca el contenido formal: la idea grande del curso, del dibujo a mano al CAD, y de CAD a BIM. Sin abrir el software todavía.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Distinguir</strong> un flujo CAD de dibujo en dos dimensiones de un flujo BIM, en términos de representación frente a información.</li>
+        <li><strong>Explicar</strong> qué significa que un elemento sea paramétrico y que necesite un anfitrión.</li>
+        <li><strong>Elegir y justificar</strong> un museo documentable para analizarlo en la próxima sesión.</li>
+      </ul>
+    </div>
+
+    <div class="caja caja--reflexion">
+      <p class="caja__titulo">La pregunta con la que arrancamos</p>
+      <p>
+        Cuando dibujas una línea en la computadora, ¿esa línea <em>sabe</em> que es un muro? ¿La
+        máquina entiende que estás diseñando un edificio, o solo guarda trazos? La respuesta separa
+        dos formas de trabajar, y marca hacia dónde va este curso.
+      </p>
+    </div>
+
+    <h2>Del dibujo a mano al dibujo asistido por computadora</h2>
+
+    <p>
+      Antes de abrir cualquier software conviene entender de dónde viene. El <strong>dibujo asistido por
+      computadora</strong>, conocido por su sigla en inglés CAD (Computer Aided Design o Computer Aided
+      Drafting), no nació en la arquitectura sino en los laboratorios de investigación.
+    </p>
+
+    <p>
+      Como relatan Cardoso Llach y Capdevila Werning (2009), el punto de partida suele situarse en el
+      <strong>Sketchpad</strong>, desarrollado por <strong>Ivan Sutherland</strong> como tesis doctoral en
+      el Massachusetts Institute of Technology en <strong>1963</strong>. El Sketchpad propuso la primera
+      interfaz gráfica de la historia: una pantalla en la que se podía dibujar directamente con ayuda de un
+      lápiz óptico. Las industrias automotriz y aeronáutica se interesaron de inmediato por esta
+      tecnología, pero pasaron más de quince años antes de que la computación gráfica empezara a
+      transformar de manera definitiva el oficio del arquitecto. Esto se debió, en buena parte, a la fuerte
+      reducción en el precio de los computadores y al aumento exponencial de su capacidad de procesamiento.
+    </p>
+
+    <figure class="fig-media">
+      <img src="../assets/img/t1-recursion.jpg" alt="Estudio de recursión tridimensional generado por computadora">
+      <figcaption>
+        Estudio de recursión en tres dimensiones generado por computadora. La computación gráfica abrió a
+        los arquitectos formas y procedimientos que serían muy difíciles de explorar a mano.
+        Fuente: Cardoso Llach y Capdevila Werning (2009).
+      </figcaption>
+    </figure>
+
+    <p>
+      Los primeros sistemas CAD evolucionaron como una <strong>automatización de la mesa de dibujo
+      tradicional</strong>: una pantalla que mostraba una hoja de papel ilimitada en la que el arquitecto
+      manipulaba versiones digitales de la regla, la escuadra, el compás y la pluma.
+    </p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">La idea de fondo del curso</p>
+      <p>
+        El CAD comenzó imitando el tablero de dibujo, pero la computadora puede hacer mucho más que guardar
+        líneas: puede guardar <em>información</em>. Cuando una línea deja de ser solo un trazo y se convierte
+        en un muro que conoce su altura, su material y su relación con otros elementos, pasamos del simple
+        dibujo asistido al <strong>modelado de información</strong>. Ese salto, de CAD a BIM, es lo que
+        estudiaremos enseguida y lo que hace de Revit una herramienta distinta.
+      </p>
+    </div>
+
+    <figure class="fig-media">
+      <img src="../assets/img/t1-paramcad.jpg" alt="Modelo tridimensional en un programa de diseño asistido con su árbol de parámetros">
+      <figcaption>
+        Modelo tridimensional dentro de un programa de diseño asistido por computadora. A la izquierda, el
+        árbol de parámetros y operaciones; alrededor, las barras de herramientas. La lógica de paneles,
+        navegadores y vistas que veremos en Revit es heredera de estos entornos.
+        Fuente: Cardoso Llach y Capdevila Werning (2009).
+      </figcaption>
+    </figure>
+
+    <h2>CAD frente a BIM</h2>
+
+    <p>
+      La distinción entre CAD y BIM es la base conceptual de todo el curso. Aunque a primera vista ambos
+      producen dibujos en pantalla, su forma de entender el proyecto es muy distinta (Hamad, 2025).
+    </p>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">CAD: dibujo asistido por computadora</p>
+      <p>
+        En un flujo <strong>CAD de dibujo en dos dimensiones</strong> representas el edificio mediante
+        <strong>entidades gráficas</strong>: líneas, arcos, textos y tramas. Dos líneas paralelas pueden
+        significar un muro para ti, pero el archivo no las gestiona necesariamente como un elemento
+        arquitectónico con material, altura y relaciones. Su significado vive sobre todo en la mente de
+        quien dibuja. Además, plantas, secciones y alzados suelen dibujarse por separado y sin vínculo
+        entre sí: si el proyecto cambia, hay que volver a cada dibujo y editarlo a mano.
+      </p>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Cuidado con una frase que vas a oír mucho</p>
+      <p>
+        Se repite a menudo que «en CAD se dibuja, no se modela ni se diseña» (Hamad, 2025). Como
+        <em>gancho</em> funciona: subraya el contraste. Como <em>definición</em> es incorrecta, y conviene
+        que lo sepas desde ahora: CAD abarca también modelado tridimensional, superficies, sólidos y
+        geometría paramétrica. De hecho, Revit es heredero de esa evolución.
+      </p>
+      <p>
+        La distinción precisa no es <em>dibujar contra modelar</em>, ni <em>2D contra 3D</em>. Es esta:
+      </p>
+      <p style="text-align:center">
+        <strong>CAD = representación &nbsp;·&nbsp; BIM = información</strong>
+      </p>
+      <p>
+        Es decir: dibujo independiente frente a información estructurada y coordinada alrededor de
+        objetos del edificio. Guarda esta formulación, porque es la que se te pedirá en el examen.
+      </p>
+    </div>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">BIM: modelado de información de la construcción</p>
+      <p>
+        BIM significa Building Information Modeling, es decir, modelado de información de la construcción. En
+        lugar de líneas, arcos y círculos, se crea desde el principio un <strong>modelo en tres
+        dimensiones</strong> con elementos inteligentes: muros, puertas, ventanas, pisos, techos y cubiertas.
+        Cada elemento contiene en su interior una gran cantidad de información. Por ejemplo, un muro dibujado
+        en la planta conoce su propia altura; por eso lo ves en dos dimensiones en la planta y, al mismo
+        tiempo, extendiéndose en la vista tridimensional (Hamad, 2025).
+      </p>
+    </div>
+
+    <p>
+      El enfoque BIM se apoya en tres ideas. La primera es que los elementos son
+      <strong>paramétricos</strong>: entienden sus relaciones mutuas, de modo que cuando un elemento cambia,
+      los que dependen de él reaccionan en consecuencia. La segunda es que algunos elementos necesitan un
+      <strong>anfitrión</strong> (host): una puerta o una ventana necesitan un muro que las aloje, y una
+      luminaria necesita un techo. La tercera es que todas las partes del modelo están
+      <strong>interrelacionadas</strong>: mover un muro en la planta afecta de inmediato a todas las demás
+      vistas, e incluso las tablas de cantidades se actualizan solas.
+    </p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">La idea esencial: de dibujar a modelar información</p>
+      <p>
+        En CAD el archivo guarda <em>cómo se ve</em> el proyecto. En BIM el archivo guarda <em>qué es</em> el
+        proyecto: un edificio compuesto por elementos que saben lo que son y cómo se relacionan. De ese modelo
+        único se derivan, de manera automática y siempre coordinada, las plantas, las secciones, los alzados,
+        las vistas tridimensionales y las tablas de cantidades. Comprender esta diferencia es más importante,
+        en este momento del curso, que memorizar cualquier comando.
+      </p>
+    </div>
+
+    <figure class="fig-media">
+      <svg class="esquema" viewBox="0 0 720 300" role="img"
+           aria-label="En BIM, un solo modelo central del que se derivan todas las vistas y tablas del proyecto"
+           xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+        <defs>
+          <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--azul-oscuro)"/>
+          </marker>
+        </defs>
+        <g font-family="var(--sans)" font-size="15" text-anchor="middle">
+          <g>
+            <rect x="20"  y="26" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
+            <text x="79"  y="52" fill="var(--texto)">Planta</text>
+          </g>
+          <g>
+            <rect x="158" y="18" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
+            <text x="217" y="44" fill="var(--texto)">Sección</text>
+          </g>
+          <g>
+            <rect x="301" y="14" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
+            <text x="360" y="40" fill="var(--texto)">Alzado</text>
+          </g>
+          <g>
+            <rect x="444" y="18" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
+            <text x="503" y="44" fill="var(--texto)">Vista 3D</text>
+          </g>
+          <g>
+            <rect x="582" y="26" width="118" height="42" rx="9" fill="var(--verde-claro)" stroke="var(--verde)" stroke-width="1.5"/>
+            <text x="641" y="46" fill="var(--texto)">Tabla de</text>
+            <text x="641" y="62" fill="var(--texto)">cantidades</text>
+          </g>
+          <rect x="256" y="188" width="208" height="60" rx="12" fill="var(--azul-medio)" opacity="0.16" stroke="var(--azul-oscuro)" stroke-width="2"/>
+          <text x="360" y="214" font-weight="700" fill="var(--texto)">Modelo BIM</text>
+          <text x="360" y="234" font-size="13" fill="var(--texto-suave)">un solo archivo .rvt</text>
+        </g>
+        <g fill="none" stroke="var(--azul-oscuro)" stroke-width="1.6" marker-end="url(#flecha)" opacity="0.85">
+          <path d="M300 190 C 220 150, 140 110, 90 70"/>
+          <path d="M325 188 C 290 140, 250 100, 220 62"/>
+          <path d="M356 186 C 356 140, 360 100, 360 58"/>
+          <path d="M395 188 C 430 140, 470 100, 500 62"/>
+          <path d="M420 190 C 500 150, 580 110, 636 70"/>
+        </g>
+        <text x="360" y="284" text-anchor="middle" font-family="var(--sans)" font-size="13" font-style="italic" fill="var(--texto-suave)">Un cambio en el modelo se refleja en todas las vistas y tablas a la vez.</text>
+      </svg>
+      <figcaption>
+        <b>Figura 1.</b> En BIM existe un solo modelo central del que se derivan, coordinadas entre sí, todas
+        las representaciones del proyecto. (Esquema propio a partir de Hamad, 2025.)
+      </figcaption>
+    </figure>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">CAD frente a BIM: diferencias esenciales (Hamad, 2025)</caption>
+        <thead>
+          <tr><th scope="col">CAD (dibujo)</th><th scope="col">BIM (modelo)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Se dibuja con líneas, arcos y círculos.</td><td>Se modela con elementos inteligentes (muros, puertas, pisos).</td></tr>
+          <tr><td>Una línea no sabe qué representa.</td><td>Cada elemento contiene su propia información.</td></tr>
+          <tr><td>Plantas, secciones y alzados son dibujos independientes, que pueden no estar coordinados entre sí.</td><td>Todas las vistas se derivan de un mismo modelo.</td></tr>
+          <tr><td>Un cambio obliga a corregir cada dibujo a mano.</td><td>Un cambio <em>correctamente modelado</em> se refleja en las vistas y tablas relacionadas.</td></tr>
+          <tr><td>El resultado es un conjunto de dibujos.</td><td>El resultado es un modelo coordinado del edificio.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">El orden importa, y tu tarea</p>
+      <p>
+        En este curso primero entendemos <em>qué</em> vamos a construir y <em>cómo</em> se representa un
+        edificio; la herramienta llega cuando ya sepamos qué estamos haciendo (la conocerás al final de
+        este parcial). <strong>Tarea:</strong> elige un <strong>museo o espacio cultural</strong> que
+        puedas <em>documentar</em>, no solo admirar. En la <strong>Sesión 3</strong> lo analizaremos en
+        equipo: será tu primer precedente.
+      </p>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Qué significa que un museo sea «documentable»</p>
+      <p>
+        Elegir un edificio espectacular del que solo encuentres fotos bonitas te dejará sin nada que
+        analizar el próximo día. Antes de decidirte, comprueba que puedes reunir <strong>como
+        mínimo</strong>:
+      </p>
+      <ul>
+        <li><strong>Una planta legible.</strong> No negociable: sin planta no hay análisis. Si no la
+          encuentras, cambia de museo.</li>
+        <li><strong>Identificación del caso:</strong> nombre, ciudad, autor o equipo, y año.</li>
+        <li><strong>Fotografías de interior y de exterior</strong>, no solo la fachada icónica.</li>
+        <li><strong>Alguna evidencia de sección, altura o entrada de luz:</strong> un corte, una foto de
+          sala donde se vea el techo, un lucernario.</li>
+        <li><strong>La fuente de cada documento</strong>, para poder decir de dónde salió.</li>
+      </ul>
+      <p>
+        Un museo pequeño y bien documentado sirve mucho más que uno famoso del que solo tienes postales.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        En una frase, <strong>corrige</strong> la afirmación «en CAD se dibuja, no se modela» usando la
+        formulación precisa que vimos hoy. Si puedes escribirla sin mirar el apunte, entendiste la sesión.
+      </p>
+      <p>
+        Entrega además el <strong>museo que elegiste</strong> con dos líneas de justificación: por qué ese
+        y dónde encontraste su planta.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Cardoso Llach, D. y Capdevila Werning, R. (2009). Arquitectura, diseño y computación. <em>DEARQ, Revista de Arquitectura</em>, (4), pp. 136–140. Universidad de los Andes.</li>
+      <li>Hamad, M. (2025). <em>Autodesk Revit 2025 Architecture</em>. Mercury Learning and Information (sello de De Gruyter). Capítulo 1: Introduction to Revit 2025.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 3, taller: leer un museo (análisis de precedentes en equipo).</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-1.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S1 · Presentación del curso</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-3.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S3 · Taller: leer un museo</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Hamad (2025) y Cardoso Llach &amp; Capdevila Werning (2009).
+      Imágenes reproducidas con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

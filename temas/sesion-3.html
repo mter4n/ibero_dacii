@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 3 · Taller: leer un museo | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 3 del Parcial 1: taller de análisis de precedentes para aprender a leer un museo real: programa, recorrido, luz y escala.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 3 · Taller: leer un museo</h1>
+    <p class="parcial-desc">Primer taller del curso. Antes de la teoría, la mirada: cada equipo analiza un museo real y descubre, por observación, qué hace funcionar a este tipo de edificio.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Analizar</strong> un museo real leyendo su programa, su recorrido, su luz y su escala.</li>
+        <li><strong>Reconstruir</strong> en croquis la planta y la sección de un edificio que no proyectaste.</li>
+        <li><strong>Marcar</strong> cada hallazgo como verificado, provisional o no verificado, y sostener las deducciones con su razonamiento.</li>
+        <li><strong>Extraer</strong> un principio transferible a tu propio museo, distinguiéndolo de lo que no conviene copiar.</li>
+      </ul>
+    </div>
+
+    <p>
+      En la Sesión 2 planteamos la idea grande: de dibujar a modelar información. Hoy toca mirar. Cada
+      quien trajo un <strong>museo o espacio cultural</strong> (la tarea de la S2); en equipo elegirán uno
+      y lo <em>leerán</em> como arquitectos. No hay teoría todavía: la teoría de la próxima sesión caerá
+      sobre lo que hoy descubran solos.
+    </p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Por qué empezamos mirando</p>
+      <p>
+        Un precedente es un edificio construido que ya resolvió el problema que tú vas a enfrentar.
+        Aprender a leerlo (qué decisiones tomó, por qué funcionan) es la herramienta más antigua y
+        efectiva del proyectista. Y hay un beneficio extra: cuando en la Sesión 4 veamos el programa y la
+        museografía "en teoría", ya los habrás visto en acción.
+      </p>
+    </div>
+
+    <h2>El ejercicio (en equipo)</h2>
+    <ol>
+      <li><strong>Elijan un museo</strong> de los que trajeron (si ninguno convence, elijan de la lista de
+        abajo). Reúnan planta, fotos y lo que encuentren.</li>
+      <li><strong>Léanlo con cuatro preguntas</strong>, una por integrante si quieren repartirse:
+        <ul>
+          <li><strong>Programa:</strong> ¿qué espacios tiene además de las salas? (vestíbulo, tienda, café,
+            talleres, auditorio…) ¿Qué tan grande es la parte que el visitante <em>no</em> ve?</li>
+          <li><strong>Recorrido:</strong> ¿cómo te mueve el edificio? ¿Libre o en secuencia? ¿Dónde
+            descansas?</li>
+          <li><strong>Luz:</strong> ¿de dónde viene? ¿De lucernarios, de muros de vidrio, de luz artificial? ¿Qué
+            protege a las obras?</li>
+          <li><strong>Escala y llegada:</strong> ¿cómo es entrar? ¿El edificio te recibe, te impone, te
+            guía?</li>
+        </ul>
+      </li>
+      <li><strong>Dibujen, no solo escriban.</strong> Dos croquis, no uno:
+        <ul>
+          <li>Una <strong>planta</strong> simplificada con las zonas y el recorrido en flechas.</li>
+          <li>Una <strong>hipótesis seccional</strong> de la sala que más les gustó: un corte a mano
+            alzada que muestre la <em>altura aproximada</em>, <em>por dónde entra la luz</em> y una
+            <em>figura humana</em> que dé la escala. Se llama hipótesis y no levantamiento porque nadie
+            espera que sea exacta: es tu mejor deducción a partir de lo que encontraste.</li>
+        </ul>
+        El croquis es dibujo rápido para <em>pensar</em>: línea suelta, proporción antes que precisión.</li>
+      <li><strong>Cierre relámpago:</strong> cada equipo presenta su museo en 3 minutos: qué es, cómo se
+        recorre, <strong>qué principio se llevarían</strong> a su propio proyecto y
+        <strong>qué no copiarían</strong> y por qué.</li>
+    </ol>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Marca qué sabes y qué estás deduciendo</p>
+      <p>
+        Van a analizar un edificio que no proyectaron y, casi seguro, que no han visitado. Habrá cosas que
+        la documentación muestre con claridad y otras que tengan que deducir. <strong>Las dos son
+        válidas; confundirlas no.</strong> Junto a cada hallazgo de su ficha, escriban una letra:
+      </p>
+      <ul>
+        <li><strong>V: verificado.</strong> Se ve en una planta, una sección o una fotografía. Pueden
+          señalar exactamente dónde.</li>
+        <li><strong>P: provisional.</strong> No aparece directamente, pero lo deducen cruzando varias
+          evidencias («la sala debe tener doble altura porque en la foto el lucernario queda muy por encima
+          de las personas»). Es una hipótesis razonada, no un dato documentado.</li>
+        <li><strong>NV: no verificado.</strong> La documentación no permite afirmarlo. Escríbanlo igual.</li>
+      </ul>
+      <p>
+        Un análisis con varios <strong>NV</strong> honestos vale más que uno donde todo parece resuelto
+        porque alguien rellenó los huecos.
+      </p>
+      <p>
+        Estas tres marcas no son un invento de hoy: son <strong>el vocabulario que usarán durante todo el
+        curso</strong>. En la Sesión 5 se les sumará una cuarta, <strong>D</strong> (decisión didáctica),
+        para los supuestos que acordemos en clase, pero eso será cuando proyecten su propio museo. Hoy,
+        analizando el de otro, no hay nada que decidir: solo lo que se ve, lo que se deduce y lo que no se
+        sabe.
+      </p>
+    </div>
+
+    <h2>Si necesitan un museo, empiecen por aquí</h2>
+    <ul>
+      <li><strong>Cercanos:</strong> CECUT (Tijuana), el museo que casi todos conocen; El Trompo (Tijuana);
+        Museo de las Californias.</li>
+      <li><strong>Clásicos contemporáneos:</strong> Tate Modern (Londres, Herzog &amp; de Meuron, 2000), una
+        central eléctrica reusada como museo; Guggenheim Bilbao (Gehry, 1997), el museo que transformó una
+        ciudad. Ambos analizados en Montaner (2003).</li>
+      <li><strong>Mexicanos:</strong> Museo Nacional de Antropología (Ramírez Vázquez, 1964), por el patio y
+        el paraguas; Museo Tamayo (González de León y Zabludovsky, 1981).</li>
+    </ul>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Entregable de la sesión + tarea</p>
+      <p>
+        <strong>Al cierre:</strong> la ficha del precedente (las cuatro preguntas respondidas, con cada
+        hallazgo marcado <strong>V / P / NV</strong>), los <strong>dos croquis</strong> (planta e hipótesis
+        seccional) y el <strong>principio que se llevan</strong> junto con <strong>lo que no copiarían</strong>.
+        Todo con el nombre del equipo. <strong>Tarea:</strong> guarden su ficha. En la
+        <strong>Sesión 4</strong> veremos la teoría del museo (programa, museografía, luz) y van a
+        reconocer en ella todo lo que hoy observaron; y en la <strong>Sesión 5</strong> esa ficha alimenta
+        el brief de su propio museo.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        En el cierre relámpago, cada conclusión que presentes debe apoyarse en una
+        <strong>evidencia gráfica señalable</strong>: «lo sé por esta planta», «se ve en esta sección».
+        Una afirmación sin dibujo que la sostenga («es dinámico», «es moderno») no cuenta como análisis.
+      </p>
+      <p>
+        Y si el dato es <strong>P</strong> (deducido), dilo: «deduzco que hay doble altura porque…». Sostener
+        una deducción con su razonamiento es análisis; presentarla como certeza documentada, no.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Montaner, J. M. (2003). <em>Museos para el siglo XXI</em>. Gustavo Gili.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 4, el proyecto del semestre: qué es un museo y cómo se organiza por dentro.</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-2.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S2 · Del dibujo a la información</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-4.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S4 · El proyecto: un museo</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material del curso. Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

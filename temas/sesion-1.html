@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 1 · Presentación del curso | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 1 del Parcial 1: encuadre y presentación del curso Dibujo Asistido por Computadora II.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 1 · Presentación del curso</h1>
+    <p class="parcial-desc">Primera clase. Encuadre del curso: conocernos y dejar claras las reglas del juego. Sesión relajada, sin material que estudiar aún.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Explicar</strong> por qué este curso trabaja el proyecto a mano antes que con software.</li>
+        <li><strong>Ubicar</strong> los tres parciales, el proyecto del semestre y lo que se entrega en cada uno.</li>
+        <li><strong>Localizar</strong> los materiales del curso: apuntes, sesiones y plataforma de entrega.</li>
+      </ul>
+    </div>
+
+    <h2>Encuadre y presentación</h2>
+    <p>
+      En esta primera sesión recorremos, con calma, todo lo que necesitas saber para arrancar bien el
+      semestre:
+    </p>
+    <ul>
+      <li><strong>El programa del curso:</strong> qué vamos a aprender y hacia dónde vamos: de la idea al modelo digital de un edificio.</li>
+      <li><strong>La forma de evaluar:</strong> los tres parciales, qué se entrega y cuándo. Todo está detallado en el <strong>encuadre del curso</strong>, que se reparte hoy: porcentajes, rúbricas, fechas y requisitos de asistencia. Consérvalo: es el documento que manda.</li>
+      <li><strong>Los equipos de trabajo:</strong> cómo nos organizamos.</li>
+      <li><strong>El proyecto del semestre:</strong> un solo proyecto que crecerá parcial a parcial (lo presentamos a detalle en las próximas sesiones).</li>
+      <li><strong>El sitio del curso:</strong> dónde encontrarás los apuntes, las sesiones y los materiales.</li>
+      <li><strong>Lo práctico:</strong> qué necesitas traer, el laboratorio y el software que usaremos más adelante.</li>
+    </ul>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">La única idea que sí nos llevamos hoy</p>
+      <p>
+        Este curso no es "aprender botones". Es aprender a construir la <strong>base digital de un
+        proyecto</strong>: pensarlo, representarlo y modelarlo. La herramienta llegará cuando el proyecto
+        ya tenga sentido. Ese orden es deliberado, y lo verás desde la próxima sesión.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        Antes de salir, entrega una tarjeta con tu nombre respondiendo en tres líneas:
+        <em>¿por qué no abriremos Revit hasta la Sesión 8?</em> No busques la respuesta correcta;
+        escribe la tuya. La revisaremos juntos al final del parcial.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Qué sigue</p>
+      <p>
+        En la <strong>Sesión 2</strong> arrancamos formalmente con la idea grande del curso: del dibujo a
+        la información, y qué cambia cuando una línea deja de ser un trazo y se vuelve un muro que sabe lo
+        que es.
+      </p>
+    </div>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <span class="nav-sesiones__hueco"></span>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-2.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S2 · Del dibujo a la información</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material del curso. Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

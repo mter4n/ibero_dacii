@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión 4 · El proyecto del semestre: un museo | Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesión 4 del Parcial 1: qué es un museo, cómo se organiza su programa y por qué será el proyecto del semestre: un museo con programa educativo-cultural.">
+<link rel="stylesheet" href="../assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="../index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="../index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <h1>Sesión 4 · El proyecto del semestre: un museo</h1>
+    <p class="parcial-desc">Qué es un museo, cómo se organiza y por qué será nuestro proyecto de todo el semestre. Todavía sin abrir el software.</p>
+  </div>
+
+  <div class="contenedor sesion-cuerpo">
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Objetivos de esta sesión</p>
+      <p>Al terminar podrás:</p>
+      <ul>
+        <li><strong>Usar</strong> la definición vigente de museo (ICOM, 2022) y reconocer qué exige que no exigía la anterior.</li>
+        <li><strong>Distinguir</strong> museología de museografía y saber cuál de las dos te toca como arquitecto.</li>
+        <li><strong>Acordar en equipo</strong> la misión de su museo y <strong>derivar</strong> de ella necesidades espaciales concretas.</li>
+        <li><strong>Explicar</strong> por qué el daño por luz es dosis (intensidad × tiempo) y qué implica para el proyecto de la sala.</li>
+      </ul>
+    </div>
+
+    <p>
+      En la Sesión 2 vimos la idea grande (de dibujar a modelar información) y en el taller pasado (S3)
+      leíste un museo real. Hoy conocemos a fondo ese tipo de edificio: qué es un museo, cómo se organiza
+      por dentro y por qué es tan rico para aprender. Vas a reconocer, con nombre propio, mucho de lo que
+      observaste en tu precedente.
+    </p>
+
+    <h2>¿Qué es un museo?</h2>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">Museo</p>
+      <p>
+        «Un museo es una institución sin ánimo de lucro, permanente y al servicio de la sociedad,
+        que <strong>investiga, colecciona, conserva, interpreta y exhibe</strong> el patrimonio
+        material e inmaterial. Abiertos al público, <strong>accesibles e inclusivos</strong>, los museos
+        fomentan la <strong>diversidad y la sostenibilidad</strong>. <strong>Con la participación de las
+        comunidades</strong>, los museos operan y comunican ética y profesionalmente, ofreciendo
+        experiencias variadas para la educación, el disfrute, la reflexión y el intercambio de
+        conocimientos» (ICOM, 2022).
+      </p>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Por qué esta definición y no otra</p>
+      <p>
+        Es la definición vigente del <strong>Consejo Internacional de Museos</strong>, aprobada en Praga
+        el 24 de agosto de 2022 tras un proceso de consulta de dos años. Sustituye a la anterior, de 2007,
+        y no es un cambio cosmético: incorpora cuatro conceptos que antes no estaban (<em>accesibilidad,
+        inclusión, participación comunitaria y sostenibilidad</em>) y los coloca al mismo nivel que
+        conservar y exhibir.
+      </p>
+      <p class="micrologro">
+        El texto de arriba es la <strong>versión oficial en español</strong> publicada por el ICOM. Si la
+        citas en un trabajo, cópiala tal cual y no la retraduzcas del inglés: una definición institucional
+        se cita literalmente o se declara como paráfrasis. Fuente: icom.museum.
+      </p>
+      <p>
+        Para ti esto tiene una consecuencia directa: un museo accesible no se resuelve añadiendo una rampa
+        al final. La accesibilidad es también <em>sensorial y cognitiva</em>, y la participación de la
+        comunidad es un requisito programático, no un adorno. Tenlo presente cuando definas tu brief en
+        la Sesión 5.
+      </p>
+    </div>
+
+    <p>
+      Para proyectar un museo conviene distinguir dos palabras que se confunden. La <strong>museología</strong>
+      es la <em>ciencia del museo</em>: estudia su función social, cómo se organiza y qué papel juega en la
+      vida de la comunidad. La <strong>museografía</strong> es el <em>conjunto de técnicas para exhibir</em>:
+      cómo se ordena el recorrido, cómo se montan e iluminan las obras y cómo se protege el acervo
+      (Plazola, 1999). Como arquitectos, trabajaremos sobre todo la segunda: diseñamos el espacio para que
+      la museografía funcione.
+    </p>
+
+    <h2>Una breve historia</h2>
+    <p>
+      El museo no siempre fue público. Nació de las <strong>colecciones privadas</strong> (gabinetes de
+      curiosidades, acervos de reyes y academias) que con el tiempo se abrieron a todos. En México, el hilo
+      va de la colección de Boturini en el siglo xviii y la Academia de San Carlos (1783, considerada el
+      primer museo de arte de América) al <strong>Museo Nacional</strong>, y de ahí a la profesionalización
+      del siglo xx (Plazola, 1999). Hoy, como plantea <strong>Montaner (2003)</strong>, el museo es uno de
+      los <strong>tipos arquitectónicos más significativos de nuestro tiempo</strong>: dejó de ser una caja
+      cerrada para volverse un edificio cultural y cívico, muchas veces el corazón de la vida de una ciudad.
+    </p>
+
+    <h2>Tipos de museo</h2>
+    <p>Los museos se clasifican, sobre todo, por lo que exhiben. Entre los más comunes:</p>
+    <ul>
+      <li><strong>De arte:</strong> pintura, escultura, arte moderno y contemporáneo (galerías).</li>
+      <li><strong>De historia y antropología:</strong> objetos y culturas del pasado.</li>
+      <li><strong>De ciencia y tecnología:</strong> por lo general interactivos.</li>
+      <li><strong>De sitio y arqueológicos:</strong> ligados a un lugar o un hallazgo.</li>
+      <li><strong>Especializados y comunitarios:</strong> un tema, una colección o una comunidad concreta.</li>
+    </ul>
+    <p>
+      Nuestro proyecto se acerca a este último grupo: un museo pequeño, con vocación
+      <strong>educativa y cultural</strong>, pensado para una comunidad.
+    </p>
+
+    <h2>El museo como experiencia: luz, recorrido y escala</h2>
+    <p>
+      Lo que distingue a un museo de casi cualquier otro edificio es que su arquitectura <em>forma parte de
+      lo que se exhibe</em>. Montaner (2003) insiste en esta idea: la luz, el recorrido, la escala y el
+      encuentro con el objeto son la experiencia cultural misma. Diseñar un museo es, a la vez, diseñar el
+      edificio y diseñar cómo se vive por dentro.
+    </p>
+    <p>
+      La museografía lo traduce en decisiones concretas: las <strong>salas de exposición</strong> piden
+      dimensiones generosas (Plazola menciona muros del orden de 4 a 10 m de ancho por 2.5 a 3.5 m de
+      altura); el <strong>recorrido</strong> guía al visitante en una secuencia con pausas y descansos; y
+      las obras se montan sobre muros, mamparas y vitrinas. Pero, sobre todo, está la <strong>luz</strong>:
+      natural filtrada y controlada, o artificial dirigida sobre cada pieza. El arquitecto se vuelve, como
+      dice Plazola (1999), colaborador del artista para dar realce a la obra.
+    </p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">La luz es proyecto, no adorno</p>
+      <p>
+        En un museo, iluminar no es "poner lámparas al final": es una decisión de diseño desde el principio.
+        Guarda esta idea, porque más adelante en el curso (al iluminar, colocar cámaras y renderizar tu
+        modelo) la vas a aplicar directamente. Pocos edificios premian tanto ese trabajo como un museo.
+      </p>
+    </div>
+
+    <h2>El programa de un museo</h2>
+    <p>
+      Todo museo organiza sus espacios en <strong>zonas</strong>. Conviene verlo como un iceberg: lo que el
+      visitante recorre es solo una parte; detrás hay bodegas, talleres y laboratorios que casi nadie ve.
+      Este es el esquema general del que partiremos (Plazola, 1999); el nuestro, a su escala, lo definiremos
+      en la Sesión 5.
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">Zonas de un museo y qué contiene cada una (síntesis de Plazola, 1999)</caption>
+        <thead>
+          <tr><th scope="col">Zona</th><th scope="col">Qué incluye</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Acceso y atención al público</strong></td><td>Vestíbulo y recepción, taquilla e información, guardarropa, sanitarios, tienda o librería, cafetería.</td></tr>
+          <tr><td><strong>Exposición</strong></td><td>Salas permanentes y temporales, áreas de descanso y las circulaciones que enlazan el recorrido (rampas, escaleras, elevadores).</td></tr>
+          <tr><td><strong>Programa educativo-cultural</strong></td><td>Aulas y talleres didácticos, auditorio o sala de usos múltiples, biblioteca o mediateca.</td></tr>
+          <tr><td><strong>Acervo y conservación</strong></td><td>Bodega de obra, registro, área de restauración y laboratorios, zona de carga y descarga.</td></tr>
+          <tr><td><strong>Administración</strong></td><td>Dirección y oficinas, servicios educativos, relaciones públicas, sala de juntas.</td></tr>
+          <tr><td><strong>Servicios generales</strong></td><td>Cuartos de máquinas, mantenimiento e instalaciones, casilleros, aseo y seguridad.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Lo que hace único a un museo: requerimientos técnicos</p>
+      <p>
+        Un museo carga exigencias que otros edificios no tienen (Plazola, 1999):
+      </p>
+      <ul>
+        <li><strong>Clima controlado:</strong> humedad y temperatura estables en salas y bodegas para no dañar las obras.</li>
+        <li><strong>Iluminación cuidada:</strong> filtrar la luz natural y dirigir la artificial sobre cada pieza, sin deteriorarla.</li>
+        <li><strong>Seguridad:</strong> contra incendio (detectores, aspersores, extintores) y contra robo (alarmas y circuito cerrado).</li>
+      </ul>
+      <p>Estas exigencias son, en buena parte, lo que vuelve al museo un ejercicio de proyecto tan completo.</p>
+    </div>
+
+    <h2>Cuánta luz tolera una obra</h2>
+
+    <p>
+      «Iluminación cuidada» suena vago hasta que se entiende de dónde viene el límite. La luz
+      <strong>degrada</strong> los materiales: decolora pigmentos, amarillea el papel, fragiliza las fibras
+      textiles. Y el daño es <strong>acumulativo e irreversible</strong>. Por eso la conservación no pide
+      «poca luz» sino una cantidad concreta según lo que se exhibe.
+    </p>
+
+    <div class="caja caja--definicion">
+      <p class="caja__titulo">El daño es dosis, no intensidad</p>
+      <p>
+        La regla que debes retener es esta: el deterioro depende de la
+        <strong>intensidad multiplicada por el tiempo</strong> de exposición.
+      </p>
+      <p style="text-align:center"><strong>dosis = lux × horas</strong></p>
+      <p>
+        Como primera aproximación: una acuarela a 50 lux durante 100 horas recibe una exposición
+        equivalente a 100 lux durante 50 horas. De ahí se sigue algo que cambia el proyecto: la exposición
+        acumulada <strong>se gestiona combinando iluminancia y tiempo</strong>. Una pieza sensible puede
+        rotarse a bodega, mostrarse por temporadas o exhibirse en una sala que se oscurece cuando nadie la
+        recorre. Esa es una de las razones por las que existen las salas temporales, junto con la
+        programación curatorial y los préstamos.
+      </p>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Hasta dónde llega esta regla</p>
+      <p>
+        La equivalencia entre intensidad y tiempo es un <strong>modelo de gestión</strong>, no una ley
+        exacta. <strong>No la leas como permiso para subir la iluminancia</strong> siempre que acortes la
+        exposición: los niveles máximos por material siguen siendo un techo, y el deterioro depende también
+        de la composición espectral de la luz, de la radiación ultravioleta e infrarroja, del estado de
+        conservación de la pieza, de la temperatura y la humedad, y de cuánta luz haya recibido esa obra a
+        lo largo de su vida.
+      </p>
+      <p>
+        Lo que sí debes llevarte: <em>el tiempo cuenta</em>. Un proyecto que solo controla cuántos lux
+        entran, sin pensar cuántas horas al año, ha resuelto media pregunta.
+      </p>
+    </div>
+
+    <p>
+      Los niveles de referencia habituales en conservación preventiva, según la sensibilidad del material:
+    </p>
+
+    <div class="tabla-envoltura">
+      <table>
+        <caption class="tabla-titulo">Iluminancia máxima recomendada según sensibilidad (referencia de conservación)</caption>
+        <thead>
+          <tr><th scope="col">Sensibilidad</th><th scope="col">Materiales</th><th scope="col">Nivel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Muy sensible</td><td>Acuarela, papel, obra gráfica, textiles, fotografía, tintes</td><td>≈50 lux</td></tr>
+          <tr><td>Medianamente sensible</td><td>Óleo, acrílico, policromía, madera, mobiliario, hueso</td><td>≈150–200 lux</td></tr>
+          <tr><td>Poco sensible</td><td>Piedra, metal, cerámica, vidrio</td><td>≈300 lux</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="caja caja--alerta">
+      <p class="caja__titulo">Cómo tratar estas cifras</p>
+      <p>
+        Son <strong>recomendaciones de conservación</strong>, no normativa: provienen del estándar de
+        Garry Thomson y de las guías del <strong>Instituto Canadiense de Conservación</strong>. Márcalas
+        como <strong>P</strong> en tu brief y cita la fuente si las usas.
+      </p>
+      <p>
+        Sobre el <em>límite anual acumulado</em> (lux·hora al año) las guías internacionales
+        <strong>no coinciden</strong> entre sí. Por eso aquí aprendes el principio (dosis) y no una cifra
+        única: si algún día necesitas el número exacto, se consulta a la fuente de conservación aplicable
+        al préstamo, no a un apunte.
+      </p>
+    </div>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Dónde vive esta decisión: en la sección</p>
+      <p>
+        Fíjate en lo que acabas de aprender: si la sala de obra sobre papel no puede pasar de ~50 lux, eso
+        determina <strong>el tamaño del lucernario, su orientación y qué lo filtra</strong>. Y esas tres
+        cosas se deciden y se dibujan en <strong>sección</strong>, no en planta.
+      </p>
+      <p>
+        Es el motivo por el que en la Sesión 6 insistiremos en que, en un museo, la sección es
+        <em>la vista de la luz</em>; y por el que en el Parcial 3, al iluminar y renderizar tu modelo,
+        estarás comprobando lo que tu sección prometió aquí.
+      </p>
+    </div>
+
+    <h2>Nuestro proyecto: un museo pequeño con programa educativo-cultural</h2>
+    <p>
+      No haremos un gran museo nacional. Trabajaremos un <strong>museo pequeño</strong> en el que el
+      <strong>programa educativo-cultural pesa tanto como la exposición</strong>: junto a sus salas tendrá
+      talleres, un espacio para actividades o auditorio, biblioteca o mediateca y áreas para la comunidad,
+      en un <strong>sitio local</strong> (en Tijuana). Es un edificio a la medida de un semestre y, a la vez,
+      lo bastante rico para tocar todo lo que enseña este curso: muros, pisos, cubiertas, muro cortina,
+      escaleras y rampas, estructura, iluminación, cámaras y render.
+    </p>
+
+    <div class="caja caja--concepto">
+      <p class="caja__titulo">Este curso son los cimientos</p>
+      <p>
+        Aquí construyes la <strong>base</strong>: el proyecto, su representación y su modelo digital. Esa
+        base no muere en el examen final (es el punto de partida que seguirás desarrollando más adelante en
+        tu formación). Piensa todo lo que hagas este semestre como el cimiento de algo más grande.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Tu tarea para la próxima sesión</p>
+      <p>
+        Vuelve al museo que analizaste en el taller (S3) y pregúntate qué de él quisieras para el tuyo:
+        ¿la luz, el recorrido, la escala, los materiales? Trae esas ideas anotadas. Con ellas arrancamos
+        la <strong>Sesión 5</strong>, donde definimos nuestro proyecto: programa a la medida, sitio y
+        primeras decisiones.
+      </p>
+    </div>
+
+    <div class="caja caja--practica">
+      <p class="caja__titulo">Comprobación de logro</p>
+      <p>
+        <strong>En equipo</strong>, redacten en dos frases la <strong>misión</strong> del museo que van a
+        proyectar. Una sola misión por equipo: acordarla ya es parte del trabajo, porque obliga a decidir
+        qué hace ese museo y para quién antes de discutir un solo metro cuadrado.
+      </p>
+      <p>
+        Después, <strong>cada integrante por separado</strong> deriva de esa misión
+        <strong>tres espacios y dos relaciones</strong> entre ellos, y comparan. Si de la misión no se
+        desprende ningún espacio, todavía es un adorno y no un encargo: reescríbanla. Y si de la misma
+        misión salen tres listas muy distintas, es que está demasiado vaga.
+      </p>
+    </div>
+
+    <div class="caja caja--recordatorio">
+      <p class="caja__titulo">Tarea para la Sesión 5 (empiécenla hoy, no el día del taller)</p>
+      <p>
+        La S5 es la sesión más densa del parcial: se cierra el encargo, el programa, el aforo, el sitio y
+        el partido. Para que rinda, lleguen con esto hecho:
+      </p>
+      <ol>
+        <li>La <strong>misión</strong> acordada en equipo y las listas individuales de espacios.</li>
+        <li>Una primera idea de la <strong>colección</strong>: qué conserva o exhibe su museo, y si hay
+          material sensible a la luz. De eso dependen los lux que acaban de estudiar.</li>
+        <li><strong>Empiecen la búsqueda normativa.</strong> En la S5 necesitarán los umbrales de aforo,
+          salidas y accesibilidad del <em>Reglamento de la Ley de Edificaciones para el Municipio de
+          Tijuana</em> (Título III, Secciones IV y V). Búsquenlos en el texto vigente y traigan lo que
+          encuentren, aunque esté incompleto.
+        </li>
+      </ol>
+      <p>
+        Sobre lo tercero, con franqueza: <strong>no se resuelve en cinco minutos</strong>. El reglamento es
+        largo, los requisitos están repartidos entre secciones y circulan compilaciones que no coinciden con
+        el texto oficial. Por eso se empieza hoy y no el día del taller. En clase resolvemos las dudas, no
+        la búsqueda entera.
+      </p>
+    </div>
+
+    <h2>Referencias</h2>
+    <ul class="referencias">
+      <li>Canadian Conservation Institute. <em>Agent of deterioration: light, ultraviolet and infrared</em>. Gobierno de Canadá. Recuperado de canada.ca. [Niveles de iluminancia y daño acumulado.]</li>
+      <li>ICOM. (2022). <em>Definición de museo</em>. Aprobada en la 26.ª Asamblea General Extraordinaria, Praga, 24 de agosto de 2022. Consejo Internacional de Museos. Recuperado de icom.museum.</li>
+      <li>Montaner, J. M. (2003). <em>Museos para el siglo XXI</em>. Editorial Gustavo Gili.</li>
+      <li>Plazola Cisneros, A., Plazola Anguiano, A. y Plazola Anguiano, G. (1999). Museo y galería. En <em>Enciclopedia de arquitectura Plazola</em> (Vol. 8, M–O). Plazola Editores.</li>
+    </ul>
+
+    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 5, taller: el brief del museo (programa, sitio y partido).</p>
+
+    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
+      <a class="nav-sesiones__ant" href="sesion-3.html">
+        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
+        <span class="nav-sesiones__titulo">S3 · Taller: leer un museo</span>
+      </a>
+      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
+      <a class="nav-sesiones__sig" href="sesion-5.html">
+        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
+        <span class="nav-sesiones__titulo">S5 · Taller: el brief, programa y sitio</span>
+      </a>
+    </nav>
+
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de la definición del ICOM (2022), Plazola (1999), Montaner (2003)
+      y el Instituto Canadiense de Conservación.
+      Con fines educativos.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/curso.js"></script>
+<script src="../assets/js/menu.js"></script>
+</body>
+</html>

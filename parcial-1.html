@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcial 1 · Dibujo Asistido por Computadora II</title>
+<meta name="description" content="Sesiones del Parcial 1 del curso Dibujo Asistido por Computadora II.">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<main>
+<section class="seccion">
+  <div class="contenedor parcial-cab">
+    <a class="volver" href="index.html">&larr; Índice del curso</a>
+    <h1>Parcial 1</h1>
+    <p class="parcial-desc" data-parcial-desc>Del encuadre al primer contacto con Revit, alternando teoría y taller: la idea del curso (de dibujar a modelar información), el museo y su brief, la representación a mano y, al cierre, el entorno y la interfaz de Revit. Termina con el examen (S10).</p>
+    <p class="seccion__titulo parcial-sesiones-tit">Sesiones</p>
+    <!-- La lista siguiente es estática a propósito: el sitio debe poder leerse sin
+         JavaScript. curso.js/menu.js la reescriben con el mismo contenido cuando el
+         script está disponible. Si añades o renombras una sesión, actualiza AMBOS:
+         este bloque y el arreglo "subtemas" del Parcial 1 en assets/js/curso.js. -->
+    <ul class="subtemas" data-parcial="1">
+      <li><a href="temas/sesion-1.html"><span class="clave">S1</span><span>Presentación del curso</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-2.html"><span class="clave">S2</span><span>Del dibujo a la información</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-3.html"><span class="clave">S3</span><span>Taller: leer un museo</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-4.html"><span class="clave">S4</span><span>El proyecto: un museo</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-5.html"><span class="clave">S5</span><span>Taller: el brief, programa y sitio</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-6.html"><span class="clave">S6</span><span>La representación: planta, sección y alzado</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-7.html"><span class="clave">S7</span><span>Taller: el anteproyecto a mano</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-8.html"><span class="clave">S8</span><span>Revit: el entorno y la interfaz</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-9.html"><span class="clave">S9</span><span>Taller: primer contacto con Revit</span><span class="flecha">&rarr;</span></a></li>
+      <li><a href="temas/sesion-10.html"><span class="clave">S10</span><span>Presentación y examen del primer parcial</span><span class="flecha">&rarr;</span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Hamad (2025), Cardoso Llach &amp; Capdevila Werning (2009)
+      y la Ayuda de Autodesk Revit 2025.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/curso.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>

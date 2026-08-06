@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dibujo Asistido por Computadora II · Licenciatura en Arquitectura</title>
+<meta name="description" content="Materiales del curso Dibujo Asistido por Computadora II (ARQ401): apuntes y recursos sobre el entorno CAD y el modelado BIM con Autodesk Revit para la Licenciatura en Arquitectura.">
+<link rel="stylesheet" href="assets/css/estilos.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('dacii-tema');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      if (t === 'oscuro') document.documentElement.setAttribute('data-tema', 'oscuro');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="contenedor nav__inner">
+    <a class="nav__marca" href="index.html">
+      <span class="nav__logo">DC2</span>
+      <span>Dibujo Asistido por Computadora II<small>Licenciatura en Arquitectura</small></span>
+    </a>
+    <div class="menu" data-menu>
+      <noscript><a class="menu__respaldo" href="index.html">Contenido del curso</a></noscript>
+    </div>
+      <button class="tema-btn" id="tema-btn" type="button"
+              aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <svg class="luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+      </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="contenedor">
+    <span class="hero__etiqueta">Curso · CAD y BIM con Revit</span>
+    <h1>Dibujo Asistido por Computadora&nbsp;II</h1>
+    <p class="hero__sub">
+      Apuntes y materiales del curso. Del dibujo asistido al modelado de información
+      (BIM) con Autodesk Revit: qué es el entorno CAD, cómo se opera la interfaz y
+      cómo se dibuja, selecciona y modifica para construir el modelo de un proyecto.
+    </p>
+    <div class="hero__datos">
+      <span class="dato"><strong>ARQ401</strong> · 5.º semestre</span>
+      <span class="dato">Basado en <strong>Autodesk Revit 2025</strong></span>
+      <span class="dato">Fuentes: <strong>Hamad</strong>, <strong>Cardoso Llach</strong>, <strong>Autodesk</strong></span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="seccion" id="bloques">
+  <div class="contenedor">
+    <p class="seccion__titulo">Contenido</p>
+    <p class="seccion__desc">
+      El curso se organiza en bloques temáticos. Cada apunte se trabaja por su cuenta y
+      sigue la misma estructura.
+    </p>
+
+    <!-- Tarjetas estáticas a propósito: el índice debe leerse sin JavaScript.
+         menu.js las reescribe con el mismo contenido a partir de curso.js.
+         Si cambias un parcial, actualiza AMBOS: este bloque y assets/js/curso.js. -->
+    <div class="bloques" data-bloques>
+      <a class="bloque bloque--1" href="parcial-1.html">
+        <div class="bloque__cab">
+          <div class="bloque__num">1</div>
+          <div><h3>Parcial 1</h3><p>10 sesiones</p></div>
+        </div>
+        <p>Del encuadre al primer contacto con Revit, alternando teoría y taller: la idea del curso (de dibujar a modelar información), el museo y su brief, la representación a mano y, al cierre, el entorno y la interfaz de Revit. Termina con el examen (S10).</p>
+        <div class="bloque__pie"><span class="chip chip--ok">Contenido disponible</span><span class="flecha">&rarr;</span></div>
+      </a>
+      <a class="bloque bloque--2" href="parcial-2.html">
+        <div class="bloque__cab">
+          <div class="bloque__num">2</div>
+          <div><h3>Parcial 2</h3><p>Por publicar</p></div>
+        </div>
+        <p>Modelar el museo en Revit: del anteproyecto en papel al modelo BIM. Contenido en preparación.</p>
+        <div class="bloque__pie"><span class="chip chip--wip">En preparación</span><span class="flecha">&rarr;</span></div>
+      </a>
+      <a class="bloque bloque--1" href="parcial-3.html">
+        <div class="bloque__cab">
+          <div class="bloque__num">3</div>
+          <div><h3>Parcial 3</h3><p>Por publicar</p></div>
+        </div>
+        <p>Contenido en preparación.</p>
+        <div class="bloque__pie"><span class="chip chip--wip">En preparación</span><span class="flecha">&rarr;</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion--alt">
+  <div class="contenedor">
+    <p class="seccion__titulo">Cómo estudiar</p>
+    <p class="seccion__desc">
+      Cada apunte sigue la misma estructura, pensada para que puedas trabajarlo por tu cuenta.
+    </p>
+
+    <div class="bloques">
+      <article class="bloque">
+        <div class="bloque__cab">
+          <div class="bloque__num" style="background:var(--morado-claro);color:var(--morado)">1</div>
+          <div><h3>Empieza por los objetivos</h3><p>Qué debes poder hacer al terminar</p></div>
+        </div>
+        <p>Cada apunte abre con objetivos de aprendizaje explícitos. Léelos primero: te dicen qué se espera de ti y a qué prestar atención.</p>
+      </article>
+
+      <article class="bloque">
+        <div class="bloque__cab">
+          <div class="bloque__num" style="background:var(--verde-claro);color:var(--verde)">2</div>
+          <div><h3>Atiende a las cajas</h3><p>Definiciones, conceptos clave y alertas</p></div>
+        </div>
+        <p>Las cajas de color destacan lo esencial: definiciones formales, ideas clave, advertencias frecuentes y preguntas para pensar. Úsalas para orientarte dentro del texto y para repasar después, no como un atajo que lo sustituya: lo que explican solo cobra sentido con el desarrollo que las rodea.</p>
+      </article>
+
+      <article class="bloque">
+        <div class="bloque__cab">
+          <div class="bloque__num" style="background:var(--naranja-claro);color:var(--naranja)">3</div>
+          <div><h3>Cierra con la autoevaluación</h3><p>Comprueba antes de avanzar</p></div>
+        </div>
+        <p>Al final de cada apunte hay un resumen y una lista de preguntas. Si alguna te genera duda, vuelve a la sección correspondiente antes de continuar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="referencias">
+  <div class="contenedor">
+    <p class="seccion__titulo">Referencias</p>
+    <p class="seccion__desc">
+      Obras en las que se apoya el curso. Cada apunte cita, además, las fuentes concretas
+      de su tema y acredita el origen de sus imágenes.
+    </p>
+
+    <h3>Representación arquitectónica</h3>
+    <ul>
+      <li>Ching, F. D. K. (2015). <em>Architectural graphics</em> (6.ª ed.). Wiley.</li>
+      <li>Yee, R. (2012). <em>Architectural drawing: A visual compendium of types and methods</em> (4.ª ed.). Wiley.</li>
+      <li>Neufert, E. (2014). <em>Arte de proyectar en arquitectura</em> (16.ª ed. renovada). Gustavo Gili.</li>
+    </ul>
+
+    <h3>El museo como tipo arquitectónico</h3>
+    <ul>
+      <li>Montaner, J. M. (2003). <em>Museos para el siglo XXI</em>. Gustavo Gili.</li>
+      <li>Plazola Cisneros, A., Plazola Anguiano, A. y Plazola Anguiano, G. (1999). Museo y galería. En <em>Enciclopedia de arquitectura Plazola</em> (Vol. 8, M–O). Plazola Editores.</li>
+      <li>ICOM. (2022). <em>Definición de museo</em>. Aprobada en la 26.ª Asamblea General, Praga, 24 de agosto de 2022. Consejo Internacional de Museos.</li>
+    </ul>
+
+    <h3>CAD, BIM y Autodesk Revit</h3>
+    <ul>
+      <li>Cardoso Llach, D. y Capdevila Werning, R. (2009). Arquitectura, diseño y computación. <em>DEARQ, Revista de Arquitectura</em>, (4), pp. 136–140. Universidad de los Andes.</li>
+      <li>Hamad, M. (2025). <em>Autodesk Revit 2025 Architecture</em>. Mercury Learning and Information (sello de De Gruyter).</li>
+      <li>Autodesk. (2025). <em>Ayuda de Revit 2025</em>. Recuperado de help.autodesk.com/view/RVT/2025.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="seccion seccion--alt" id="instructor">
+  <div class="contenedor">
+    <p class="seccion__titulo">Instructor</p>
+    <p class="seccion__desc">Quién imparte el curso.</p>
+
+    <div class="instructor">
+      <img class="instructor__foto" src="assets/img/instructor.jpg"
+           alt="Retrato del Dr. Miguel Terán, instructor del curso">
+      <div>
+        <p class="instructor__rol">Instructor</p>
+        <h3 class="instructor__nombre">Dr. Miguel Terán</h3>
+        <p class="instructor__nota">
+          Responsable del curso Dibujo Asistido por Computadora II de la Licenciatura en Arquitectura.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__inner">
+    <div>
+      <strong>Dibujo Asistido por Computadora II</strong>
+      Licenciatura en Arquitectura
+    </div>
+    <div class="pie__nota">
+      Material elaborado a partir de Hamad (2025), Cardoso Llach &amp; Capdevila Werning (2009)
+      y la Ayuda de Autodesk Revit 2025. Las imágenes se reproducen con fines
+      educativos, acreditadas en cada apunte.
+      <br>&copy; <span data-anio>2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/curso.js"></script>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>
