@@ -38,12 +38,34 @@
 <main>
 <section class="seccion">
   <div class="contenedor parcial-cab">
-    <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+    <div class="cab-acciones">
+      <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
+      <button class="imprimir-btn" type="button" data-imprimir hidden
+              title="Imprimir esta sesión o guardarla en PDF"
+              aria-label="Imprimir esta sesión o guardarla en PDF">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 9V3.6h10V9"/>
+          <path d="M7 18H5.2A2.2 2.2 0 0 1 3 15.8v-4.6A2.2 2.2 0 0 1 5.2 9h13.6A2.2 2.2 0 0 1 21 11.2v4.6a2.2 2.2 0 0 1-2.2 2.2H17"/>
+          <rect x="7" y="14.4" width="10" height="6" rx="1"/>
+          <circle cx="17.6" cy="11.9" r=".9"/>
+        </svg>
+        <span>Imprimir</span>
+      </button>
+    </div>
     <h1>Sesión 2 · Del dibujo a la información</h1>
     <p class="parcial-desc">Arranca el contenido formal: la idea grande del curso, del dibujo a mano al CAD, y de CAD a BIM. Sin abrir el software todavía.</p>
   </div>
 
   <div class="contenedor sesion-cuerpo">
+
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-00-portada.png"
+           alt="Portada de la presentación de la Sesión 2: Del dibujo a la información. Del dibujo manual al CAD y del CAD al modelado BIM">
+      <figcaption>
+        Presentación de la sesión. <strong>Toca cualquier lámina para ampliarla</strong>; dentro del visor
+        puedes acercar más y cerrar con Esc.
+      </figcaption>
+    </figure>
 
     <div class="caja caja--concepto">
       <p class="caja__titulo">Objetivos de esta sesión</p>
@@ -54,6 +76,15 @@
         <li><strong>Elegir y justificar</strong> un museo documentable para analizarlo en la próxima sesión.</li>
       </ul>
     </div>
+
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-01-objetivos.png"
+           alt="Lámina de objetivos de la sesión: distinguir CAD y BIM, explicar objetos BIM y elegir un precedente; a la derecha, comparación entre un trazo 2D sin información y un muro BIM con altura, espesor, material y una puerta alojada">
+      <figcaption>
+        <b>Lámina 1.</b> Los tres objetivos de hoy y, a la derecha, la diferencia que los resume: el mismo
+        muro como <em>trazo</em> y como <em>elemento con información</em>.
+      </figcaption>
+    </figure>
 
     <div class="caja caja--reflexion">
       <p class="caja__titulo">La pregunta con la que arrancamos</p>
@@ -98,6 +129,15 @@
       manipulaba versiones digitales de la regla, la escuadra, el compás y la pluma.
     </p>
 
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-02-del-dibujo-manual-al-cad.png"
+           alt="Secuencia de tres etapas: dibujo manual con regla, escuadra y compás; Sketchpad de Ivan Sutherland en el MIT en 1963, con lápiz óptico sobre pantalla; y CAD actual con planta y vista tridimensional en pantalla">
+      <figcaption>
+        <b>Lámina 2.</b> Las tres etapas del recorrido: del tablero físico al Sketchpad de Sutherland
+        (MIT, 1963) y de ahí al CAD, donde regla, escuadra y compás se vuelven herramientas digitales.
+      </figcaption>
+    </figure>
+
     <div class="caja caja--concepto">
       <p class="caja__titulo">La idea de fondo del curso</p>
       <p>
@@ -125,6 +165,15 @@
       La distinción entre CAD y BIM es la base conceptual de todo el curso. Aunque a primera vista ambos
       producen dibujos en pantalla, su forma de entender el proyecto es muy distinta (Hamad, 2025).
     </p>
+
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-03-cad-frente-a-bim.png"
+           alt="Comparación entre CAD y BIM: a la izquierda, una planta hecha de líneas, arcos y textos independientes; a la derecha, un modelo del que se derivan planta, sección, alzado, vista 3D y tabla de cantidades. Al pie, la advertencia de que en CAD también se puede modelar en tres dimensiones">
+      <figcaption>
+        <b>Lámina 3.</b> La comparación completa, con la advertencia que conviene no olvidar: la diferencia
+        no es 2D contra 3D, sino cómo se estructura y se coordina la información.
+      </figcaption>
+    </figure>
 
     <div class="caja caja--definicion">
       <p class="caja__titulo">CAD: dibujo asistido por computadora</p>
@@ -179,6 +228,15 @@
       <strong>interrelacionadas</strong>: mover un muro en la planta afecta de inmediato a todas las demás
       vistas, e incluso las tablas de cantidades se actualizan solas.
     </p>
+
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-04-elemento-bim.png"
+           alt="Anatomía de un elemento BIM: un muro con su geometría (longitud, altura, espesor, posición), su información (tipo, material, función), sus parámetros modificables, sus relaciones con niveles, muros contiguos, pisos y techos, y los elementos que aloja como una puerta y una ventana">
+      <figcaption>
+        <b>Lámina 4.</b> Lo que hay dentro de un elemento BIM: geometría, información, parámetros,
+        relaciones y anfitriones. Fíjate en la puerta y la ventana: existen <em>alojadas</em> en el muro.
+      </figcaption>
+    </figure>
 
     <div class="caja caja--concepto">
       <p class="caja__titulo">La idea esencial: de dibujar a modelar información</p>
@@ -241,6 +299,15 @@
       </figcaption>
     </figure>
 
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-05-modelo-vistas-datos.png"
+           alt="El mismo modelo produce planta, sección, alzado, vista 3D y tabla de cantidades. Abajo, la comparación de mover un muro un metro: en CAD hay que corregir cada dibujo por separado; en BIM se modifica el muro y se verifica la actualización de las vistas relacionadas">
+      <figcaption>
+        <b>Lámina 5.</b> El mismo esquema llevado a un caso concreto: mover un muro un metro. A la derecha,
+        el matiz que evita la ilusión de automatismo: BIM coordina, pero no exime de revisar.
+      </figcaption>
+    </figure>
+
     <div class="tabla-envoltura">
       <table>
         <caption class="tabla-titulo">CAD frente a BIM: diferencias esenciales (Hamad, 2025)</caption>
@@ -288,6 +355,24 @@
         Un museo pequeño y bien documentado sirve mucho más que uno famoso del que solo tienes postales.
       </p>
     </div>
+
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-06-museo-documentable.png"
+           alt="Lista de verificación de la documentación mínima de un precedente: planta legible, nombre, ciudad, autor, año, fotografías exteriores e interiores, evidencia de sección o entrada de luz y fuente de cada documento. A la derecha, qué entregar y el criterio de elección: mejor un museo pequeño bien documentado que uno famoso del que solo hay fotos icónicas">
+      <figcaption>
+        <b>Lámina 6.</b> La lista completa para revisar antes de decidirte, y el criterio en una línea:
+        sin planta legible no hay base para el análisis.
+      </figcaption>
+    </figure>
+
+    <figure class="fig-media">
+      <img src="../expo/expo_s2/s2-07-resumen.png"
+           alt="Tabla resumen de la sesión con sus conceptos e ideas clave: dibujo manual, CAD, BIM, elemento paramétrico, anfitrión, coordinación y museo documentable">
+      <figcaption>
+        <b>Lámina 7.</b> Síntesis de la sesión. Si puedes explicar las siete filas con tus palabras, la
+        sesión está entendida.
+      </figcaption>
+    </figure>
 
     <div class="caja caja--practica">
       <p class="caja__titulo">Comprobación de logro</p>
@@ -342,5 +427,6 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/curso.js"></script>
 <script src="../assets/js/menu.js"></script>
+<script src="../assets/js/lupa.js"></script>
 </body>
 </html>

@@ -99,10 +99,20 @@
     for (var i = 0; i < n.length; i++) n[i].textContent = new Date().getFullYear();
   }
 
+  /* --- Botón de imprimir / guardar en PDF --- */
+  function imprimir() {
+    var botones = document.querySelectorAll('[data-imprimir]');
+    for (var i = 0; i < botones.length; i++) {
+      botones[i].hidden = false;
+      botones[i].addEventListener('click', function () { window.print(); });
+    }
+  }
+
   function iniciar() {
     tema();
     activarTOC();
     anioPie();
+    imprimir();
   }
 
   if (document.readyState === 'loading') {

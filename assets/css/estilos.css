@@ -986,3 +986,74 @@ a.bloque:hover { text-decoration: none; }
   border-radius: 0 var(--radio-sm, 6px) var(--radio-sm, 6px) 0;
   font-size: 15.2px;
 }
+
+/* ===================================================================
+   Cabecera de sesión: volver + imprimir
+   =================================================================== */
+.cab-acciones {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap; margin-bottom: 14px;
+}
+.cab-acciones .volver { margin-bottom: 0; }
+
+.imprimir-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: inherit; font-size: 13.5px; font-weight: 600;
+  color: var(--texto-suave); background: var(--fondo-alt);
+  border: 1px solid var(--borde); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+  transition: border-color .16s ease, color .16s ease, background-color .16s ease;
+}
+.imprimir-btn:hover {
+  color: var(--azul-oscuro);
+  border-color: color-mix(in srgb, var(--azul-medio) 42%, var(--fondo));
+  background: var(--azul-claro);
+}
+.imprimir-btn:focus-visible { outline: 2px solid var(--azul-medio); outline-offset: 2px; }
+/* Nace oculto y solo lo muestra el JS: sin scripts, imprimir se hace con Ctrl+P */
+.imprimir-btn[hidden] { display: none; }
+.imprimir-btn svg {
+  width: 15px; height: 15px; flex-shrink: 0;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+@media (max-width: 520px) { .imprimir-btn span { display: none; } .imprimir-btn { padding: 7px 9px; } }
+
+/* ===================================================================
+   Impresión de una sesión
+   Se fuerza la paleta clara (aunque el usuario tenga el tema oscuro),
+   se ocultan los elementos de navegación y se evita partir cajas.
+   =================================================================== */
+@media print {
+  :root, [data-tema="oscuro"] {
+    --texto: #111; --texto-suave: #444; --borde: #bbb;
+    --fondo: #fff; --fondo-alt: #fff; --tarjeta: #fff;
+    --azul-oscuro: #14456b; --azul-medio: #1d5f94; --azul-claro: #eef4fa;
+    --verde: #14503a; --verde-claro: #eef6f1;
+    --gris-azul: #3c4a58; --gris-azul-claro: #f0f3f6;
+    --gris-calido: #4a4a52; --gris-calido-claro: #f4f4f6;
+    --morado: #4a1264; --morado-claro: #f4eef8;
+    --naranja: #8a4d00; --naranja-claro: #fbf3e7;
+    --rojo: #8c1717; --rojo-claro: #fbeef0;
+    --sombra: none; --sombra-hover: none; --brillo-fig: none;
+  }
+
+  .nav, .pie, .nav-sesiones, .cab-acciones, .menu, .tema-btn { display: none !important; }
+
+  body { background: #fff; font-size: 10.5pt; line-height: 1.5; }
+  .seccion { padding: 0 !important; }
+  .contenedor { max-width: none; padding: 0; }
+
+  /* Nada de elementos partidos entre páginas */
+  .caja, figure, table, .tabla-envoltura, .micrologro { break-inside: avoid; page-break-inside: avoid; }
+  h1, h2, h3 { break-after: avoid; page-break-after: avoid; }
+  h2 { margin-top: 1.4em; }
+  img, svg { max-height: 42vh; }
+
+  .caja, .tabla-envoltura, .micrologro { box-shadow: none; }
+  a { color: inherit; text-decoration: none; }
+
+  /* El título de la sesión encabeza la primera hoja */
+  .parcial-cab h1 { font-size: 20pt; margin-bottom: .3em; }
+  .parcial-desc { font-size: 10.5pt; }
+}
