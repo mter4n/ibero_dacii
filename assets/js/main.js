@@ -108,11 +108,65 @@
     }
   }
 
+  /* --- Acordeón de zonas: abrir/cerrar todas --- */
+  function zonas() {
+    var grupos = document.querySelectorAll('[data-zonas]');
+    for (var i = 0; i < grupos.length; i++) {
+      (function (grupo) {
+        var btn = grupo.querySelector('[data-zonas-todo]');
+        var detalles = grupo.querySelectorAll('details');
+        if (!btn || !detalles.length) return;
+        btn.hidden = false;
+
+        function refrescar() {
+          var abiertas = 0;
+          for (var k = 0; k < detalles.length; k++) if (detalles[k].open) abiertas++;
+          btn.textContent = abiertas === detalles.length ? 'Cerrar todas' : 'Abrir todas';
+        }
+        btn.addEventListener('click', function () {
+          var abrir = btn.textContent === 'Abrir todas';
+          for (var k = 0; k < detalles.length; k++) detalles[k].open = abrir;
+          refrescar();
+        });
+        for (var j = 0; j < detalles.length; j++) {
+          detalles[j].addEventListener('toggle', refrescar);
+        }
+        refrescar();
+      })(grupos[i]);
+    }
+  }
+
+  /* --- Al imprimir, desplegar todo lo plegable y restaurarlo después --- */
+  function imprimirDesplegado() {
+    var previos = null;
+    function antes() {
+      var d = document.querySelectorAll('details');
+      previos = [];
+      for (var i = 0; i < d.length; i++) { previos.push(d[i].open); d[i].open = true; }
+    }
+    function despues() {
+      if (!previos) return;
+      var d = document.querySelectorAll('details');
+      for (var i = 0; i < d.length; i++) d[i].open = previos[i];
+      previos = null;
+    }
+    window.addEventListener('beforeprint', antes);
+    window.addEventListener('afterprint', despues);
+    if (window.matchMedia) {
+      var mq = window.matchMedia('print');
+      var alCambiar = function (e) { e.matches ? antes() : despues(); };
+      if (mq.addEventListener) mq.addEventListener('change', alCambiar);
+      else if (mq.addListener) mq.addListener(alCambiar);
+    }
+  }
+
   function iniciar() {
     tema();
     activarTOC();
     anioPie();
     imprimir();
+    zonas();
+    imprimirDesplegado();
   }
 
   if (document.readyState === 'loading') {

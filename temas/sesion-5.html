@@ -171,51 +171,115 @@
       tamaño aproximado. Es tu primer "contrato" con el proyecto: todo lo demás se mide contra él.
     </p>
 
-    <div class="tabla-envoltura">
-      <table>
-        <caption class="tabla-titulo">Cuadro de áreas orientativo: museo pequeño con programa educativo-cultural</caption>
-        <thead>
-          <tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr>
-        </thead>
-        <tbody>
-          <tr><td colspan="3"><strong>Acceso y atención al público</strong></td></tr>
-          <tr><td>Vestíbulo y recepción</td><td>1</td><td>60 m²</td></tr>
-          <tr><td>Taquilla e información</td><td>1</td><td>10 m²</td></tr>
-          <tr><td>Guardarropa</td><td>1</td><td>12 m²</td></tr>
-          <tr><td>Tienda / librería</td><td>1</td><td>25 m²</td></tr>
-          <tr><td>Cafetería (con cocina)</td><td>1</td><td>60 m²</td></tr>
-          <tr><td>Sanitarios públicos</td><td>2</td><td>20 m² c/u</td></tr>
+    <div class="zonas" data-zonas>
+      <p class="zonas__titulo">
+        Cuadro de áreas orientativo: museo pequeño con programa educativo-cultural
+        <button class="zonas__todo" type="button" data-zonas-todo hidden>Abrir todas</button>
+      </p>
 
-          <tr><td colspan="3"><strong>Exposición</strong></td></tr>
-          <tr><td>Sala de exposición permanente</td><td>2</td><td>120 m² c/u</td></tr>
-          <tr><td>Sala de exposición temporal</td><td>1</td><td>100 m²</td></tr>
-          <tr><td>Áreas de descanso</td><td>—</td><td>30 m²</td></tr>
+      <details class="zona">
+        <summary>
+          <span class="zona__nombre">Acceso y atención al público</span>
+          <span class="zona__datos"><span class="zona__n">6 espacios</span><span class="zona__m2">207 m²</span></span>
+        </summary>
+        <table>
+          <thead><tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr></thead>
+          <tbody>
+            <tr><td>Vestíbulo y recepción</td><td>1</td><td>60 m²</td></tr>
+            <tr><td>Taquilla e información</td><td>1</td><td>10 m²</td></tr>
+            <tr><td>Guardarropa</td><td>1</td><td>12 m²</td></tr>
+            <tr><td>Tienda / librería</td><td>1</td><td>25 m²</td></tr>
+            <tr><td>Cafetería (con cocina)</td><td>1</td><td>60 m²</td></tr>
+            <tr><td>Sanitarios públicos</td><td>2</td><td>20 m² c/u</td></tr>
+          </tbody>
+        </table>
+      </details>
 
-          <tr><td colspan="3"><strong>Programa educativo-cultural</strong></td></tr>
-          <tr><td>Aula / taller didáctico</td><td>2</td><td>50 m² c/u</td></tr>
-          <tr><td>Sala de usos múltiples / auditorio (≈80 pers.)</td><td>1</td><td>140 m²</td></tr>
-          <tr><td>Biblioteca / mediateca</td><td>1</td><td>80 m²</td></tr>
+      <details class="zona">
+        <summary>
+          <span class="zona__nombre">Exposición</span>
+          <span class="zona__datos"><span class="zona__n">3 espacios</span><span class="zona__m2">370 m²</span></span>
+        </summary>
+        <table>
+          <thead><tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr></thead>
+          <tbody>
+            <tr><td>Sala de exposición permanente</td><td>2</td><td>120 m² c/u</td></tr>
+            <tr><td>Sala de exposición temporal</td><td>1</td><td>100 m²</td></tr>
+            <tr><td>Áreas de descanso</td><td>—</td><td>30 m²</td></tr>
+          </tbody>
+        </table>
+      </details>
 
-          <tr><td colspan="3"><strong>Acervo y conservación</strong></td></tr>
-          <tr><td>Bodega de obra</td><td>1</td><td>60 m²</td></tr>
-          <tr><td>Registro y restauración</td><td>1</td><td>40 m²</td></tr>
-          <tr><td>Recepción de obra y cuarentena</td><td>1</td><td>25 m²</td></tr>
-          <tr><td>Preparación y montaje de exposiciones</td><td>1</td><td>35 m²</td></tr>
-          <tr><td>Carga y descarga</td><td>1</td><td>30 m²</td></tr>
+      <details class="zona">
+        <summary>
+          <span class="zona__nombre">Programa educativo-cultural</span>
+          <span class="zona__datos"><span class="zona__n">3 espacios</span><span class="zona__m2">320 m²</span></span>
+        </summary>
+        <table>
+          <thead><tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr></thead>
+          <tbody>
+            <tr><td>Aula / taller didáctico</td><td>2</td><td>50 m² c/u</td></tr>
+            <tr><td>Sala de usos múltiples / auditorio (≈80 pers.)</td><td>1</td><td>140 m²</td></tr>
+            <tr><td>Biblioteca / mediateca</td><td>1</td><td>80 m²</td></tr>
+          </tbody>
+        </table>
+      </details>
 
-          <tr><td colspan="3"><strong>Administración</strong></td></tr>
-          <tr><td>Dirección y oficinas</td><td>1</td><td>60 m²</td></tr>
-          <tr><td>Sala de juntas</td><td>1</td><td>25 m²</td></tr>
+      <details class="zona">
+        <summary>
+          <span class="zona__nombre">Acervo y conservación</span>
+          <span class="zona__datos"><span class="zona__n">5 espacios</span><span class="zona__m2">190 m²</span></span>
+        </summary>
+        <table>
+          <thead><tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr></thead>
+          <tbody>
+            <tr><td>Bodega de obra</td><td>1</td><td>60 m²</td></tr>
+            <tr><td>Registro y restauración</td><td>1</td><td>40 m²</td></tr>
+            <tr><td>Recepción de obra y cuarentena</td><td>1</td><td>25 m²</td></tr>
+            <tr><td>Preparación y montaje de exposiciones</td><td>1</td><td>35 m²</td></tr>
+            <tr><td>Carga y descarga</td><td>1</td><td>30 m²</td></tr>
+          </tbody>
+        </table>
+      </details>
 
-          <tr><td colspan="3"><strong>Servicios generales</strong></td></tr>
-          <tr><td>Cuartos de máquinas, eléctrico, datos y climatización</td><td>—</td><td>60 m²</td></tr>
-          <tr><td>Seguridad y control</td><td>1</td><td>15 m²</td></tr>
-          <tr><td>Residuos y limpieza</td><td>—</td><td>15 m²</td></tr>
-          <tr><td>Sanitarios de servicio y casilleros</td><td>—</td><td>25 m²</td></tr>
+      <details class="zona">
+        <summary>
+          <span class="zona__nombre">Administración</span>
+          <span class="zona__datos"><span class="zona__n">2 espacios</span><span class="zona__m2">85 m²</span></span>
+        </summary>
+        <table>
+          <thead><tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr></thead>
+          <tbody>
+            <tr><td>Dirección y oficinas</td><td>1</td><td>60 m²</td></tr>
+            <tr><td>Sala de juntas</td><td>1</td><td>25 m²</td></tr>
+          </tbody>
+        </table>
+      </details>
 
-          <tr><td colspan="3"><strong>Subtotal útil ≈ 1&nbsp;290 m² · con circulaciones y muros (≈30 %) ≈ 1&nbsp;670 m²</strong></td></tr>
-        </tbody>
-      </table>
+      <details class="zona">
+        <summary>
+          <span class="zona__nombre">Servicios generales</span>
+          <span class="zona__datos"><span class="zona__n">4 espacios</span><span class="zona__m2">115 m²</span></span>
+        </summary>
+        <table>
+          <thead><tr><th scope="col">Espacio</th><th scope="col">Cant.</th><th scope="col">Sup. aprox.</th></tr></thead>
+          <tbody>
+            <tr><td>Cuartos de máquinas, eléctrico, datos y climatización</td><td>—</td><td>60 m²</td></tr>
+            <tr><td>Seguridad y control</td><td>1</td><td>15 m²</td></tr>
+            <tr><td>Residuos y limpieza</td><td>—</td><td>15 m²</td></tr>
+            <tr><td>Sanitarios de servicio y casilleros</td><td>—</td><td>25 m²</td></tr>
+          </tbody>
+        </table>
+      </details>
+
+      <p class="zonas__total">
+        <span>Subtotal útil</span>
+        <strong>≈ 1&nbsp;290 m²</strong>
+      </p>
+      <p class="zonas__total zonas__total--final">
+        <span>Con circulaciones y muros (≈30 %)</span>
+        <strong>≈ 1&nbsp;670 m²</strong>
+      </p>
     </div>
 
     <div class="caja caja--alerta">

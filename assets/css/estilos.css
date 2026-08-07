@@ -988,6 +988,85 @@ a.bloque:hover { text-decoration: none; }
 }
 
 /* ===================================================================
+   Cuadro de áreas por zonas (acordeón)
+   Cada zona es un <details> nativo: funciona sin JavaScript, es
+   navegable con teclado y el resumen muestra el subtotal aunque
+   esté cerrado, para poder leer el programa completo de un vistazo.
+   =================================================================== */
+.zonas { margin: 1.9em 0; }
+.zonas__titulo {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  font-size: 13.6px; font-weight: 600; color: var(--texto-suave);
+  margin: 0 0 10px;
+}
+.zonas__todo {
+  font: inherit; font-size: 12.6px; font-weight: 600;
+  color: var(--texto-suave); background: var(--fondo-alt);
+  border: 1px solid var(--borde); border-radius: 999px;
+  padding: 4px 12px; cursor: pointer; transition: .16s;
+}
+.zonas__todo:hover { color: var(--azul-oscuro); border-color: color-mix(in srgb, var(--azul-medio) 40%, var(--fondo)); background: var(--azul-claro); }
+.zonas__todo:focus-visible { outline: 2px solid var(--azul-medio); outline-offset: 2px; }
+
+.zona {
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-sm);
+  margin-bottom: 8px;
+  background: var(--tarjeta);
+  overflow: hidden;
+}
+.zona > summary {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; cursor: pointer; list-style: none;
+  font-weight: 600; color: var(--texto);
+  transition: background-color .16s ease;
+}
+.zona > summary::-webkit-details-marker { display: none; }
+.zona > summary:hover { background: var(--fondo-alt); }
+.zona > summary:focus-visible { outline: 2px solid var(--azul-medio); outline-offset: -2px; }
+/* Triángulo propio, para controlarlo en ambos temas */
+.zona > summary::before {
+  content: ""; flex-shrink: 0;
+  width: 0; height: 0;
+  border-left: 6px solid var(--azul-medio);
+  border-top: 4.5px solid transparent;
+  border-bottom: 4.5px solid transparent;
+  transition: transform .18s ease;
+}
+.zona[open] > summary::before { transform: rotate(90deg); }
+.zona[open] > summary { border-bottom: 1px solid var(--borde); background: var(--fondo-alt); }
+
+.zona__nombre { flex: 1 1 auto; min-width: 0; }
+.zona__datos { display: flex; align-items: baseline; gap: 12px; flex-shrink: 0; }
+.zona__n { font-size: 12.8px; font-weight: 500; color: var(--texto-suave); }
+.zona__m2 {
+  font-size: 13.4px; font-weight: 700; color: var(--azul-oscuro);
+  background: var(--azul-claro); border-radius: 999px; padding: 2px 11px;
+  white-space: nowrap;
+}
+.zona table { font-size: 14.6px; }
+.zona tbody tr:last-child td { border-bottom: none; }
+
+.zonas__total {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+  margin: 0; padding: 11px 16px;
+  border: 1px solid var(--borde); border-radius: var(--radio-sm);
+  background: var(--fondo-alt); color: var(--texto-suave); font-size: 14.6px;
+}
+.zonas__total + .zonas__total { margin-top: 6px; }
+.zonas__total strong { color: var(--texto); font-size: 15.4px; white-space: nowrap; }
+.zonas__total--final {
+  border-color: color-mix(in srgb, var(--azul-medio) 38%, var(--fondo));
+  background: var(--azul-claro);
+}
+.zonas__total--final strong { color: var(--azul-oscuro); }
+
+@media (max-width: 560px) {
+  .zona > summary { flex-wrap: wrap; }
+  .zona__n { display: none; }
+}
+
+/* ===================================================================
    Cabecera de sesión: volver + imprimir
    =================================================================== */
 .cab-acciones {
@@ -1038,7 +1117,10 @@ a.bloque:hover { text-decoration: none; }
     --sombra: none; --sombra-hover: none; --brillo-fig: none;
   }
 
-  .nav, .pie, .nav-sesiones, .cab-acciones, .menu, .tema-btn { display: none !important; }
+  .nav, .pie, .nav-sesiones, .cab-acciones, .menu, .tema-btn, .zonas__todo { display: none !important; }
+  /* Los <details> se abren por JS antes de imprimir; el triángulo sobra en papel */
+  .zona > summary::before { display: none; }
+  .zona, .zonas__total { break-inside: avoid; page-break-inside: avoid; }
 
   body { background: #fff; font-size: 10.5pt; line-height: 1.5; }
   .seccion { padding: 0 !important; }
