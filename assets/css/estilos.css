@@ -1099,6 +1099,44 @@ a.bloque:hover { text-decoration: none; }
 @media (max-width: 520px) { .imprimir-btn span { display: none; } .imprimir-btn { padding: 7px 9px; } }
 
 /* ===================================================================
+   Descarga de un material imprimible (fichas, plantillas, formatos)
+   Bloque ancho y evidente: se usa dentro del cuerpo de la sesión,
+   no en la barra de acciones.
+   =================================================================== */
+.descarga {
+  display: flex; align-items: center; gap: 16px;
+  margin: 26px 0; padding: 16px 18px;
+  background: var(--fondo-alt); border: 1px solid var(--borde);
+  border-left: 4px solid var(--azul-oscuro); border-radius: 10px;
+}
+.descarga__icono {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 9px;
+  display: grid; place-items: center;
+  background: var(--azul-claro); color: var(--azul-oscuro);
+}
+.descarga__icono svg {
+  width: 21px; height: 21px; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.descarga__cuerpo { flex: 1 1 auto; min-width: 0; }
+.descarga__titulo { margin: 0 0 3px; font-weight: 700; color: var(--texto); }
+.descarga__nota { margin: 0; font-size: 14.5px; color: var(--texto-suave); }
+.descarga .btn { flex-shrink: 0; }
+
+@media (max-width: 560px) {
+  .descarga { flex-wrap: wrap; gap: 12px; }
+  .descarga__cuerpo { flex-basis: calc(100% - 56px); }
+  .descarga .btn { width: 100%; justify-content: center; text-align: center; }
+}
+
+/* Al imprimir la sesión, el botón no sirve: queda la dirección visible. */
+@media print {
+  .descarga { border-left-color: #999; }
+  .descarga .btn { display: none; }
+  .descarga__nota::after { content: " · ibero-dacii.pages.dev"; }
+}
+
+/* ===================================================================
    Impresión de una sesión
    Se fuerza la paleta clara (aunque el usuario tenga el tema oscuro),
    se ocultan los elementos de navegación y se evita partir cajas.
