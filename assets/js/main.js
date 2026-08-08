@@ -160,13 +160,25 @@
     }
   }
 
-  function iniciar() {
-    tema();
+  /* --- Lo que depende del contenido de la página ---
+     En las sesiones cerradas con candado, al cargar la página el contenido
+     todavía no existe: solo está la pantalla del código. Por eso esta parte
+     se separa, y candado.js la vuelve a llamar cuando el alumno desbloquea.
+     Al correr en la página abierta no hace nada: no hay TOC, ni botón de
+     imprimir, ni acordeón que enganchar. */
+  function iniciarContenido() {
     activarTOC();
     anioPie();
     imprimir();
     zonas();
-    imprimirDesplegado();
+  }
+
+  window.CURSO_CONTENIDO = iniciarContenido;
+
+  function iniciar() {
+    tema();
+    iniciarContenido();
+    imprimirDesplegado();   /* escucha en window: se conecta una sola vez */
   }
 
   if (document.readyState === 'loading') {

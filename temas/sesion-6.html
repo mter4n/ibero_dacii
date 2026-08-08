@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sesión 6 · La representación: planta, sección y alzado | Dibujo Asistido por Computadora II</title>
-<meta name="description" content="Sesión 6 del Parcial 1: el lenguaje de la representación arquitectónica: la planta, la sección y el alzado, la escala y las convenciones.">
+<meta name="description" content="Sesión del curso Dibujo Asistido por Computadora II. Requiere el código de grupo.">
+<meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="../assets/css/estilos.css">
 <script>
   (function () {
@@ -35,359 +36,47 @@
   </div>
 </nav>
 
-<main>
+<main data-destino>
 <section class="seccion">
-  <div class="contenedor parcial-cab">
+  <div class="contenedor">
+
     <div class="cab-acciones">
       <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
-      <button class="imprimir-btn" type="button" data-imprimir hidden
-              title="Imprimir esta sesión o guardarla en PDF"
-              aria-label="Imprimir esta sesión o guardarla en PDF">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 9V3.6h10V9"/>
-          <path d="M7 18H5.2A2.2 2.2 0 0 1 3 15.8v-4.6A2.2 2.2 0 0 1 5.2 9h13.6A2.2 2.2 0 0 1 21 11.2v4.6a2.2 2.2 0 0 1-2.2 2.2H17"/>
-          <rect x="7" y="14.4" width="10" height="6" rx="1"/>
-          <circle cx="17.6" cy="11.9" r=".9"/>
-        </svg>
-        <span>Imprimir</span>
-      </button>
-    </div>
-    <h1>Sesión 6 · La representación: planta, sección y alzado</h1>
-    <p class="parcial-desc">El lenguaje con el que los arquitectos describen un edificio: las tres vistas convencionales, la escala y las reglas para que cualquiera pueda leerlas.</p>
-  </div>
-
-  <div class="contenedor sesion-cuerpo">
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Objetivos de esta sesión</p>
-      <p>Al terminar podrás:</p>
-      <ul>
-        <li><strong>Explicar</strong> qué operación de corte y proyección produce una planta, una sección y un alzado.</li>
-        <li><strong>Producir</strong> las tres vistas a escala, con jerarquía de línea y la información mínima.</li>
-        <li><strong>Comprobar</strong> que las tres describen el mismo edificio.</li>
-        <li><strong>Argumentar</strong> por qué en un museo la sección es la vista de la luz.</li>
-      </ul>
     </div>
 
-    <p>
-      Ya tienes un museo pensado (S3–S5). Antes de dibujarlo necesitas el <strong>lenguaje</strong>: un
-      sistema de vistas convencionales que cualquiera puede leer. Hoy lo vemos completo (planta, sección
-      y alzado) porque en el próximo taller (S7) dibujarás las tres para tu museo. Y hay una razón más de
-      fondo: <strong>BIM es "un modelo, muchas vistas"</strong>; entender qué es cada vista a mano es
-      entender exactamente lo que Revit generará por ti.
-    </p>
+    <section class="candado" data-candado>
 
-    <h2>1 · La planta</h2>
+      <div class="candado__marca" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8.2 10.5V7.6a3.8 3.8 0 0 1 7.6 0v2.9"/><circle cx="12" cy="15.5" r="1.35"/></svg>
+      </div>
 
-    <div class="caja caja--definicion">
-      <p class="caja__titulo">Planta arquitectónica</p>
-      <p>
-        Una planta representa una <strong>sección horizontal</strong> del edificio: se corta con un plano
-        horizontal, se retira la parte superior y se proyecta ortográficamente lo que queda, mirando hacia
-        abajo (Ching, 2015). No es "el edificio visto desde arriba": es el edificio <em>cortado</em>.
+      <p class="candado__etiqueta">Sesión 6</p>
+      <h1 class="candado__titulo">La representación: planta, sección y alzado</h1>
+
+      <p class="candado__texto">
+        Esta sesión está reservado para los grupos del curso.
+        Escribe el código que te dio tu profesor para abrirlo.
       </p>
-    </div>
 
-    <p>
-      Como <strong>referencia convencional</strong>, el plano de corte suele situarse en torno a
-      <strong>1.20 m sobre el piso</strong>: a esa altura corta las puertas y ventanas típicas (por eso se
-      ven en la planta) y deja ver mesas, muebles y cubiertas (Ching, 2015). No es una regla fija: la altura
-      se ajusta cuando el edificio lo pide (para cortar por un ventanal alto, por un lucernario o por un
-      entrepiso), y lo que manda es <em>qué necesitas mostrar</em>. En Revit esa decisión tiene un nombre y
-      un control propio (el rango de la vista), así que te conviene entenderla ahora como criterio y no
-      como número memorizado.
-    </p>
+      <form class="candado__forma" data-forma novalidate>
+        <label class="candado__rotulo" for="codigo-grupo">Código de grupo</label>
+        <div class="candado__fila">
+          <input class="candado__campo" id="codigo-grupo" name="codigo" type="text"
+                 inputmode="text" autocomplete="off" autocapitalize="characters"
+                 autocorrect="off" spellcheck="false" enterkeyhint="go"
+                 aria-describedby="candado-aviso" required>
+          <button class="btn btn--primario candado__btn" type="submit" data-enviar>Abrir</button>
+        </div>
+      </form>
 
-    <p>
-      Todo lo que el plano <strong>corta</strong> se dibuja con la línea más gruesa; lo que se
-      <strong>ve por debajo</strong> del corte, con líneas más delgadas; y lo que está <strong>arriba u
-      oculto</strong> (un volado, un doble altura), punteado.
-    </p>
+      <p class="candado__aviso" id="candado-aviso" data-aviso role="status" aria-live="polite"></p>
 
-    <figure class="fig-media">
-      <svg viewBox="0 0 640 320" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
-           aria-label="Esquema del corte horizontal de la planta a 1.20 metros: corta muros, puertas y ventanas; se mira hacia abajo">
-        <defs>
-          <marker id="f4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
-          </marker>
-        </defs>
-        <g>
-          <rect x="90" y="70" width="18" height="180" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
-          <rect x="392" y="70" width="18" height="180" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
-          <rect x="80" y="250" width="340" height="14" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
-          <rect x="80" y="56" width="340" height="14" fill="var(--gris-azul-claro)" stroke="var(--texto)" stroke-width="2"/>
-          <rect x="392" y="120" width="18" height="60" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.6"/>
-          <rect x="90" y="150" width="18" height="100" fill="var(--fondo)" stroke="var(--texto)" stroke-width="1.4" stroke-dasharray="4 3"/>
-          <g stroke="var(--texto-suave)" stroke-width="2" fill="none">
-            <circle cx="250" cy="170" r="9"/>
-            <path d="M250 179v34M250 190l-14 12M250 190l14 12M250 213l-11 22M250 213l11 22"/>
-          </g>
-        </g>
-        <g>
-          <rect x="60" y="128" width="392" height="6" fill="var(--rojo)" opacity="0.75"/>
-          <text x="470" y="136" font-family="var(--sans)" font-size="13" fill="var(--rojo)">plano de corte</text>
-          <text x="470" y="153" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">≈ 1.20 m sobre el piso</text>
-          <path d="M78 134 L78 250" stroke="var(--texto-suave)" stroke-width="1.2" marker-start="url(#f4)" marker-end="url(#f4)"/>
-          <text x="30" y="196" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">1.20 m</text>
-        </g>
-        <g>
-          <path d="M540 90 L540 170" stroke="var(--azul-medio)" stroke-width="2.4" marker-end="url(#f4)"/>
-          <text x="540" y="78" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--azul-medio)">se mira</text>
-          <text x="540" y="196" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--azul-medio)">hacia abajo</text>
-        </g>
-        <text x="256" y="300" text-anchor="middle" font-family="var(--sans)" font-size="13" font-style="italic" fill="var(--texto-suave)">El corte pasa por puertas y ventanas: por eso aparecen en la planta.</text>
-      </svg>
-      <figcaption>
-        <b>Figura 1.</b> La planta es un corte horizontal a ≈1.20 m: la parte superior se retira y se
-        proyecta lo que queda, mirando hacia abajo. (Esquema propio a partir de Ching, 2015.)
-      </figcaption>
-    </figure>
-
-    <p>
-      Una buena planta trae: muros cortados con línea gruesa, puertas con su abatimiento, ventanas,
-      <strong>nombres de los espacios</strong>, cotas generales, <strong>norte</strong>,
-      <strong>escala</strong> y la <strong>línea de corte de la sección</strong> (marca por dónde cortarás).
-    </p>
-
-    <h2>2 · La escala</h2>
-    <p>
-      Un dibujo arquitectónico se hace <strong>a escala</strong>: cada unidad del papel representa una
-      dimensión real. La regla práctica es que <strong>la escala determina el detalle</strong>: cuanto más
-      grande la escala, más información puede (y debe) contener el dibujo (Ching, 2015). Para el museo
-      usaremos <strong>1:100</strong> en plantas y cortes generales, y 1:250/1:500 para el conjunto en su
-      sitio.
-    </p>
-
-    <h2>3 · La sección</h2>
-
-    <div class="caja caja--definicion">
-      <p class="caja__titulo">Sección arquitectónica</p>
-      <p>
-        Una sección representa un <strong>corte vertical</strong> del edificio: un plano vertical lo
-        atraviesa, se retira una de las partes y se proyecta ortográficamente lo que queda (Ching, 2015).
-        Es la planta puesta de pie: misma lógica de corte, otra dirección.
+      <p class="candado__pie">
+        ¿No tienes el código? Pídeselo a tu profesor.
+        <a href="../parcial-1.html">Volver a Parcial 1</a>
       </p>
-    </div>
 
-    <p>
-      Mientras el corte horizontal de la planta suele seguir una altura convencional, el plano de la
-      sección <strong>se coloca libremente, donde más revele</strong> (Ching, 2015): corta por lo
-      interesante (la sala principal, el doble altura, la escalera, el lucernario) nunca por el pasillo
-      vacío. Marca niveles y alturas, y dibuja siempre la <strong>escala humana</strong> (una persona
-      ≈1.70 m): sin ella no se lee el tamaño.
-    </p>
-
-    <figure class="fig-media">
-      <svg viewBox="0 0 640 330" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
-           aria-label="Esquema de una sección: plano vertical que corta el edificio mostrando dos niveles, un doble altura y la luz entrando por un lucernario">
-        <defs>
-          <marker id="f5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
-          </marker>
-        </defs>
-        <g stroke="var(--texto)" stroke-width="2.4" fill="var(--gris-azul-claro)">
-          <rect x="70" y="272" width="420" height="14"/>
-          <rect x="70" y="80" width="16" height="192"/>
-          <rect x="474" y="130" width="16" height="142"/>
-          <rect x="86" y="180" width="212" height="12"/>
-          <rect x="70" y="80" width="240" height="12"/>
-          <rect x="332" y="118" width="158" height="12"/>
-        </g>
-        <g stroke="var(--texto)" stroke-width="2.4" fill="none">
-          <path d="M310 86 L332 124"/>
-        </g>
-        <g stroke="var(--naranja)" stroke-width="2" opacity="0.9">
-          <path d="M330 60 L368 150" marker-end="url(#f5)"/>
-          <path d="M352 52 L390 142" marker-end="url(#f5)"/>
-          <path d="M374 46 L412 136" marker-end="url(#f5)"/>
-        </g>
-        <text x="392" y="40" font-family="var(--sans)" font-size="12.5" fill="var(--naranja)">luz del lucernario</text>
-        <g stroke="var(--texto-suave)" stroke-width="2" fill="none">
-          <circle cx="150" cy="222" r="7"/><path d="M150 229v26M150 238l-10 9M150 238l10 9M150 255l-8 16M150 255l8 16"/>
-          <circle cx="400" cy="212" r="7"/><path d="M400 219v26M400 228l-10 9M400 228l10 9M400 245l-8 16M400 245l8 16"/>
-          <circle cx="180" cy="132" r="7"/><path d="M180 139v24M180 147l-9 8M180 147l9 8M180 163l-7 15M180 163l7 15"/>
-        </g>
-        <g font-family="var(--sans)" font-size="12.5" fill="var(--texto-suave)">
-          <text x="120" y="165">nivel 1</text>
-          <text x="120" y="252">planta baja</text>
-          <text x="360" y="252">sala a doble altura</text>
-        </g>
-        <path d="M520 130 L520 272" stroke="var(--texto-suave)" stroke-width="1.2" marker-start="url(#f5)" marker-end="url(#f5)"/>
-        <text x="532" y="205" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">altura</text>
-        <text x="532" y="220" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">libre</text>
-        <text x="280" y="316" text-anchor="middle" font-family="var(--sans)" font-size="13" font-style="italic" fill="var(--texto-suave)">La sección revela lo que la planta no puede: alturas, dobles alturas y por dónde entra la luz.</text>
-      </svg>
-      <figcaption>
-        <b>Figura 2.</b> La sección corta verticalmente y muestra niveles, alturas y la entrada de luz:
-        aquí, un lucernario ilumina la sala a doble altura. Las personas dan la escala. (Esquema propio a
-        partir de Ching, 2015.)
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">En un museo, la sección es la vista de la luz</p>
-      <p>
-        Recuerda la Sesión 4: la luz sobre las obras debe controlarse. Esa decisión <em>vive en la
-        sección</em>: la altura de la sala, el lucernario, el muro que filtra el sol. Cuando más adelante
-        iluminemos y rendericemos el modelo, estaremos comprobando lo que tu sección prometió.
-      </p>
-    </div>
-
-    <h2>4 · El alzado</h2>
-
-    <div class="caja caja--definicion">
-      <p class="caja__titulo">Alzado</p>
-      <p>
-        Un alzado es la <strong>proyección ortográfica</strong> del edificio sobre un plano vertical
-        paralelo a una de sus caras (Ching, 2015). Aquí no se corta nada: se dibuja lo que se ve de frente,
-        sin la deformación de la perspectiva.
-      </p>
-    </div>
-
-    <ul>
-      <li>Se nombra por su <strong>orientación</strong> (alzado norte, sur…), la que decidiste en el brief (S5).</li>
-      <li>La profundidad se sugiere con el <strong>peso de línea</strong>: lo cercano más grueso, lo lejano más delgado (Ching, 2015).</li>
-      <li>Trae terreno, personas, vanos y materiales indicados: es la cara pública del museo.</li>
-    </ul>
-
-    <figure class="fig-media">
-      <svg viewBox="0 0 640 330" role="img" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto"
-           aria-label="Esquema de un alzado: proyección ortográfica de una fachada sobre un plano vertical, con línea de terreno, vanos, personas a escala y líneas de proyección que suben desde la planta correspondiente">
-        <defs>
-          <marker id="fa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="var(--texto-suave)"/>
-          </marker>
-        </defs>
-
-        <!-- planta esquemática abajo, para mostrar la correspondencia -->
-        <g stroke="var(--texto-suave)" stroke-width="1.8" fill="none" opacity="0.65">
-          <rect x="120" y="250" width="320" height="46"/>
-        </g>
-        <text x="280" y="315" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">planta (la fachada que se proyecta es la cara inferior)</text>
-
-        <!-- lineas de proyeccion -->
-        <g stroke="var(--azul-medio)" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.85">
-          <path d="M120 250 L120 92"/>
-          <path d="M440 250 L440 92"/>
-        </g>
-
-        <!-- volumen del alzado: contorno grueso -->
-        <g stroke="var(--texto)" stroke-width="3" fill="var(--gris-azul-claro)">
-          <path d="M120 108 L120 210 L440 210 L440 140 L300 140 L300 108 Z"/>
-        </g>
-        <!-- vanos: linea media -->
-        <g stroke="var(--texto)" stroke-width="1.8" fill="var(--fondo)">
-          <rect x="150" y="150" width="34" height="44"/>
-          <rect x="200" y="150" width="34" height="44"/>
-          <rect x="336" y="164" width="56" height="46"/>
-        </g>
-        <!-- volumen lejano: linea delgada -->
-        <g stroke="var(--texto-suave)" stroke-width="1.2" fill="none">
-          <path d="M300 108 L300 140"/>
-          <path d="M262 122 L262 210"/>
-        </g>
-
-        <!-- terreno -->
-        <path d="M70 210 L500 210" stroke="var(--texto)" stroke-width="3.4"/>
-        <text x="76" y="226" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">línea de terreno</text>
-
-        <!-- personas -->
-        <g stroke="var(--texto-suave)" stroke-width="2" fill="none">
-          <circle cx="470" cy="180" r="6"/><path d="M470 186v14M470 192l-8 7M470 192l8 7M470 200l-6 10M470 200l6 10"/>
-          <circle cx="100" cy="180" r="6"/><path d="M100 186v14M100 192l-8 7M100 192l8 7M100 200l-6 10M100 200l6 10"/>
-        </g>
-
-        <!-- cota de ancho -->
-        <path d="M120 84 L440 84" stroke="var(--texto-suave)" stroke-width="1.2" marker-start="url(#fa)" marker-end="url(#fa)"/>
-        <text x="280" y="76" text-anchor="middle" font-family="var(--sans)" font-size="12" fill="var(--texto-suave)">mismo ancho que la fachada en planta</text>
-
-        <!-- rotulos -->
-        <g font-family="var(--sans)" font-size="12.5" fill="var(--texto-suave)">
-          <text x="516" y="150">contorno</text>
-          <text x="516" y="166">cercano:</text>
-          <text x="516" y="182">línea gruesa</text>
-          <text x="516" y="112">fondo:</text>
-          <text x="516" y="128">línea delgada</text>
-        </g>
-        <text x="520" y="248" font-family="var(--sans)" font-size="12.5" font-weight="600" fill="var(--azul-medio)">N</text>
-        <path d="M527 244 L527 228" stroke="var(--azul-medio)" stroke-width="1.6" marker-end="url(#fa)"/>
-      </svg>
-      <figcaption>
-        <b>Figura 3.</b> El alzado no corta: proyecta perpendicularmente una fachada sobre un plano
-        vertical. Su ancho es el de <em>esa</em> cara en planta (líneas de proyección punteadas), su altura
-        la de la sección. La profundidad se sugiere con el peso de línea, no con sombreado ni perspectiva.
-        (Esquema propio a partir de Ching, 2015.)
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--alerta">
-      <p class="caja__titulo">Tres cosas que un alzado no es</p>
-      <ul>
-        <li><strong>No es una perspectiva frontal.</strong> No hay punto de fuga ni convergencia: todo lo
-          paralelo a la fachada se mantiene paralelo y a escala.</li>
-        <li><strong>No es un dibujo de fachada suelto.</strong> Sale de la planta y de la sección, y tiene
-          que cuadrar con las dos.</li>
-        <li><strong>No es decoración.</strong> Si dibujas un material, es porque decidiste ese material;
-          si dibujas un alero, es porque protege algo del sol.</li>
-      </ul>
-    </div>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Las tres vistas son un solo edificio</p>
-      <p>
-        Planta, sección y alzado deben <strong>corresponderse</strong>: los muros que aparecen en la
-        sección existen en la planta; el alzado mide de ancho lo mismo que <em>la fachada que representa</em>
-        (no cualquier ancho de la planta) y de alto lo mismo que la sección.
-      </p>
-      <p>
-        En BIM esa correspondencia <em>geométrica</em> viene dada, porque todas las vistas se derivan de los
-        mismos elementos. Pero ojo: el modelo coordina la geometría, no tu criterio. Que una vista exista y
-        cuadre no significa que esté bien configurada, bien anotada ni bien pensada; eso lo veremos en la
-        S8. A mano, en cambio, la correspondencia la garantizas tú, línea por línea. Precisamente por eso
-        vale la pena aprenderla aquí: es el hábito mental que te preparará para Revit.
-      </p>
-    </div>
-
-    <div class="caja caja--recordatorio">
-      <p class="caja__titulo">Ejercicio en clase + tarea</p>
-      <p>
-        <strong>En clase:</strong> dibuja la planta de un espacio que conozcas de memoria (tu recámara),
-        con muros gruesos, puertas, ventanas y nombres; luego córtale una sección con una persona a escala.
-        <strong>Tarea:</strong> el alzado principal de ese mismo espacio. Es tu calentamiento: en la
-        <strong>Sesión 7</strong> harás exactamente esto, pero con tu museo.
-      </p>
-    </div>
-
-    <div class="caja caja--practica">
-      <p class="caja__titulo">Comprobación de logro</p>
-      <p>
-        Marca la <strong>línea de sección</strong> sobre tu planta y demuestra <strong>cinco
-        correspondencias geométricas</strong> entre planta, sección y alzado: un muro que está en las tres,
-        una altura que coincide, un ancho que coincide, un vano que aparece donde debe y un nivel que se
-        lee igual. Si alguna no cuadra, todavía no describes un solo edificio.
-      </p>
-    </div>
-
-    <h2>Referencias</h2>
-    <ul class="referencias">
-      <li>Ching, F. D. K. (2015). <em>Architectural graphics</em> (6.ª ed.). Wiley. [Cap. 4: Multiview Drawings.]</li>
-      <li>Yee, R. (2012). <em>Architectural drawing: A visual compendium of types and methods</em> (4.ª ed.). Wiley.</li>
-    </ul>
-
-    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 7, taller: el anteproyecto a mano (plantas, sección y alzado de tu museo).</p>
-
-    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
-      <a class="nav-sesiones__ant" href="sesion-5.html">
-        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
-        <span class="nav-sesiones__titulo">S5 · Taller: el brief, programa y sitio</span>
-      </a>
-      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
-      <a class="nav-sesiones__sig" href="sesion-7.html">
-        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
-        <span class="nav-sesiones__titulo">S7 · Taller: el anteproyecto a mano</span>
-      </a>
-    </nav>
+    </section>
 
   </div>
 </section>
@@ -409,5 +98,7 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/curso.js"></script>
 <script src="../assets/js/menu.js"></script>
+<script id="cerrojo" type="application/json">{"v":1,"iter":200000,"sello":"12d191b578e3","iv":"Z3zTprVqmY0PKT/7","ct":"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","grupos":[{"nombre":"IBERO-A","sal":"xb1Q98g7MUg02MK2OQH1EQ==","iv":"47cVUgngJus/x7L0","ct":"XW3dvexzDTl6vOsKGOxkLx68svhS4FjO22HK6LIjI0O0u67itexgWOYhxvsA6n+9"}]}</script>
+<script src="../assets/js/candado.js"></script>
 </body>
 </html>

@@ -133,8 +133,10 @@
     destino.removeAttribute('data-destino');
     document.body.classList.add('taller-abierto');
 
-    /* Sello discreto de grupo, para que el alumno confirme que entró bien */
-    var cab = destino.querySelector('.apunte__cab');
+    /* Sello discreto de grupo, para que el alumno confirme que entró bien.
+       La cabecera se llama distinto en cada plantilla: .apunte__cab en los
+       apuntes, .parcial-cab en las sesiones. */
+    var cab = destino.querySelector('.apunte__cab, .parcial-cab');
     if (cab && grupo) {
       var marca = document.createElement('p');
       marca.className = 'candado__sello';
@@ -155,11 +157,16 @@
     pendientes
       .then(function () {
         if (window.CURSO_NAV) window.CURSO_NAV();          // anterior / siguiente
+        /* main.js ya se cargó al abrir la página, pero corrió cuando aquí
+           solo había la pantalla del código. Ahora que el contenido existe,
+           se vuelve a enganchar: índice lateral, botón de imprimir, acordeón
+           de zonas y año del pie. */
+        if (window.CURSO_CONTENIDO) window.CURSO_CONTENIDO();
         if (window.MathJax && window.MathJax.typesetPromise) {
           return window.MathJax.typesetPromise([destino]);
         }
       })
-      .catch(function () { /* si algo no carga, el taller sigue legible */ });
+      .catch(function () { /* si algo no carga, el contenido sigue legible */ });
 
     /* Si la dirección traía un ancla (#act3), ir ahí ahora que ya existe */
     if (location.hash) {
@@ -178,7 +185,7 @@
       .then(function (hallado) {
         if (!hallado) {
           ocupado(false);
-          decir('Ese código no corresponde a ningún grupo de este taller. Revísalo y vuelve a intentar.', 'error');
+          decir('Ese código no abre esta página. Revísalo: cada sesión tiene el suyo.', 'error');
           campo.select();
           campo.focus();
           return;
@@ -193,7 +200,7 @@
       })
       .catch(function () {
         ocupado(false);
-        decir('Algo falló al abrir el taller. Recarga la página e intenta de nuevo.', 'error');
+        decir('Algo falló al abrir la página. Recárgala e intenta de nuevo.', 'error');
       });
   }
 
@@ -202,7 +209,7 @@
   /* Web Crypto solo existe en páginas servidas por https:// (o localhost).
      Si alguien abre el archivo con doble clic, avisarlo con claridad. */
   if (!window.crypto || !window.crypto.subtle) {
-    decir('Este taller debe abrirse desde la dirección del curso (https://…), no como archivo local.', 'error');
+    decir('Esta página debe abrirse desde la dirección del curso (https://…), no como archivo local.', 'error');
     boton.disabled = true;
     campo.disabled = true;
     return;

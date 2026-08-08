@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sesión 9 · Taller: primer contacto con Revit | Dibujo Asistido por Computadora II</title>
-<meta name="description" content="Sesión 9 del Parcial 1: taller en laboratorio: abrir Revit, crear un proyecto, navegar y dibujar, seleccionar y modificar los primeros muros.">
+<meta name="description" content="Sesión del curso Dibujo Asistido por Computadora II. Requiere el código de grupo.">
+<meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="../assets/css/estilos.css">
 <script>
   (function () {
@@ -35,290 +36,47 @@
   </div>
 </nav>
 
-<main>
+<main data-destino>
 <section class="seccion">
-  <div class="contenedor parcial-cab">
+  <div class="contenedor">
+
     <div class="cab-acciones">
       <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
-      <button class="imprimir-btn" type="button" data-imprimir hidden
-              title="Imprimir esta sesión o guardarla en PDF"
-              aria-label="Imprimir esta sesión o guardarla en PDF">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 9V3.6h10V9"/>
-          <path d="M7 18H5.2A2.2 2.2 0 0 1 3 15.8v-4.6A2.2 2.2 0 0 1 5.2 9h13.6A2.2 2.2 0 0 1 21 11.2v4.6a2.2 2.2 0 0 1-2.2 2.2H17"/>
-          <rect x="7" y="14.4" width="10" height="6" rx="1"/>
-          <circle cx="17.6" cy="11.9" r=".9"/>
-        </svg>
-        <span>Imprimir</span>
-      </button>
-    </div>
-    <h1>Sesión 9 · Taller: primer contacto con Revit</h1>
-    <p class="parcial-desc">Frente a la máquina. Hoy abres Revit por primera vez: crear un proyecto, navegar la interfaz y dibujar, seleccionar y modificar tus primeros muros.</p>
-  </div>
-
-  <div class="contenedor sesion-cuerpo">
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Objetivos de esta sesión</p>
-      <p>Al terminar podrás:</p>
-      <ul>
-        <li><strong>Crear</strong> un proyecto a partir de una plantilla y guardarlo con la nomenclatura correcta.</li>
-        <li><strong>Navegar</strong> entre vistas sabiendo en todo momento en cuál estás.</li>
-        <li><strong>Modelar</strong> muros con medidas exactas usando cotas temporales y snaps.</li>
-        <li><strong>Restringir</strong> un muro a un nivel y comprobar qué pasa al mover ese nivel.</li>
-        <li><strong>Distinguir</strong> en pantalla un cambio de tipo de un cambio de instancia.</li>
-        <li><strong>Seleccionar y modificar</strong> elementos, y <strong>diagnosticar</strong> un error sin reiniciar a ciegas.</li>
-      </ul>
     </div>
 
-    <p>
-      Todo lo de la S8, ahora con tus manos. El objetivo de hoy <strong>no es modelar el museo
-      completo</strong> (eso es el Parcial 2), sino perderle el miedo al programa: que al salir sepas crear
-      un proyecto, moverte con soltura y dibujar con precisión. Practicarás primero con un recinto genérico
-      y, al final, <strong>trazarás un fragmento de tu propio museo</strong> para ver el puente entre lo que
-      dibujaste a mano y el modelo. Trabaja al ritmo de la guía; levanta la mano cuando te atores.
-    </p>
+    <section class="candado" data-candado>
 
-    <div class="caja caja--recordatorio">
-      <p class="caja__titulo">Qué traer hoy</p>
-      <p>
-        Tu <strong>paquete de anteproyecto de la S7</strong>, con las cotas legibles. Lo vas a necesitar en
-        la Parte 5: de ahí saldrán las medidas que teclees.
+      <div class="candado__marca" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8.2 10.5V7.6a3.8 3.8 0 0 1 7.6 0v2.9"/><circle cx="12" cy="15.5" r="1.35"/></svg>
+      </div>
+
+      <p class="candado__etiqueta">Sesión 9</p>
+      <h1 class="candado__titulo">Taller: primer contacto con Revit</h1>
+
+      <p class="candado__texto">
+        Esta sesión está reservado para los grupos del curso.
+        Escribe el código que te dio tu profesor para abrirlo.
       </p>
-    </div>
 
-    <div class="caja caja--alerta">
-      <p class="caja__titulo">Antes de empezar</p>
-      <p>
-        Los tiempos de abajo suman 110 minutos y dejan margen deliberado para el arranque:
-        inicio de sesión, licencia educativa, versiones distintas y equipos lentos. Si vas
-        retrasado, lo esencial de hoy son las <strong>Partes 1 a 3</strong>; la Parte 4 marca qué
-        puedes dejar para después.
+      <form class="candado__forma" data-forma novalidate>
+        <label class="candado__rotulo" for="codigo-grupo">Código de grupo</label>
+        <div class="candado__fila">
+          <input class="candado__campo" id="codigo-grupo" name="codigo" type="text"
+                 inputmode="text" autocomplete="off" autocapitalize="characters"
+                 autocorrect="off" spellcheck="false" enterkeyhint="go"
+                 aria-describedby="candado-aviso" required>
+          <button class="btn btn--primario candado__btn" type="submit" data-enviar>Abrir</button>
+        </div>
+      </form>
+
+      <p class="candado__aviso" id="candado-aviso" data-aviso role="status" aria-live="polite"></p>
+
+      <p class="candado__pie">
+        ¿No tienes el código? Pídeselo a tu profesor.
+        <a href="../parcial-1.html">Volver a Parcial 1</a>
       </p>
-    </div>
 
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Cómo trabajaremos hoy: por ciclos cortos</p>
-      <p>
-        Cada bloque sigue el mismo ritmo, y conviene que lo sepas para no perderte:
-      </p>
-      <ol>
-        <li><strong>Demostración</strong> (unos 5 minutos): yo lo hago en pantalla, tú solo miras.</li>
-        <li><strong>Tú lo haces</strong>: repites la operación en tu equipo.</li>
-        <li><strong>Comprobación</strong>: cada bloque cierra con un <em>micrologro</em> concreto (algo que
-          debe existir en tu pantalla antes de seguir). Si no lo tienes, levanta la mano ahí mismo.</li>
-      </ol>
-      <p>
-        No copies los movimientos sin entenderlos. La pregunta que debes hacerte en cada paso es
-        <em>por qué</em> funcionó, no <em>dónde</em> estaba el botón: los botones cambian de sitio entre
-        versiones, la lógica no.
-      </p>
-    </div>
-
-    <h2>Parte 1 · Abrir y reconocer (15 min)</h2>
-    <ol>
-      <li>Abre <strong>Revit</strong>. En la pantalla de inicio, identifica: proyectos recientes, Nuevo, Abrir.</li>
-      <li>Crea un <strong>proyecto nuevo</strong> con la plantilla <em>arquitectónica métrica</em> (Browse si hace falta; recuerda: plantillas = .rte).</li>
-      <li>Reconoce en pantalla lo que viste en la S8: cinta, Propiedades, <strong>Navegador del proyecto</strong>, barra de control de vista. Nota que estás en una vista de planta (Level 1).</li>
-      <li><strong>Comprueba las unidades</strong> antes de dibujar nada: Manage → Project Units. Confirma
-        que la longitud está en <strong>milímetros</strong>. Si estuviera en metros, teclear «8000» daría
-        un muro de ocho kilómetros y no entenderías por qué.</li>
-      <li><strong>Guarda ahora</strong>, antes de tener nada que perder: <strong>Apellido_S9.rvt</strong>,
-        en tu carpeta, no en el escritorio del laboratorio. Y vuelve a guardar al final de cada bloque.</li>
-    </ol>
-    <p class="micrologro"><strong>Micrologro:</strong> tienes un proyecto guardado con tu nombre, en milímetros, abierto en la vista de planta Level 1.</p>
-
-    <h2>Parte 2 · Navegar (15 min)</h2>
-    <ol>
-      <li>Zoom con la <strong>rueda</strong>: girar, presionar y arrastrar (pan), doble clic (ajustar a pantalla).</li>
-      <li>Abre la <strong>vista 3D</strong> (el botón de la casita/3D en la barra de acceso rápido).</li>
-      <li>Orbita con <strong>Shift + rueda presionada</strong>; usa el <strong>ViewCube</strong> para ir a Top, Front y una esquina.</li>
-      <li>Vuelve a la planta desde el <strong>Navegador del proyecto</strong> (doble clic en Level 1). Regla de oro: ¿en qué vista estoy?</li>
-    </ol>
-    <p class="micrologro"><strong>Micrologro:</strong> puedes ir de planta a 3D y volver sin dudar, y sabes decir en voz alta en qué vista estás.</p>
-
-    <h2>Parte 3 · Dibujar con precisión (30 min)</h2>
-    <ol>
-      <li>Pestaña Architecture → <strong>Wall</strong> (Muro). Dibuja un muro haciendo clic y moviéndote a la
-        derecha; <strong>teclea 8000</strong> y Enter: acabas de usar la <strong>cota temporal</strong>.</li>
-      <li>Sigue el contorno: hacia arriba <strong>6000</strong>, izquierda <strong>8000</strong>, y cierra.
-        Observa las <strong>líneas de alineación</strong> y los <strong>snaps</strong> enganchando los extremos.</li>
-      <li>Abre la <strong>vista 3D</strong>: tus "líneas" son muros con altura: eso es BIM (la planta era un corte, ¿recuerdas la S6?).</li>
-      <li>Selecciona un muro y mira <strong>Propiedades</strong>: altura, base, tipo. Cambia el tipo en el
-        <strong>selector de tipo</strong> y observa qué pasa.</li>
-    </ol>
-    <p class="micrologro"><strong>Micrologro:</strong> tienes un recinto cerrado de 8&nbsp;000 × 6&nbsp;000 mm, lo ves en 3D con altura, y sabes dónde leer la altura de un muro.</p>
-
-    <h2>Parte 4 · Niveles, restricciones y coordinación (25 min)</h2>
-
-    <p>
-      Éste es el bloque que de verdad separa a Revit de un programa de dibujo. Hasta ahora hiciste muros;
-      ahora vas a comprobar que <strong>están relacionados con algo</strong>.
-    </p>
-    <ol>
-      <li>Abre una <strong>elevación</strong> desde el Navegador del proyecto (Elevations → South). Ahí
-        están tus niveles: <strong>Level 1</strong> y <strong>Level 2</strong>. Fíjate en la cota del
-        segundo.</li>
-      <li>Vuelve a la planta, selecciona un muro y mira <strong>Propiedades</strong>: <em>Base
-        Constraint</em>, <em>Top Constraint</em>, <em>Unconnected Height</em>. Cambia su restricción
-        superior a <strong>Up to level: Level 2</strong>.</li>
-      <li>Vuelve a la elevación y <strong>sube el Level 2</strong> (selecciónalo y teclea otra cota, por
-        ejemplo 3&nbsp;600). <strong>Observa qué le pasa al muro.</strong> Eso, y no otra cosa, es el
-        comportamiento paramétrico del que hablamos desde la S2.</li>
-      <li>Ahora <strong>tipo frente a instancia</strong>: selecciona un solo muro y cámbialo de tipo con el
-        <strong>selector de tipo</strong>. Solo cambia ese. Después entra a <strong>Editar tipo</strong> y
-        mira (sin guardar cambios) cuántos muros comparten esa definición. Ahí está la diferencia que viste
-        en la S8.</li>
-      <li>Selección y movimiento: prueba <strong>clic</strong>, <strong>ventana</strong> (arrastre a la
-        derecha) y <strong>cruce</strong> (a la izquierda), y usa <strong>Move</strong> para desplazar un
-        muro exactamente <strong>1500</strong>.</li>
-    </ol>
-    <p class="micrologro"><strong>Micrologro:</strong> moviste un nivel y un muro cambió de altura solo. Puedes explicar por qué.</p>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Un modelo, muchas vistas: compruébalo</p>
-      <p>
-        Llevas todo el parcial oyendo esta frase. Ahora hazla verdad en treinta segundos: pon
-        <strong>planta y 3D en mosaico</strong> (pestaña View → Tile Views, o teclea <strong>WT</strong>),
-        selecciona un muro en la planta y muévelo. Míralo moverse en el 3D <em>al mismo tiempo</em>.
-      </p>
-      <p>
-        No dibujaste dos veces. Hay un solo muro y dos maneras de mirarlo. Eso es exactamente lo que tu
-        planta, tu sección y tu alzado de la S7 intentaban conseguir a mano, revisando que las tres
-        cuadraran.
-      </p>
-    </div>
-
-    <p class="nota-docente">
-      Mirror, Rotate y Array quedan para el Parcial 2: son comandos útiles, pero genéricos, y hoy el tiempo
-      rinde más en lo que solo Revit hace.
-    </p>
-
-    <h2>Parte 5 · Tu museo: el primer trazo (15 min)</h2>
-
-    <p>
-      Hasta aquí practicaste con un rectángulo cualquiera. Ahora abre tu
-      <strong>paquete de anteproyecto</strong> (el de la S7) y traza en Revit
-      <strong>un fragmento</strong> de tu museo, no el edificio entero: solo una pieza:
-    </p>
-    <ol>
-      <li>Elige <strong>un espacio</strong>: el vestíbulo o una sala de exposición.</li>
-      <li>Traza sus <strong>muros exteriores</strong> tomando las medidas de tu propia planta. Usa las cotas temporales: teclea las distancias reales de tu proyecto.</li>
-      <li>Añade <strong>una división interior</strong> y <strong>una puerta</strong> (Architecture → Door).
-        Colócala sobre un muro y fíjate en tres cosas: el muro es su <strong>anfitrión</strong> (el hueco lo
-        abre ella sola); en el selector de tipo eliges entre varios <strong>tipos</strong> de la misma
-        <strong>familia</strong>; y lo que acabas de colocar es una <strong>instancia</strong>. Familia →
-        tipo → instancia → anfitrión, como en la S8.</li>
-      <li><strong>Prueba el anfitrión:</strong> selecciona el muro que aloja la puerta y bórralo. La puerta
-        desaparece con él. Deshaz con Ctrl+Z. Eso es una relación de dependencia, no una coincidencia
-        de dibujo.</li>
-      <li>Abre la <strong>vista 3D</strong> y mira tu propio espacio levantado.</li>
-    </ol>
-    <p class="micrologro"><strong>Micrologro:</strong> un fragmento de <em>tu</em> museo existe como modelo, con sus medidas reales, y lo puedes ver en planta y en 3D.</p>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Lo que acaba de ocurrir</p>
-      <p>
-        Ese trazo es el puente de todo el curso. Los muros que dibujaste a mano en la S7 acaban de
-        convertirse en <strong>muros con altura, material y relaciones</strong>. La cota que mediste con
-        escalímetro ahora la teclea el programa. Y la planta que dibujaste como un corte a mano es
-        exactamente la vista que Revit deriva del modelo.
-      </p>
-      <p>
-        No te preocupes si quedó tosco o incompleto: no se evalúa el acabado. Se evalúa que hayas visto,
-        con tu propio proyecto, que representar y modelar son la misma decisión tomada con herramientas
-        distintas.
-      </p>
-      <p>
-        En dos horas hiciste el ciclo completo del curso en miniatura: creaste un archivo desde una
-        plantilla, navegaste vistas de un modelo único y dibujaste elementos <em>inteligentes</em> con
-        precisión. El principio del Parcial 2 será el mismo (construir elementos y relaciones), pero
-        aparecerán categorías nuevas: pisos, cubiertas, escaleras y rampas, huecos, habitaciones,
-        familias cargables y, al final, la documentación del proyecto. Lo que no cambiará es la lógica que
-        practicaste hoy.
-      </p>
-    </div>
-
-    <h2>Parte 6 · Cerrar y entregar (10 min)</h2>
-    <ol>
-      <li>Guarda por última vez. Ya lo hiciste al empezar y en cada bloque: <strong>Apellido_S9.rvt</strong>.
-        Recuerda: .rvt = proyecto; la plantilla .rte quedó intacta.</li>
-      <li>Toma una captura de tu vista 3D.</li>
-      <li>Escribe tu <strong>nota de diagnóstico</strong> (ver abajo).</li>
-    </ol>
-
-    <div class="caja caja--alerta">
-      <p class="caja__titulo">Atorones típicos del primer día</p>
-      <ul>
-        <li><strong>"No veo mis muros":</strong> estás en otra vista o el zoom está lejísimos: doble clic a la rueda (Zoom to Fit).</li>
-        <li><strong>"Se me cerró Propiedades / el Navegador":</strong> pestaña View → User Interface → márcalos de nuevo.</li>
-        <li><strong>"Dibujé y no pasa nada":</strong> mira la barra de estado (abajo a la izquierda): Revit te está pidiendo el siguiente clic.</li>
-        <li><strong>"Todo se mueve junto":</strong> los muros conectados se estiran entre sí: es el comportamiento paramétrico, no un error.</li>
-        <li><strong>Esc dos veces</strong> te saca de cualquier comando. Es tu mejor amigo.</li>
-      </ul>
-    </div>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">El protocolo: seis preguntas, siempre en este orden</p>
-      <p>
-        La lista de arriba resuelve casos concretos. Esto resuelve <em>cualquier</em> caso. Cuando algo no
-        aparezca o no responda, no vuelvas a dibujarlo: pregúntale a la pantalla, en orden.
-      </p>
-      <ol>
-        <li><strong>Vista:</strong> ¿en qué vista estoy y qué debería verse aquí?</li>
-        <li><strong>Selección:</strong> ¿qué elemento está seleccionado ahora mismo?</li>
-        <li><strong>Comando:</strong> ¿Revit está esperando otro clic? (mira la barra de estado, abajo a la izquierda).</li>
-        <li><strong>Propiedades:</strong> ¿el nivel, la altura, el tipo y las restricciones son los que creo?</li>
-        <li><strong>Visibilidad:</strong> ¿existe el elemento pero está oculto o fuera del rango de la vista?</li>
-        <li><strong>Deshacer:</strong> ¿cuál fue la última operación que sí funcionó?</li>
-      </ol>
-      <p>
-        Nueve de cada diez atorones caen en los tres primeros. Y ojo con una idea cómoda:
-        <strong>Ctrl+Z deshace la mayoría de las operaciones de modelado, pero no todo</strong>: cerrar sin
-        guardar, sobrescribir un archivo o abrirlo en otra versión no se arreglan deshaciendo. Por eso
-        guardas seguido.
-      </p>
-    </div>
-
-    <div class="caja caja--recordatorio">
-      <p class="caja__titulo">Entregable + para la próxima sesión</p>
-      <p>
-        <strong>Entregable:</strong> tu archivo <strong>.rvt</strong> y la captura de la vista 3D (se suben
-        a la plataforma). <strong>Próxima sesión (S10):</strong> examen del parcial y entrega final del
-        paquete de anteproyecto (S7). El examen incluye lo de Revit a nivel <em>conceptual</em>, así que repasa la
-        S8.
-      </p>
-    </div>
-
-    <div class="caja caja--practica">
-      <p class="caja__titulo">Comprobación de logro</p>
-      <p>
-        Además del archivo y la captura, entrega <strong>tres líneas describiendo un error que te haya
-        pasado hoy</strong>: qué viste, qué revisaste y cómo lo resolviste. Da igual cuál sea; lo que se
-        evalúa es que sepas <em>diagnosticar</em>. En Revit, saber qué preguntarle a la pantalla vale más
-        que memorizar comandos.
-      </p>
-    </div>
-
-    <h2>Referencias</h2>
-    <ul class="referencias">
-      <li>Hamad, M. (2025). <em>Autodesk Revit 2025 Architecture</em>. Mercury Learning and Information (sello de De Gruyter). Capítulos 1 y 2.</li>
-      <li>Autodesk. (2025). <em>Ayuda de Revit 2025</em>. Recuperado de <a href="https://help.autodesk.com/view/RVT/2025/ENU/" target="_blank" rel="noopener">help.autodesk.com/view/RVT/2025</a>.</li>
-    </ul>
-
-    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 10, examen del primer parcial y entrega del anteproyecto.</p>
-
-    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
-      <a class="nav-sesiones__ant" href="sesion-8.html">
-        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
-        <span class="nav-sesiones__titulo">S8 · Revit: el entorno y la interfaz</span>
-      </a>
-      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
-      <a class="nav-sesiones__sig" href="sesion-10.html">
-        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
-        <span class="nav-sesiones__titulo">S10 · Presentación y examen del primer parcial</span>
-      </a>
-    </nav>
+    </section>
 
   </div>
 </section>
@@ -341,5 +99,7 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/curso.js"></script>
 <script src="../assets/js/menu.js"></script>
+<script id="cerrojo" type="application/json">{"v":1,"iter":200000,"sello":"ed21bbb85d08","iv":"tOrHtvPrE1rkVFa9","ct":"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","grupos":[{"nombre":"IBERO-A","sal":"++70oYpnQP5hY+uL8ibj/w==","iv":"N9FlnPQ4i0JxzR4e","ct":"bqHOpzcIx00W35UP7mPbzFruhP2wzHb3DFUOfnMZcAoXUENAPYe9BHWWtoCGKfzQ"}]}</script>
+<script src="../assets/js/candado.js"></script>
 </body>
 </html>

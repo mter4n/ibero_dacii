@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sesión 2 · Del dibujo a la información | Dibujo Asistido por Computadora II</title>
-<meta name="description" content="Sesión 2 del Parcial 1: la idea grande del curso, del dibujo a mano al CAD, y de CAD a BIM.">
+<meta name="description" content="Sesión del curso Dibujo Asistido por Computadora II. Requiere el código de grupo.">
+<meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="../assets/css/estilos.css">
 <script>
   (function () {
@@ -35,376 +36,47 @@
   </div>
 </nav>
 
-<main>
+<main data-destino>
 <section class="seccion">
-  <div class="contenedor parcial-cab">
+  <div class="contenedor">
+
     <div class="cab-acciones">
       <a class="volver" href="../parcial-1.html">&larr; Parcial 1</a>
-      <button class="imprimir-btn" type="button" data-imprimir hidden
-              title="Imprimir esta sesión o guardarla en PDF"
-              aria-label="Imprimir esta sesión o guardarla en PDF">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 9V3.6h10V9"/>
-          <path d="M7 18H5.2A2.2 2.2 0 0 1 3 15.8v-4.6A2.2 2.2 0 0 1 5.2 9h13.6A2.2 2.2 0 0 1 21 11.2v4.6a2.2 2.2 0 0 1-2.2 2.2H17"/>
-          <rect x="7" y="14.4" width="10" height="6" rx="1"/>
-          <circle cx="17.6" cy="11.9" r=".9"/>
-        </svg>
-        <span>Imprimir</span>
-      </button>
-    </div>
-    <h1>Sesión 2 · Del dibujo a la información</h1>
-    <p class="parcial-desc">Arranca el contenido formal: la idea grande del curso, del dibujo a mano al CAD, y de CAD a BIM. Sin abrir el software todavía.</p>
-  </div>
-
-  <div class="contenedor sesion-cuerpo">
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-00-portada.png"
-           alt="Portada de la presentación de la Sesión 2: Del dibujo a la información. Del dibujo manual al CAD y del CAD al modelado BIM">
-      <figcaption>
-        Presentación de la sesión. <strong>Toca cualquier lámina para ampliarla</strong>; dentro del visor
-        puedes acercar más y cerrar con Esc.
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">Objetivos de esta sesión</p>
-      <p>Al terminar podrás:</p>
-      <ul>
-        <li><strong>Distinguir</strong> un flujo CAD de dibujo en dos dimensiones de un flujo BIM, en términos de representación frente a información.</li>
-        <li><strong>Explicar</strong> qué significa que un elemento sea paramétrico y que necesite un anfitrión.</li>
-        <li><strong>Elegir y justificar</strong> un museo documentable para analizarlo en la próxima sesión.</li>
-      </ul>
     </div>
 
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-01-objetivos.png"
-           alt="Lámina de objetivos de la sesión: distinguir CAD y BIM, explicar objetos BIM y elegir un precedente; a la derecha, comparación entre un trazo 2D sin información y un muro BIM con altura, espesor, material y una puerta alojada">
-      <figcaption>
-        <b>Lámina 1.</b> Los tres objetivos de hoy y, a la derecha, la diferencia que los resume: el mismo
-        muro como <em>trazo</em> y como <em>elemento con información</em>.
-      </figcaption>
-    </figure>
+    <section class="candado" data-candado>
 
-    <div class="caja caja--reflexion">
-      <p class="caja__titulo">La pregunta con la que arrancamos</p>
-      <p>
-        Cuando dibujas una línea en la computadora, ¿esa línea <em>sabe</em> que es un muro? ¿La
-        máquina entiende que estás diseñando un edificio, o solo guarda trazos? La respuesta separa
-        dos formas de trabajar, y marca hacia dónde va este curso.
+      <div class="candado__marca" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8.2 10.5V7.6a3.8 3.8 0 0 1 7.6 0v2.9"/><circle cx="12" cy="15.5" r="1.35"/></svg>
+      </div>
+
+      <p class="candado__etiqueta">Sesión 2</p>
+      <h1 class="candado__titulo">Del dibujo a la información</h1>
+
+      <p class="candado__texto">
+        Esta sesión está reservado para los grupos del curso.
+        Escribe el código que te dio tu profesor para abrirlo.
       </p>
-    </div>
 
-    <h2>Del dibujo a mano al dibujo asistido por computadora</h2>
+      <form class="candado__forma" data-forma novalidate>
+        <label class="candado__rotulo" for="codigo-grupo">Código de grupo</label>
+        <div class="candado__fila">
+          <input class="candado__campo" id="codigo-grupo" name="codigo" type="text"
+                 inputmode="text" autocomplete="off" autocapitalize="characters"
+                 autocorrect="off" spellcheck="false" enterkeyhint="go"
+                 aria-describedby="candado-aviso" required>
+          <button class="btn btn--primario candado__btn" type="submit" data-enviar>Abrir</button>
+        </div>
+      </form>
 
-    <p>
-      Antes de abrir cualquier software conviene entender de dónde viene. El <strong>dibujo asistido por
-      computadora</strong>, conocido por su sigla en inglés CAD (Computer Aided Design o Computer Aided
-      Drafting), no nació en la arquitectura sino en los laboratorios de investigación.
-    </p>
+      <p class="candado__aviso" id="candado-aviso" data-aviso role="status" aria-live="polite"></p>
 
-    <p>
-      Como relatan Cardoso Llach y Capdevila Werning (2009), el punto de partida suele situarse en el
-      <strong>Sketchpad</strong>, desarrollado por <strong>Ivan Sutherland</strong> como tesis doctoral en
-      el Massachusetts Institute of Technology en <strong>1963</strong>. El Sketchpad propuso la primera
-      interfaz gráfica de la historia: una pantalla en la que se podía dibujar directamente con ayuda de un
-      lápiz óptico. Las industrias automotriz y aeronáutica se interesaron de inmediato por esta
-      tecnología, pero pasaron más de quince años antes de que la computación gráfica empezara a
-      transformar de manera definitiva el oficio del arquitecto. Esto se debió, en buena parte, a la fuerte
-      reducción en el precio de los computadores y al aumento exponencial de su capacidad de procesamiento.
-    </p>
-
-    <figure class="fig-media">
-      <img src="../assets/img/t1-recursion.jpg" alt="Estudio de recursión tridimensional generado por computadora">
-      <figcaption>
-        Estudio de recursión en tres dimensiones generado por computadora. La computación gráfica abrió a
-        los arquitectos formas y procedimientos que serían muy difíciles de explorar a mano.
-        Fuente: Cardoso Llach y Capdevila Werning (2009).
-      </figcaption>
-    </figure>
-
-    <p>
-      Los primeros sistemas CAD evolucionaron como una <strong>automatización de la mesa de dibujo
-      tradicional</strong>: una pantalla que mostraba una hoja de papel ilimitada en la que el arquitecto
-      manipulaba versiones digitales de la regla, la escuadra, el compás y la pluma.
-    </p>
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-02-del-dibujo-manual-al-cad.png"
-           alt="Secuencia de tres etapas: dibujo manual con regla, escuadra y compás; Sketchpad de Ivan Sutherland en el MIT en 1963, con lápiz óptico sobre pantalla; y CAD actual con planta y vista tridimensional en pantalla">
-      <figcaption>
-        <b>Lámina 2.</b> Las tres etapas del recorrido: del tablero físico al Sketchpad de Sutherland
-        (MIT, 1963) y de ahí al CAD, donde regla, escuadra y compás se vuelven herramientas digitales.
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">La idea de fondo del curso</p>
-      <p>
-        El CAD comenzó imitando el tablero de dibujo, pero la computadora puede hacer mucho más que guardar
-        líneas: puede guardar <em>información</em>. Cuando una línea deja de ser solo un trazo y se convierte
-        en un muro que conoce su altura, su material y su relación con otros elementos, pasamos del simple
-        dibujo asistido al <strong>modelado de información</strong>. Ese salto, de CAD a BIM, es lo que
-        estudiaremos enseguida y lo que hace de Revit una herramienta distinta.
+      <p class="candado__pie">
+        ¿No tienes el código? Pídeselo a tu profesor.
+        <a href="../parcial-1.html">Volver a Parcial 1</a>
       </p>
-    </div>
 
-    <figure class="fig-media">
-      <img src="../assets/img/t1-paramcad.jpg" alt="Modelo tridimensional en un programa de diseño asistido con su árbol de parámetros">
-      <figcaption>
-        Modelo tridimensional dentro de un programa de diseño asistido por computadora. A la izquierda, el
-        árbol de parámetros y operaciones; alrededor, las barras de herramientas. La lógica de paneles,
-        navegadores y vistas que veremos en Revit es heredera de estos entornos.
-        Fuente: Cardoso Llach y Capdevila Werning (2009).
-      </figcaption>
-    </figure>
-
-    <h2>CAD frente a BIM</h2>
-
-    <p>
-      La distinción entre CAD y BIM es la base conceptual de todo el curso. Aunque a primera vista ambos
-      producen dibujos en pantalla, su forma de entender el proyecto es muy distinta (Hamad, 2025).
-    </p>
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-03-cad-frente-a-bim.png"
-           alt="Comparación entre CAD y BIM: a la izquierda, una planta hecha de líneas, arcos y textos independientes; a la derecha, un modelo del que se derivan planta, sección, alzado, vista 3D y tabla de cantidades. Al pie, la advertencia de que en CAD también se puede modelar en tres dimensiones">
-      <figcaption>
-        <b>Lámina 3.</b> La comparación completa, con la advertencia que conviene no olvidar: la diferencia
-        no es 2D contra 3D, sino cómo se estructura y se coordina la información.
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--definicion">
-      <p class="caja__titulo">CAD: dibujo asistido por computadora</p>
-      <p>
-        En un flujo <strong>CAD de dibujo en dos dimensiones</strong> representas el edificio mediante
-        <strong>entidades gráficas</strong>: líneas, arcos, textos y tramas. Dos líneas paralelas pueden
-        significar un muro para ti, pero el archivo no las gestiona necesariamente como un elemento
-        arquitectónico con material, altura y relaciones. Su significado vive sobre todo en la mente de
-        quien dibuja. Además, plantas, secciones y alzados suelen dibujarse por separado y sin vínculo
-        entre sí: si el proyecto cambia, hay que volver a cada dibujo y editarlo a mano.
-      </p>
-    </div>
-
-    <div class="caja caja--alerta">
-      <p class="caja__titulo">Cuidado con una frase que vas a oír mucho</p>
-      <p>
-        Se repite a menudo que «en CAD se dibuja, no se modela ni se diseña» (Hamad, 2025). Como
-        <em>gancho</em> funciona: subraya el contraste. Como <em>definición</em> es incorrecta, y conviene
-        que lo sepas desde ahora: CAD abarca también modelado tridimensional, superficies, sólidos y
-        geometría paramétrica. De hecho, Revit es heredero de esa evolución.
-      </p>
-      <p>
-        La distinción precisa no es <em>dibujar contra modelar</em>, ni <em>2D contra 3D</em>. Es esta:
-      </p>
-      <p style="text-align:center">
-        <strong>CAD = representación &nbsp;·&nbsp; BIM = información</strong>
-      </p>
-      <p>
-        Es decir: dibujo independiente frente a información estructurada y coordinada alrededor de
-        objetos del edificio. Guarda esta formulación, porque es la que se te pedirá en el examen.
-      </p>
-    </div>
-
-    <div class="caja caja--definicion">
-      <p class="caja__titulo">BIM: modelado de información de la construcción</p>
-      <p>
-        BIM significa Building Information Modeling, es decir, modelado de información de la construcción. En
-        lugar de líneas, arcos y círculos, se crea desde el principio un <strong>modelo en tres
-        dimensiones</strong> con elementos inteligentes: muros, puertas, ventanas, pisos, techos y cubiertas.
-        Cada elemento contiene en su interior una gran cantidad de información. Por ejemplo, un muro dibujado
-        en la planta conoce su propia altura; por eso lo ves en dos dimensiones en la planta y, al mismo
-        tiempo, extendiéndose en la vista tridimensional (Hamad, 2025).
-      </p>
-    </div>
-
-    <p>
-      El enfoque BIM se apoya en tres ideas. La primera es que los elementos son
-      <strong>paramétricos</strong>: entienden sus relaciones mutuas, de modo que cuando un elemento cambia,
-      los que dependen de él reaccionan en consecuencia. La segunda es que algunos elementos necesitan un
-      <strong>anfitrión</strong> (host): una puerta o una ventana necesitan un muro que las aloje, y una
-      luminaria necesita un techo. La tercera es que todas las partes del modelo están
-      <strong>interrelacionadas</strong>: mover un muro en la planta afecta de inmediato a todas las demás
-      vistas, e incluso las tablas de cantidades se actualizan solas.
-    </p>
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-04-elemento-bim.png"
-           alt="Anatomía de un elemento BIM: un muro con su geometría (longitud, altura, espesor, posición), su información (tipo, material, función), sus parámetros modificables, sus relaciones con niveles, muros contiguos, pisos y techos, y los elementos que aloja como una puerta y una ventana">
-      <figcaption>
-        <b>Lámina 4.</b> Lo que hay dentro de un elemento BIM: geometría, información, parámetros,
-        relaciones y anfitriones. Fíjate en la puerta y la ventana: existen <em>alojadas</em> en el muro.
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--concepto">
-      <p class="caja__titulo">La idea esencial: de dibujar a modelar información</p>
-      <p>
-        En CAD el archivo guarda <em>cómo se ve</em> el proyecto. En BIM el archivo guarda <em>qué es</em> el
-        proyecto: un edificio compuesto por elementos que saben lo que son y cómo se relacionan. De ese modelo
-        único se derivan, de manera automática y siempre coordinada, las plantas, las secciones, los alzados,
-        las vistas tridimensionales y las tablas de cantidades. Comprender esta diferencia es más importante,
-        en este momento del curso, que memorizar cualquier comando.
-      </p>
-    </div>
-
-    <figure class="fig-media">
-      <svg class="esquema" viewBox="0 0 720 300" role="img"
-           aria-label="En BIM, un solo modelo central del que se derivan todas las vistas y tablas del proyecto"
-           xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
-        <defs>
-          <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="var(--azul-oscuro)"/>
-          </marker>
-        </defs>
-        <g font-family="var(--sans)" font-size="15" text-anchor="middle">
-          <g>
-            <rect x="20"  y="26" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
-            <text x="79"  y="52" fill="var(--texto)">Planta</text>
-          </g>
-          <g>
-            <rect x="158" y="18" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
-            <text x="217" y="44" fill="var(--texto)">Sección</text>
-          </g>
-          <g>
-            <rect x="301" y="14" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
-            <text x="360" y="40" fill="var(--texto)">Alzado</text>
-          </g>
-          <g>
-            <rect x="444" y="18" width="118" height="42" rx="9" fill="var(--azul-claro)" stroke="var(--azul-medio)" stroke-width="1.5"/>
-            <text x="503" y="44" fill="var(--texto)">Vista 3D</text>
-          </g>
-          <g>
-            <rect x="582" y="26" width="118" height="42" rx="9" fill="var(--verde-claro)" stroke="var(--verde)" stroke-width="1.5"/>
-            <text x="641" y="46" fill="var(--texto)">Tabla de</text>
-            <text x="641" y="62" fill="var(--texto)">cantidades</text>
-          </g>
-          <rect x="256" y="188" width="208" height="60" rx="12" fill="var(--azul-medio)" opacity="0.16" stroke="var(--azul-oscuro)" stroke-width="2"/>
-          <text x="360" y="214" font-weight="700" fill="var(--texto)">Modelo BIM</text>
-          <text x="360" y="234" font-size="13" fill="var(--texto-suave)">un solo archivo .rvt</text>
-        </g>
-        <g fill="none" stroke="var(--azul-oscuro)" stroke-width="1.6" marker-end="url(#flecha)" opacity="0.85">
-          <path d="M300 190 C 220 150, 140 110, 90 70"/>
-          <path d="M325 188 C 290 140, 250 100, 220 62"/>
-          <path d="M356 186 C 356 140, 360 100, 360 58"/>
-          <path d="M395 188 C 430 140, 470 100, 500 62"/>
-          <path d="M420 190 C 500 150, 580 110, 636 70"/>
-        </g>
-        <text x="360" y="284" text-anchor="middle" font-family="var(--sans)" font-size="13" font-style="italic" fill="var(--texto-suave)">Un cambio en el modelo se refleja en todas las vistas y tablas a la vez.</text>
-      </svg>
-      <figcaption>
-        <b>Figura 1.</b> En BIM existe un solo modelo central del que se derivan, coordinadas entre sí, todas
-        las representaciones del proyecto. (Esquema propio a partir de Hamad, 2025.)
-      </figcaption>
-    </figure>
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-05-modelo-vistas-datos.png"
-           alt="El mismo modelo produce planta, sección, alzado, vista 3D y tabla de cantidades. Abajo, la comparación de mover un muro un metro: en CAD hay que corregir cada dibujo por separado; en BIM se modifica el muro y se verifica la actualización de las vistas relacionadas">
-      <figcaption>
-        <b>Lámina 5.</b> El mismo esquema llevado a un caso concreto: mover un muro un metro. A la derecha,
-        el matiz que evita la ilusión de automatismo: BIM coordina, pero no exime de revisar.
-      </figcaption>
-    </figure>
-
-    <div class="tabla-envoltura">
-      <table>
-        <caption class="tabla-titulo">CAD frente a BIM: diferencias esenciales (Hamad, 2025)</caption>
-        <thead>
-          <tr><th scope="col">CAD (dibujo)</th><th scope="col">BIM (modelo)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Se dibuja con líneas, arcos y círculos.</td><td>Se modela con elementos inteligentes (muros, puertas, pisos).</td></tr>
-          <tr><td>Una línea no sabe qué representa.</td><td>Cada elemento contiene su propia información.</td></tr>
-          <tr><td>Plantas, secciones y alzados son dibujos independientes, que pueden no estar coordinados entre sí.</td><td>Todas las vistas se derivan de un mismo modelo.</td></tr>
-          <tr><td>Un cambio obliga a corregir cada dibujo a mano.</td><td>Un cambio <em>correctamente modelado</em> se refleja en las vistas y tablas relacionadas.</td></tr>
-          <tr><td>El resultado es un conjunto de dibujos.</td><td>El resultado es un modelo coordinado del edificio.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="caja caja--recordatorio">
-      <p class="caja__titulo">El orden importa, y tu tarea</p>
-      <p>
-        En este curso primero entendemos <em>qué</em> vamos a construir y <em>cómo</em> se representa un
-        edificio; la herramienta llega cuando ya sepamos qué estamos haciendo (la conocerás al final de
-        este parcial). <strong>Tarea:</strong> elige un <strong>museo o espacio cultural</strong> que
-        puedas <em>documentar</em>, no solo admirar. En la <strong>Sesión 3</strong> lo analizaremos en
-        equipo: será tu primer precedente.
-      </p>
-    </div>
-
-    <div class="caja caja--alerta">
-      <p class="caja__titulo">Qué significa que un museo sea «documentable»</p>
-      <p>
-        Elegir un edificio espectacular del que solo encuentres fotos bonitas te dejará sin nada que
-        analizar el próximo día. Antes de decidirte, comprueba que puedes reunir <strong>como
-        mínimo</strong>:
-      </p>
-      <ul>
-        <li><strong>Una planta legible.</strong> No negociable: sin planta no hay análisis. Si no la
-          encuentras, cambia de museo.</li>
-        <li><strong>Identificación del caso:</strong> nombre, ciudad, autor o equipo, y año.</li>
-        <li><strong>Fotografías de interior y de exterior</strong>, no solo la fachada icónica.</li>
-        <li><strong>Alguna evidencia de sección, altura o entrada de luz:</strong> un corte, una foto de
-          sala donde se vea el techo, un lucernario.</li>
-        <li><strong>La fuente de cada documento</strong>, para poder decir de dónde salió.</li>
-      </ul>
-      <p>
-        Un museo pequeño y bien documentado sirve mucho más que uno famoso del que solo tienes postales.
-      </p>
-    </div>
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-06-museo-documentable.png"
-           alt="Lista de verificación de la documentación mínima de un precedente: planta legible, nombre, ciudad, autor, año, fotografías exteriores e interiores, evidencia de sección o entrada de luz y fuente de cada documento. A la derecha, qué entregar y el criterio de elección: mejor un museo pequeño bien documentado que uno famoso del que solo hay fotos icónicas">
-      <figcaption>
-        <b>Lámina 6.</b> La lista completa para revisar antes de decidirte, y el criterio en una línea:
-        sin planta legible no hay base para el análisis.
-      </figcaption>
-    </figure>
-
-    <figure class="fig-media">
-      <img src="../expo/expo_s2/s2-07-resumen.png"
-           alt="Tabla resumen de la sesión con sus conceptos e ideas clave: dibujo manual, CAD, BIM, elemento paramétrico, anfitrión, coordinación y museo documentable">
-      <figcaption>
-        <b>Lámina 7.</b> Síntesis de la sesión. Si puedes explicar las siete filas con tus palabras, la
-        sesión está entendida.
-      </figcaption>
-    </figure>
-
-    <div class="caja caja--practica">
-      <p class="caja__titulo">Comprobación de logro</p>
-      <p>
-        En una frase, <strong>corrige</strong> la afirmación «en CAD se dibuja, no se modela» usando la
-        formulación precisa que vimos hoy. Si puedes escribirla sin mirar el apunte, entendiste la sesión.
-      </p>
-      <p>
-        Entrega además el <strong>museo que elegiste</strong> con dos líneas de justificación: por qué ese
-        y dónde encontraste su planta.
-      </p>
-    </div>
-
-    <h2>Referencias</h2>
-    <ul class="referencias">
-      <li>Cardoso Llach, D. y Capdevila Werning, R. (2009). Arquitectura, diseño y computación. <em>DEARQ, Revista de Arquitectura</em>, (4), pp. 136–140. Universidad de los Andes.</li>
-      <li>Hamad, M. (2025). <em>Autodesk Revit 2025 Architecture</em>. Mercury Learning and Information (sello de De Gruyter). Capítulo 1: Introduction to Revit 2025.</li>
-    </ul>
-
-    <p class="sesion-sig"><strong>Qué sigue:</strong> Sesión 3, taller: leer un museo (análisis de precedentes en equipo).</p>
-
-    <nav class="nav-sesiones" aria-label="Navegación entre sesiones">
-      <a class="nav-sesiones__ant" href="sesion-1.html">
-        <span class="nav-sesiones__rotulo">&larr; Anterior</span>
-        <span class="nav-sesiones__titulo">S1 · Presentación del curso</span>
-      </a>
-      <a class="nav-sesiones__ind" href="../parcial-1.html">Todas las sesiones</a>
-      <a class="nav-sesiones__sig" href="sesion-3.html">
-        <span class="nav-sesiones__rotulo">Siguiente &rarr;</span>
-        <span class="nav-sesiones__titulo">S3 · Taller: leer un museo</span>
-      </a>
-    </nav>
+    </section>
 
   </div>
 </section>
@@ -427,6 +99,7 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/curso.js"></script>
 <script src="../assets/js/menu.js"></script>
-<script src="../assets/js/lupa.js"></script>
+<script id="cerrojo" type="application/json">{"v":1,"iter":200000,"sello":"c926682088cc","iv":"4ulnwoUy2t7SZdx2","ct":"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","grupos":[{"nombre":"IBERO-A","sal":"ShMSni4pDX6AzhvXc2Il8Q==","iv":"qpLDcmcXRXCQNYsq","ct":"lzTg+Afm9GF9tde4qcpyc3HtyOiOgx7GxQg9wjCjPa/ZHP5N7MUEKA+0Mdsh+jOr"}]}</script>
+<script src="../assets/js/candado.js"></script>
 </body>
 </html>

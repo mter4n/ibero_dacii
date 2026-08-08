@@ -33,16 +33,19 @@ window.CURSO = {
                    'representación a mano y, al cierre, el entorno y la interfaz de Revit. ' +
                    'Termina con el examen (S10).',
       subtemas: [
+        /* La S1 es la presentación del curso y se queda abierta.
+           De la S2 en adelante cada sesión pide su propio código:
+           los códigos viven en taller-fuente/grupos.json. */
         { clave: 'S1',  titulo: 'Presentación del curso',     apunte: 'sesion-1.html' },
-        { clave: 'S2',  titulo: 'Del dibujo a la información', apunte: 'sesion-2.html' },
-        { clave: 'S3',  titulo: 'Taller: leer un museo',      apunte: 'sesion-3.html' },
-        { clave: 'S4',  titulo: 'El proyecto: un museo',      apunte: 'sesion-4.html' },
-        { clave: 'S5',  titulo: 'Taller: el brief, programa y sitio', apunte: 'sesion-5.html' },
-        { clave: 'S6',  titulo: 'La representación: planta, sección y alzado', apunte: 'sesion-6.html' },
-        { clave: 'S7',  titulo: 'Taller: el anteproyecto a mano', apunte: 'sesion-7.html' },
-        { clave: 'S8',  titulo: 'Revit: el entorno y la interfaz', apunte: 'sesion-8.html' },
-        { clave: 'S9',  titulo: 'Taller: primer contacto con Revit', apunte: 'sesion-9.html' },
-        { clave: 'S10', titulo: 'Presentación y examen del primer parcial', apunte: 'sesion-10.html' }
+        { clave: 'S2',  titulo: 'Del dibujo a la información', apunte: 'sesion-2.html', apunteCerrado: true },
+        { clave: 'S3',  titulo: 'Taller: leer un museo',      apunte: 'sesion-3.html', apunteCerrado: true },
+        { clave: 'S4',  titulo: 'El proyecto: un museo',      apunte: 'sesion-4.html', apunteCerrado: true },
+        { clave: 'S5',  titulo: 'Taller: el brief, programa y sitio', apunte: 'sesion-5.html', apunteCerrado: true },
+        { clave: 'S6',  titulo: 'La representación: planta, sección y alzado', apunte: 'sesion-6.html', apunteCerrado: true },
+        { clave: 'S7',  titulo: 'Taller: el anteproyecto a mano', apunte: 'sesion-7.html', apunteCerrado: true },
+        { clave: 'S8',  titulo: 'Revit: el entorno y la interfaz', apunte: 'sesion-8.html', apunteCerrado: true },
+        { clave: 'S9',  titulo: 'Taller: primer contacto con Revit', apunte: 'sesion-9.html', apunteCerrado: true },
+        { clave: 'S10', titulo: 'Presentación y examen del primer parcial', apunte: 'sesion-10.html', apunteCerrado: true }
       ]
     },
     {
